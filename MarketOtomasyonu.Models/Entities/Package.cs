@@ -20,7 +20,7 @@ namespace MarketOtomasyonu.Models.Entities
         [Required]
         public decimal PackagePurchasingPrice { get; set; }
 
-        public int ProductQuantity { get; set; }
+        public int PackageProductQuantity { get; set; }
 
         public int ProductId { get; set; }
 
