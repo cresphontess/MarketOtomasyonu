@@ -31,7 +31,7 @@
             this.btnOrderSave = new System.Windows.Forms.Button();
             this.cmbOrderProduct = new System.Windows.Forms.ComboBox();
             this.nmOrderQuantity = new System.Windows.Forms.NumericUpDown();
-            this.lbl_OrderTitle = new System.Windows.Forms.Label();
+            this.lblOrderTitle = new System.Windows.Forms.Label();
             this.LblOrderProduct = new System.Windows.Forms.Label();
             this.lblOrderQuantity = new System.Windows.Forms.Label();
             this.lstOrder = new System.Windows.Forms.ListBox();
@@ -69,15 +69,15 @@
             this.nmOrderQuantity.Size = new System.Drawing.Size(91, 20);
             this.nmOrderQuantity.TabIndex = 2;
             // 
-            // lbl_OrderTitle
+            // lblOrderTitle
             // 
-            this.lbl_OrderTitle.AutoSize = true;
-            this.lbl_OrderTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_OrderTitle.Location = new System.Drawing.Point(304, 14);
-            this.lbl_OrderTitle.Name = "lbl_OrderTitle";
-            this.lbl_OrderTitle.Size = new System.Drawing.Size(177, 55);
-            this.lbl_OrderTitle.TabIndex = 3;
-            this.lbl_OrderTitle.Text = "Sipariş";
+            this.lblOrderTitle.AutoSize = true;
+            this.lblOrderTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblOrderTitle.Location = new System.Drawing.Point(304, 14);
+            this.lblOrderTitle.Name = "lblOrderTitle";
+            this.lblOrderTitle.Size = new System.Drawing.Size(177, 55);
+            this.lblOrderTitle.TabIndex = 3;
+            this.lblOrderTitle.Text = "Sipariş";
             // 
             // LblOrderProduct
             // 
@@ -176,7 +176,7 @@
             this.Controls.Add(this.lstOrder);
             this.Controls.Add(this.lblOrderQuantity);
             this.Controls.Add(this.LblOrderProduct);
-            this.Controls.Add(this.lbl_OrderTitle);
+            this.Controls.Add(this.lblOrderTitle);
             this.Controls.Add(this.nmOrderQuantity);
             this.Controls.Add(this.cmbOrderProduct);
             this.Controls.Add(this.btnOrderSave);
@@ -193,7 +193,7 @@
         private System.Windows.Forms.Button btnOrderSave;
         private System.Windows.Forms.ComboBox cmbOrderProduct;
         private System.Windows.Forms.NumericUpDown nmOrderQuantity;
-        private System.Windows.Forms.Label lbl_OrderTitle;
+        private System.Windows.Forms.Label lblOrderTitle;
         private System.Windows.Forms.Label LblOrderProduct;
         private System.Windows.Forms.Label lblOrderQuantity;
         private System.Windows.Forms.ListBox lstOrder;

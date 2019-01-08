@@ -31,7 +31,7 @@
             this.dtGoodAcceptance = new System.Windows.Forms.DateTimePicker();
             this.lblGoodsAcceptanceList = new System.Windows.Forms.Label();
             this.lstGoodAcceptance = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblGoodAcceptanceTitle = new System.Windows.Forms.Label();
             this.btnOrderSave = new System.Windows.Forms.Button();
             this.txtGoodAcceptanceBarcode = new System.Windows.Forms.TextBox();
             this.lblGoodAcceptanceBarcode = new System.Windows.Forms.Label();
@@ -62,15 +62,15 @@
             this.lstGoodAcceptance.Size = new System.Drawing.Size(206, 238);
             this.lstGoodAcceptance.TabIndex = 17;
             // 
-            // label3
+            // lblGoodAcceptanceTitle
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(248, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(229, 55);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Mal Kayıt";
+            this.lblGoodAcceptanceTitle.AutoSize = true;
+            this.lblGoodAcceptanceTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblGoodAcceptanceTitle.Location = new System.Drawing.Point(248, 12);
+            this.lblGoodAcceptanceTitle.Name = "lblGoodAcceptanceTitle";
+            this.lblGoodAcceptanceTitle.Size = new System.Drawing.Size(229, 55);
+            this.lblGoodAcceptanceTitle.TabIndex = 14;
+            this.lblGoodAcceptanceTitle.Text = "Mal Kayıt";
             // 
             // btnOrderSave
             // 
@@ -110,7 +110,7 @@
             this.Controls.Add(this.dtGoodAcceptance);
             this.Controls.Add(this.lblGoodsAcceptanceList);
             this.Controls.Add(this.lstGoodAcceptance);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblGoodAcceptanceTitle);
             this.Controls.Add(this.btnOrderSave);
             this.Name = "GoodsAcceptanceForm";
             this.Text = "GoodsAcceptanceForm";
@@ -124,7 +124,7 @@
         private System.Windows.Forms.DateTimePicker dtGoodAcceptance;
         private System.Windows.Forms.Label lblGoodsAcceptanceList;
         private System.Windows.Forms.ListBox lstGoodAcceptance;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblGoodAcceptanceTitle;
         private System.Windows.Forms.Button btnOrderSave;
         private System.Windows.Forms.TextBox txtGoodAcceptanceBarcode;
         private System.Windows.Forms.Label lblGoodAcceptanceBarcode;

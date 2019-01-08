@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace MarketOtomasyonu.Models.Entities
 {
     [Table("Orders")]
-  public  class Order
+  public class Order
     {
         [Key]
         public int OrderId { get; set; }
