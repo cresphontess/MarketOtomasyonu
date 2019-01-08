@@ -208,6 +208,7 @@
             this.btnBarcodeControl.TabIndex = 30;
             this.btnBarcodeControl.Text = "Paket Barkod Var Mı";
             this.btnBarcodeControl.UseVisualStyleBackColor = true;
+            this.btnBarcodeControl.Click += new System.EventHandler(this.btnBarcodeControl_Click);
             // 
             // OrderForm
             // 

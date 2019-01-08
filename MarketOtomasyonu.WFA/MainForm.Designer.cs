@@ -47,6 +47,7 @@
             this.btnProductOrder.TabIndex = 0;
             this.btnProductOrder.Text = "Sipariş Ver";
             this.btnProductOrder.UseVisualStyleBackColor = false;
+            this.btnProductOrder.Click += new System.EventHandler(this.btnProductOrder_Click);
             // 
             // btnGoodsAcceptance
             // 
@@ -61,6 +62,7 @@
             this.btnGoodsAcceptance.TabIndex = 1;
             this.btnGoodsAcceptance.Text = "Mal Kabul";
             this.btnGoodsAcceptance.UseVisualStyleBackColor = false;
+            this.btnGoodsAcceptance.Click += new System.EventHandler(this.btnGoodsAcceptance_Click);
             // 
             // btnSelling
             // 
@@ -75,6 +77,7 @@
             this.btnSelling.TabIndex = 2;
             this.btnSelling.Text = "Satış Yap";
             this.btnSelling.UseVisualStyleBackColor = false;
+            this.btnSelling.Click += new System.EventHandler(this.btnSelling_Click);
             // 
             // MainForm
             // 

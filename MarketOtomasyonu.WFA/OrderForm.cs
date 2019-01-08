@@ -12,9 +12,17 @@ namespace MarketOtomasyonu.WFA
 {
     public partial class OrderForm : Form
     {
+       
         public OrderForm()
         {
             InitializeComponent();
+
+
+        }
+
+        private void btnBarcodeControl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
