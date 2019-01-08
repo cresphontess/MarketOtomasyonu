@@ -41,6 +41,11 @@
             this.dtOrder = new System.Windows.Forms.DateTimePicker();
             this.lblOrderBarcode = new System.Windows.Forms.Label();
             this.txtOrderBarcode = new System.Windows.Forms.TextBox();
+            this.txtOrderPackagePrice = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPackageName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnBarcodeControl = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nmOrderQuantity)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,12 +166,60 @@
             this.txtOrderBarcode.Size = new System.Drawing.Size(193, 20);
             this.txtOrderBarcode.TabIndex = 24;
             // 
+            // txtOrderPackagePrice
+            // 
+            this.txtOrderPackagePrice.Location = new System.Drawing.Point(82, 316);
+            this.txtOrderPackagePrice.Name = "txtOrderPackagePrice";
+            this.txtOrderPackagePrice.Size = new System.Drawing.Size(166, 20);
+            this.txtOrderPackagePrice.TabIndex = 26;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(116, 277);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 20);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Paket Fiyat";
+            // 
+            // txtPackageName
+            // 
+            this.txtPackageName.Location = new System.Drawing.Point(82, 174);
+            this.txtPackageName.Name = "txtPackageName";
+            this.txtPackageName.Size = new System.Drawing.Size(166, 20);
+            this.txtPackageName.TabIndex = 28;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(116, 130);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Paket Adı";
+            // 
+            // btnBarcodeControl
+            // 
+            this.btnBarcodeControl.Location = new System.Drawing.Point(314, 171);
+            this.btnBarcodeControl.Name = "btnBarcodeControl";
+            this.btnBarcodeControl.Size = new System.Drawing.Size(155, 23);
+            this.btnBarcodeControl.TabIndex = 30;
+            this.btnBarcodeControl.Text = "Paket Barkod Var Mı";
+            this.btnBarcodeControl.UseVisualStyleBackColor = true;
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBarcodeControl);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtPackageName);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtOrderPackagePrice);
             this.Controls.Add(this.lblOrderBarcode);
             this.Controls.Add(this.txtOrderBarcode);
             this.Controls.Add(this.dtOrder);
@@ -203,5 +256,10 @@
         private System.Windows.Forms.DateTimePicker dtOrder;
         private System.Windows.Forms.Label lblOrderBarcode;
         private System.Windows.Forms.TextBox txtOrderBarcode;
+        private System.Windows.Forms.TextBox txtOrderPackagePrice;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPackageName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnBarcodeControl;
     }
 }
