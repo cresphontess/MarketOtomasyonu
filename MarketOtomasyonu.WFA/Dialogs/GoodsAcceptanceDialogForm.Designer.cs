@@ -143,6 +143,7 @@
             this.Controls.Add(this.txtCategory);
             this.Name = "GoodsAcceptanceDialogForm";
             this.Text = "GoodsAcceptanceDialogForm";
+            
             this.Load += new System.EventHandler(this.GoodsAcceptanceDialogForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
