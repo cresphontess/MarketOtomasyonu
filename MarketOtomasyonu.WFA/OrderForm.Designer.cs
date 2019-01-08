@@ -51,6 +51,7 @@
             // 
             // btnOrderSave
             // 
+            this.btnOrderSave.Enabled = false;
             this.btnOrderSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnOrderSave.Location = new System.Drawing.Point(48, 388);
             this.btnOrderSave.Name = "btnOrderSave";
@@ -165,6 +166,7 @@
             this.txtOrderBarcode.Name = "txtOrderBarcode";
             this.txtOrderBarcode.Size = new System.Drawing.Size(193, 20);
             this.txtOrderBarcode.TabIndex = 24;
+            this.txtOrderBarcode.TextChanged += new System.EventHandler(this.txtOrderBarcode_TextChanged);
             // 
             // txtOrderPackagePrice
             // 
@@ -202,6 +204,7 @@
             // 
             // btnBarcodeControl
             // 
+            this.btnBarcodeControl.Enabled = false;
             this.btnBarcodeControl.Location = new System.Drawing.Point(314, 171);
             this.btnBarcodeControl.Name = "btnBarcodeControl";
             this.btnBarcodeControl.Size = new System.Drawing.Size(155, 23);
