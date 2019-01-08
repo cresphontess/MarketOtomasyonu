@@ -21,7 +21,7 @@ namespace MarketOtomasyonu.Models.Entities
         public int ProductStock { get; set; }
 
         [Required]
-        public decimal ProductPurchasingPrice { get; set; }
+        public decimal ProductPurchasingPrice { get; set; } 
         [Required]
         public decimal ProductSellingPrice { get; set; }
         public int CategoryId { get; set; }

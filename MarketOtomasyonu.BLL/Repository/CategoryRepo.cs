@@ -9,5 +9,21 @@ namespace MarketOtomasyonu.BLL.Repository
 {
    public class CategoryRepo:RepositoryBase<Category>
     {
+        public override List<Category> GetAll()
+        {
+            return base.GetAll().OrderBy(x => x.CategoryName).ToList();
+        }
+        public override int Insert(Category entity)
+        {
+            try
+            {
+  
+                return base.Insert(entity);
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }

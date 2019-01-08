@@ -55,6 +55,7 @@
             this.btnCategoryAdd.TabIndex = 1;
             this.btnCategoryAdd.Text = "Kategori Ekle";
             this.btnCategoryAdd.UseVisualStyleBackColor = true;
+            this.btnCategoryAdd.Click += new System.EventHandler(this.btnCategoryAdd_Click);
             // 
             // btnProductAdd
             // 
@@ -64,6 +65,7 @@
             this.btnProductAdd.TabIndex = 2;
             this.btnProductAdd.Text = "Ürün Ekle";
             this.btnProductAdd.UseVisualStyleBackColor = true;
+            this.btnProductAdd.Click += new System.EventHandler(this.btnProductAdd_Click);
             // 
             // txtProductName
             // 
@@ -122,6 +124,7 @@
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(121, 21);
             this.cmbCategory.TabIndex = 10;
+            this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
             // 
             // GoodsAcceptanceDialogForm
             // 
@@ -140,6 +143,7 @@
             this.Controls.Add(this.txtCategory);
             this.Name = "GoodsAcceptanceDialogForm";
             this.Text = "GoodsAcceptanceDialogForm";
+            this.Load += new System.EventHandler(this.GoodsAcceptanceDialogForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
