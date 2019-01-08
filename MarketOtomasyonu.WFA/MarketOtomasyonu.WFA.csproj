@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialogs\GoodsAcceptanceDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\GoodsAcceptanceDialogForm.Designer.cs">
+      <DependentUpon>GoodsAcceptanceDialogForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GoodsAcceptanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\GoodsAcceptanceDialogForm.resx">
+      <DependentUpon>GoodsAcceptanceDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="SaleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,8 +132,6 @@
       <Name>MarketOtomasyonu.Models</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dialogs\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
