@@ -38,18 +38,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
+            this.pbBarcode = new System.Windows.Forms.PictureBox();
+            this.btnBarcode = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBarcode)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCategory
             // 
-            this.txtCategory.Location = new System.Drawing.Point(293, 29);
+            this.txtCategory.Location = new System.Drawing.Point(552, 29);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(100, 20);
             this.txtCategory.TabIndex = 0;
             // 
             // btnCategoryAdd
             // 
-            this.btnCategoryAdd.Location = new System.Drawing.Point(293, 75);
+            this.btnCategoryAdd.Location = new System.Drawing.Point(552, 75);
             this.btnCategoryAdd.Name = "btnCategoryAdd";
             this.btnCategoryAdd.Size = new System.Drawing.Size(100, 23);
             this.btnCategoryAdd.TabIndex = 1;
@@ -59,7 +62,7 @@
             // 
             // btnProductAdd
             // 
-            this.btnProductAdd.Location = new System.Drawing.Point(125, 196);
+            this.btnProductAdd.Location = new System.Drawing.Point(107, 162);
             this.btnProductAdd.Name = "btnProductAdd";
             this.btnProductAdd.Size = new System.Drawing.Size(75, 23);
             this.btnProductAdd.TabIndex = 2;
@@ -71,15 +74,17 @@
             // 
             this.txtProductName.Location = new System.Drawing.Point(91, 29);
             this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(121, 20);
+            this.txtProductName.Size = new System.Drawing.Size(136, 20);
             this.txtProductName.TabIndex = 3;
             // 
             // txtProductBarcode
             // 
             this.txtProductBarcode.Location = new System.Drawing.Point(91, 73);
             this.txtProductBarcode.Name = "txtProductBarcode";
-            this.txtProductBarcode.Size = new System.Drawing.Size(121, 20);
-            this.txtProductBarcode.TabIndex = 4;
+            this.txtProductBarcode.ReadOnly = true;
+            this.txtProductBarcode.Size = new System.Drawing.Size(136, 20);
+            this.txtProductBarcode.TabIndex = 3;
+            this.txtProductBarcode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductBarcode_KeyDown);
             // 
             // label1
             // 
@@ -111,7 +116,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(223, 32);
+            this.label4.Location = new System.Drawing.Point(482, 32);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 9;
@@ -122,15 +127,35 @@
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Location = new System.Drawing.Point(91, 118);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(121, 21);
+            this.cmbCategory.Size = new System.Drawing.Size(136, 21);
             this.cmbCategory.TabIndex = 10;
             this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
+            // 
+            // pbBarcode
+            // 
+            this.pbBarcode.Location = new System.Drawing.Point(246, 12);
+            this.pbBarcode.Name = "pbBarcode";
+            this.pbBarcode.Size = new System.Drawing.Size(209, 93);
+            this.pbBarcode.TabIndex = 11;
+            this.pbBarcode.TabStop = false;
+            // 
+            // btnBarcode
+            // 
+            this.btnBarcode.Location = new System.Drawing.Point(302, 111);
+            this.btnBarcode.Name = "btnBarcode";
+            this.btnBarcode.Size = new System.Drawing.Size(75, 23);
+            this.btnBarcode.TabIndex = 12;
+            this.btnBarcode.Text = "Barkod Ekle";
+            this.btnBarcode.UseVisualStyleBackColor = true;
+            this.btnBarcode.Click += new System.EventHandler(this.btnBarcode_Click);
             // 
             // GoodsAcceptanceDialogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 231);
+            this.ClientSize = new System.Drawing.Size(683, 231);
+            this.Controls.Add(this.btnBarcode);
+            this.Controls.Add(this.pbBarcode);
             this.Controls.Add(this.cmbCategory);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -143,8 +168,8 @@
             this.Controls.Add(this.txtCategory);
             this.Name = "GoodsAcceptanceDialogForm";
             this.Text = "GoodsAcceptanceDialogForm";
-            
             this.Load += new System.EventHandler(this.GoodsAcceptanceDialogForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbBarcode)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +187,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbCategory;
+        private System.Windows.Forms.PictureBox pbBarcode;
+        private System.Windows.Forms.Button btnBarcode;
     }
 }

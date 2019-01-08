@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Barcode\Ean13.cs" />
     <Compile Include="Dialogs\GoodsAcceptanceDialogForm.cs">
       <SubType>Form</SubType>
     </Compile>
