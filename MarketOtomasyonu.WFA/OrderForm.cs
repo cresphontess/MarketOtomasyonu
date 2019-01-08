@@ -25,8 +25,10 @@ namespace MarketOtomasyonu.WFA
 
         private void btnBarcodeControl_Click(object sender, EventArgs e)
         {
-            PackageRepo db= new PackageRepo();
+            PackageRepo db = new PackageRepo();
             var koliler = db.GetAll();
+
+            bool control = false;
 
 
             if (koliler.Count != 0)
@@ -34,11 +36,22 @@ namespace MarketOtomasyonu.WFA
 
                 foreach (var item in koliler)
                 {
-                    if (txtOrderBarcode.Text != item.PackageBarcode.ToString())
+                    if (txtOrderBarcode.Text == item.PackageBarcode.ToString())
                     {
-                        GoodsAcceptanceDialogForm goodsAcceptanceDialogForm = new GoodsAcceptanceDialogForm();
-                        goodsAcceptanceDialogForm.Show();
+                        control = true;
+                        break;
                     }
+                   
+                }
+
+                if(control == false)
+                {
+                    GoodsAcceptanceDialogForm goodsAcceptanceDialogForm = new GoodsAcceptanceDialogForm();
+                    goodsAcceptanceDialogForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show($"{txtOrderBarcode} numaralı paketiniz mevcuttur.");
                 }
             }
             else
@@ -64,21 +77,36 @@ namespace MarketOtomasyonu.WFA
         private void btnOrderSave_Click(object sender, EventArgs e)
         {
             PackageRepo db = new PackageRepo();
+            OrderDetailRepo dbOrderDetail = new OrderDetailRepo();
+            OrderDetail orderDetail = new OrderDetail();
+           
 
-            
+            try
+            {
+                Package package = new Package();
 
-            Package package = new Package();
 
-            package.PackageName = txtPackageName.Text;
-            package.ProductId= (cmbOrderProduct.SelectedItem as Product).ProductId;
-            package.PackagePurchasingPrice = Convert.ToInt32(txtOrderPackagePrice.Text);
-            package.PackageProductQuantity = Convert.ToInt32(nmOrderQuantity.Value);
+                package.PackageName = txtPackageName.Text;
+                package.ProductId = (cmbOrderProduct.SelectedItem as Product).ProductId;
+                package.PackagePurchasingPrice = Convert.ToDecimal(txtOrderPackagePrice.Text);
+                package.PackageProductQuantity = Convert.ToInt32(nmOrderQuantity.Value);
+                package.PackageBarcode = txtOrderBarcode.Text;
+                
 
-            db.Insert(package);
+                db.Insert(package);
+                orderDetail.PackageId = package.PackageId;
+                dbOrderDetail.Insert(orderDetail);
 
-            var koliler = db.GetAll();
+                var packages = db.GetAll();
 
-            lstOrder.DataSource = koliler;
+                lstOrder.DataSource = packages;
+                lstOrder.DisplayMember = "PackageName";
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
 
 
 
@@ -91,6 +119,17 @@ namespace MarketOtomasyonu.WFA
         private void OrderForm_Load(object sender, EventArgs e)
         {
             UrunleriGetir();
+        }
+
+        private void cmbOrderProduct_DropDown(object sender, EventArgs e)
+        {
+            UrunleriGetir();
+        }
+
+        private void nmOrderQuantity_ValueChanged(object sender, EventArgs e)
+        {
+            txtOrderPackagePrice.Text = "0";
+            txtOrderPackagePrice.Text = ((cmbOrderProduct.SelectedItem as Product).ProductPurchasingPrice * nmOrderQuantity.Value).ToString();
         }
     }
 }

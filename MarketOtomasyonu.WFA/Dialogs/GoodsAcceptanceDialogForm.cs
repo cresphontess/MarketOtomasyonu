@@ -21,6 +21,7 @@ namespace MarketOtomasyonu.WFA.Dialogs
 
         private void btnCategoryAdd_Click(object sender, EventArgs e)
         {
+
             new CategoryRepo().Insert(new Category()
             {
                 CategoryName = txtCategory.Text
@@ -45,7 +46,7 @@ namespace MarketOtomasyonu.WFA.Dialogs
                         CategoryId = (cmbCategory.SelectedItem as Category).CategoryId,
                          ProductName = txtProductName.Text,
                           ProductBarcode = txtProductBarcode.Text,
-                           ProductPurchasingPrice=0,
+                           ProductPurchasingPrice= Convert.ToInt32(txtProductPurchasingPrice.Text),
                             ProductSellingPrice=0,
                              ProductStock=0
                                

@@ -14,8 +14,11 @@ namespace MarketOtomasyonu.Models.Entities
         [Key]
         public int ProductId { get; set; }
         [Required]
+        [MaxLength(20)]
+        [MinLength(2)]
         public string ProductName { get; set; }
         [Required]
+        [StringLength(10)]
         public string ProductBarcode { get; set; }
         [Required]
         public int ProductStock { get; set; }

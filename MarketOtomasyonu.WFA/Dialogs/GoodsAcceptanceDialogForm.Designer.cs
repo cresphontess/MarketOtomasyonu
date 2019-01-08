@@ -38,6 +38,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtProductPurchasingPrice = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtCategory
@@ -102,7 +104,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 121);
+            this.label3.Location = new System.Drawing.Point(38, 150);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 8;
@@ -120,17 +122,35 @@
             // cmbCategory
             // 
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(91, 118);
+            this.cmbCategory.Location = new System.Drawing.Point(91, 147);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(121, 21);
             this.cmbCategory.TabIndex = 10;
             this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 118);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Ürün Alış Fiyatı";
+            // 
+            // txtProductPurchasingPrice
+            // 
+            this.txtProductPurchasingPrice.Location = new System.Drawing.Point(91, 111);
+            this.txtProductPurchasingPrice.Name = "txtProductPurchasingPrice";
+            this.txtProductPurchasingPrice.Size = new System.Drawing.Size(121, 20);
+            this.txtProductPurchasingPrice.TabIndex = 11;
             // 
             // GoodsAcceptanceDialogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(405, 231);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtProductPurchasingPrice);
             this.Controls.Add(this.cmbCategory);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -143,7 +163,6 @@
             this.Controls.Add(this.txtCategory);
             this.Name = "GoodsAcceptanceDialogForm";
             this.Text = "GoodsAcceptanceDialogForm";
-            
             this.Load += new System.EventHandler(this.GoodsAcceptanceDialogForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -162,5 +181,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbCategory;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtProductPurchasingPrice;
     }
 }
