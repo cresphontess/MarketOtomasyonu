@@ -240,6 +240,7 @@
             this.Controls.Add(this.btnOrderSave);
             this.Name = "OrderForm";
             this.Text = "OrderForm";
+            this.Load += new System.EventHandler(this.OrderForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nmOrderQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -83,5 +83,14 @@ namespace MarketOtomasyonu.WFA
 
 
         }
+        private void UrunleriGetir()
+        {
+            cmbOrderProduct.DataSource = new ProductRepo().GetAll();
+            cmbOrderProduct.DisplayMember = "ProductName";
+        }
+        private void OrderForm_Load(object sender, EventArgs e)
+        {
+            UrunleriGetir();
+        }
     }
 }

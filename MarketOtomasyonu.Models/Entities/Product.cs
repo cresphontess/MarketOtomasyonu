@@ -26,6 +26,7 @@ namespace MarketOtomasyonu.Models.Entities
         public decimal ProductSellingPrice { get; set; }
         public int CategoryId { get; set; }
         
+       
 
 
         [ForeignKey("CategoryId")]

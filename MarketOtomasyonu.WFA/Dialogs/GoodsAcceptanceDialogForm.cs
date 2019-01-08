@@ -26,6 +26,7 @@ namespace MarketOtomasyonu.WFA.Dialogs
                 CategoryName = txtCategory.Text
                
             });
+            KategorileriGetir();
         }
         private void KategorileriGetir()
         {
@@ -47,6 +48,7 @@ namespace MarketOtomasyonu.WFA.Dialogs
                            ProductPurchasingPrice=0,
                             ProductSellingPrice=0,
                              ProductStock=0
+                               
                         
                     });
                 }
@@ -69,5 +71,7 @@ namespace MarketOtomasyonu.WFA.Dialogs
             if (cmbCategory.SelectedItem == null) return;
             Category cat = cmbCategory.SelectedItem as Category;
         }
+
+       
     }
 }
