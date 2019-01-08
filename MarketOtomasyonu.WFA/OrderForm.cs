@@ -1,4 +1,5 @@
 ﻿using MarketOtomasyonu.BLL.Repository;
+using MarketOtomasyonu.Models.Entities;
 using MarketOtomasyonu.WFA.Dialogs;
 using System;
 using System.Collections.Generic;
@@ -58,6 +59,29 @@ namespace MarketOtomasyonu.WFA
             {
                 btnBarcodeControl.Enabled = false;
             }
+        }
+
+        private void btnOrderSave_Click(object sender, EventArgs e)
+        {
+            PackageRepo db = new PackageRepo();
+
+            
+
+            Package package = new Package();
+
+            package.PackageName = txtPackageName.Text;
+            package.ProductId= (cmbOrderProduct.SelectedItem as Product).ProductId;
+            package.PackagePurchasingPrice = Convert.ToInt32(txtOrderPackagePrice.Text);
+            package.PackageProductQuantity = Convert.ToInt32(nmOrderQuantity.Value);
+
+            db.Insert(package);
+
+            var koliler = db.GetAll();
+
+            lstOrder.DataSource = koliler;
+
+
+
         }
     }
 }

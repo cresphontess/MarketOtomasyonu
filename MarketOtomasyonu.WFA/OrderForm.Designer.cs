@@ -59,6 +59,7 @@
             this.btnOrderSave.TabIndex = 0;
             this.btnOrderSave.Text = "Kaydet";
             this.btnOrderSave.UseVisualStyleBackColor = true;
+            this.btnOrderSave.Click += new System.EventHandler(this.btnOrderSave_Click);
             // 
             // cmbOrderProduct
             // 
