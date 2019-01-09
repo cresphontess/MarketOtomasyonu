@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -141,5 +142,38 @@ namespace MarketOtomasyonu.WFA
             txtOrderPackagePrice.Text = "0";
             txtOrderPackagePrice.Text = ((cmbOrderProduct.SelectedItem as Product).ProductPurchasingPrice * nmOrderQuantity.Value).ToString();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtOrderBarcode.Visible = true;
+            PrintDocument doc = new PrintDocument();
+            MarketOtomasyonu.WFA.Barcode.Ean13 barkod = new MarketOtomasyonu.WFA.Barcode.Ean13();
+
+            barkod.Height = 20f;
+            barkod.Width = 50f;
+            barkod.FontSize = 12f;
+            //bu kod barkodun ilk 2 hanesi -ülke kodu
+            barkod.CountryCode = "90";
+            //Bu kod üretici-imalatçı numarası -bu kısımın legal illegal gibi durumları da var
+            barkod.ManufacturerCode = "95525";
+            //Bu kod ürün kodu
+            barkod.ProductCode = UrunKodu();
+            //Bu kısım boş geçilsede birşey değişmiyor EAN-13 te zaten 12 veri okuyorsunuz ,bu sayı  barkodun sonunda oluyor. kontrol kodu
+            barkod.ChecksumDigit = "0";
+            pbPackageBarcode.Image = barkod.CreateBitmap();
+            txtOrderBarcode.Text = barkod.ToString();
+            this.ActiveControl = txtOrderBarcode;
+            txtOrderBarcode.Focus();
+            txtOrderBarcode.Select(0, 0);
+            txtOrderBarcode.SelectionStart = txtOrderBarcode.MaxLength;
+        }
+
+        private string UrunKodu()
+        {
+            Random rnd = new Random();
+            int sayi = rnd.Next(50001, 99999);
+            return sayi.ToString();
+        }
     }
-}
+    }
+
