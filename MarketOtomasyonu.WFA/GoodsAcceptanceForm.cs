@@ -22,6 +22,11 @@ namespace MarketOtomasyonu.WFA
         private void GoodsAcceptanceForm_Load(object sender, EventArgs e)
         {
             var orders = new List<OrderViewModel>();
+
+
+          
+
+
             try
             {
                 orders.AddRange(new PackageRepo().GetAll()
@@ -38,6 +43,14 @@ namespace MarketOtomasyonu.WFA
             }
 
             cmbOrderProduct.DataSource = orders;
+
+
+
+        }
+
+        private void cmbOrderProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
