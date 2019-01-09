@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarketOtomasyonu.BLL.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,7 @@ namespace MarketOtomasyonu.WFA
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
+       
     }
 }

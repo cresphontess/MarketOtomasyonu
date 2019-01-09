@@ -88,7 +88,7 @@
             this.txtGoodAcceptanceBarcode.Name = "txtGoodAcceptanceBarcode";
             this.txtGoodAcceptanceBarcode.Size = new System.Drawing.Size(193, 20);
             this.txtGoodAcceptanceBarcode.TabIndex = 22;
-            this.txtGoodAcceptanceBarcode.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+           
             // 
             // lblGoodAcceptanceBarcode
             // 

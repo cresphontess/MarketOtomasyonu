@@ -102,7 +102,7 @@ namespace MarketOtomasyonu.WFA.Dialogs
         private string UrunKodu()
         {
             Random rnd = new Random();
-            int sayi = rnd.Next(10000, 99999);
+            int sayi = rnd.Next(10000, 50000);
             return sayi.ToString();
         }
 

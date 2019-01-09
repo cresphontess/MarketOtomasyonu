@@ -46,7 +46,10 @@
             this.txtPackageName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnBarcodeControl = new System.Windows.Forms.Button();
+            this.pbPackageBarcode = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nmOrderQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPackageBarcode)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOrderSave
@@ -156,15 +159,15 @@
             // 
             this.lblOrderBarcode.AutoSize = true;
             this.lblOrderBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrderBarcode.Location = new System.Drawing.Point(310, 97);
+            this.lblOrderBarcode.Location = new System.Drawing.Point(44, 63);
             this.lblOrderBarcode.Name = "lblOrderBarcode";
-            this.lblOrderBarcode.Size = new System.Drawing.Size(146, 20);
+            this.lblOrderBarcode.Size = new System.Drawing.Size(110, 20);
             this.lblOrderBarcode.TabIndex = 25;
-            this.lblOrderBarcode.Text = "Barkod Numarası";
+            this.lblOrderBarcode.Text = "Koli Barkodu";
             // 
             // txtOrderBarcode
             // 
-            this.txtOrderBarcode.Location = new System.Drawing.Point(292, 120);
+            this.txtOrderBarcode.Location = new System.Drawing.Point(12, 97);
             this.txtOrderBarcode.Name = "txtOrderBarcode";
             this.txtOrderBarcode.Size = new System.Drawing.Size(193, 20);
             this.txtOrderBarcode.TabIndex = 24;
@@ -208,7 +211,7 @@
             // btnBarcodeControl
             // 
             this.btnBarcodeControl.Enabled = false;
-            this.btnBarcodeControl.Location = new System.Drawing.Point(314, 146);
+            this.btnBarcodeControl.Location = new System.Drawing.Point(531, 81);
             this.btnBarcodeControl.Name = "btnBarcodeControl";
             this.btnBarcodeControl.Size = new System.Drawing.Size(155, 23);
             this.btnBarcodeControl.TabIndex = 30;
@@ -216,12 +219,32 @@
             this.btnBarcodeControl.UseVisualStyleBackColor = true;
             this.btnBarcodeControl.Click += new System.EventHandler(this.btnBarcodeControl_Click);
             // 
+            // pbPackageBarcode
+            // 
+            this.pbPackageBarcode.Location = new System.Drawing.Point(274, 72);
+            this.pbPackageBarcode.Name = "pbPackageBarcode";
+            this.pbPackageBarcode.Size = new System.Drawing.Size(207, 104);
+            this.pbPackageBarcode.TabIndex = 31;
+            this.pbPackageBarcode.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(327, 182);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Barkod Ekle";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pbPackageBarcode);
             this.Controls.Add(this.btnBarcodeControl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPackageName);
@@ -244,6 +267,7 @@
             this.Text = "OrderForm";
             this.Load += new System.EventHandler(this.OrderForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nmOrderQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPackageBarcode)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,5 +293,7 @@
         private System.Windows.Forms.TextBox txtPackageName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBarcodeControl;
+        private System.Windows.Forms.PictureBox pbPackageBarcode;
+        private System.Windows.Forms.Button button1;
     }
 }
