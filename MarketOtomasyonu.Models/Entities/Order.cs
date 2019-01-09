@@ -14,6 +14,8 @@ namespace MarketOtomasyonu.Models.Entities
         [Key]
         public int OrderId { get; set; }
 
+        public string OrderName { get; set; }
+
         public DateTime OrderDateTime { get; set; } = DateTime.Now;
 
         public virtual ICollection<Package> Packages { get; set; } = new HashSet<Package>();

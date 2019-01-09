@@ -60,10 +60,11 @@ namespace MarketOtomasyonu.WFA
 
                 package.PackageName = txtPackageName.Text;
                 package.ProductId = (cmbOrderProduct.SelectedItem as Product).ProductId;
+                package.OrderId = (cmbOrderName.SelectedItem as Order).OrderId;
                 package.PackagePurchasingPrice = Convert.ToDecimal(txtOrderPackagePrice.Text);
                 package.PackageProductQuantity = Convert.ToInt32(nmOrderQuantity.Value);
                 package.PackageBarcode = txtOrderBarcode.Text;
-                
+                 
 
                 db.Insert(package);
                 //orderDetail.PackageId = package.PackageId;
@@ -101,6 +102,15 @@ namespace MarketOtomasyonu.WFA
         {
             UrunleriGetir();
             PaketleriGetir();
+            SiparisleriGetir();
+        }
+
+        private void SiparisleriGetir()
+        {
+            var db = new OrderRepo();
+            List<Order> siparisler = db.GetAll();
+            cmbOrderName.DataSource = siparisler;
+            cmbOrderName.DisplayMember = "OrderName";
         }
 
         private void cmbOrderProduct_DropDown(object sender, EventArgs e)
@@ -145,6 +155,37 @@ namespace MarketOtomasyonu.WFA
             int sayi = rnd.Next(50001, 99999);
             return sayi.ToString();
         }
+
+        private void btnOrderNameAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var orderRepo = new OrderRepo())
+                {
+                    orderRepo.Insert(new Order()
+                    {
+
+                        OrderName = txtOrderName.Text
+               
+
+
+                    });
+                }
+                
+                MessageBox.Show("Sipariş  Eklendi.");
+                SiparisleriGetir();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmbOrderName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+       
+        }
     }
-    }
+    
+ }   
 

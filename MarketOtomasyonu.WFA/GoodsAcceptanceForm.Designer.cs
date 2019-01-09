@@ -33,8 +33,8 @@
             this.lstGoodAcceptance = new System.Windows.Forms.ListBox();
             this.lblGoodAcceptanceTitle = new System.Windows.Forms.Label();
             this.btnOrderSave = new System.Windows.Forms.Button();
-            this.txtGoodAcceptanceBarcode = new System.Windows.Forms.TextBox();
             this.lblGoodAcceptanceBarcode = new System.Windows.Forms.Label();
+            this.cmbOrderProduct = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // dtGoodAcceptance
@@ -82,14 +82,6 @@
             this.btnOrderSave.Text = "Kaydet";
             this.btnOrderSave.UseVisualStyleBackColor = true;
             // 
-            // txtGoodAcceptanceBarcode
-            // 
-            this.txtGoodAcceptanceBarcode.Location = new System.Drawing.Point(243, 204);
-            this.txtGoodAcceptanceBarcode.Name = "txtGoodAcceptanceBarcode";
-            this.txtGoodAcceptanceBarcode.Size = new System.Drawing.Size(193, 20);
-            this.txtGoodAcceptanceBarcode.TabIndex = 22;
-           
-            // 
             // lblGoodAcceptanceBarcode
             // 
             this.lblGoodAcceptanceBarcode.AutoSize = true;
@@ -100,13 +92,21 @@
             this.lblGoodAcceptanceBarcode.TabIndex = 23;
             this.lblGoodAcceptanceBarcode.Text = "Barkod Numarası : ";
             // 
+            // cmbOrderProduct
+            // 
+            this.cmbOrderProduct.FormattingEnabled = true;
+            this.cmbOrderProduct.Location = new System.Drawing.Point(269, 206);
+            this.cmbOrderProduct.Name = "cmbOrderProduct";
+            this.cmbOrderProduct.Size = new System.Drawing.Size(185, 21);
+            this.cmbOrderProduct.TabIndex = 24;
+            // 
             // GoodsAcceptanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbOrderProduct);
             this.Controls.Add(this.lblGoodAcceptanceBarcode);
-            this.Controls.Add(this.txtGoodAcceptanceBarcode);
             this.Controls.Add(this.dtGoodAcceptance);
             this.Controls.Add(this.lblGoodsAcceptanceList);
             this.Controls.Add(this.lstGoodAcceptance);
@@ -114,6 +114,7 @@
             this.Controls.Add(this.btnOrderSave);
             this.Name = "GoodsAcceptanceForm";
             this.Text = "GoodsAcceptanceForm";
+            this.Load += new System.EventHandler(this.GoodsAcceptanceForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,7 +127,7 @@
         private System.Windows.Forms.ListBox lstGoodAcceptance;
         private System.Windows.Forms.Label lblGoodAcceptanceTitle;
         private System.Windows.Forms.Button btnOrderSave;
-        private System.Windows.Forms.TextBox txtGoodAcceptanceBarcode;
         private System.Windows.Forms.Label lblGoodAcceptanceBarcode;
+        private System.Windows.Forms.ComboBox cmbOrderProduct;
     }
 }
