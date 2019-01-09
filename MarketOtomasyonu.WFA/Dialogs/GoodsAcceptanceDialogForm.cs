@@ -47,7 +47,7 @@ namespace MarketOtomasyonu.WFA.Dialogs
                         CategoryId = (cmbCategory.SelectedItem as Category).CategoryId,
                          ProductName = txtProductName.Text,
                           ProductBarcode = txtProductBarcode.Text,
-                           ProductPurchasingPrice= Convert.ToInt32(txtProductPurchasingPrice.Text),
+                           ProductPurchasingPrice= Convert.ToDecimal(txtProductPurchasingPrice.Text),
                             ProductSellingPrice=0,
                              ProductStock=0
                                

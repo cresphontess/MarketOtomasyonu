@@ -65,20 +65,20 @@ namespace MarketOtomasyonu.WFA
         {
             if(txtOrderBarcode.TextLength != 0)
             {
-                btnBarcodeControl.Enabled = true;
+                btnNewProductAdd.Enabled = true;
 
             }
             else
             {
-                btnBarcodeControl.Enabled = false;
+                btnNewProductAdd.Enabled = false;
             }
         }
 
         private void btnOrderSave_Click(object sender, EventArgs e)
         {
             PackageRepo db = new PackageRepo();
-            OrderDetailRepo dbOrderDetail = new OrderDetailRepo();
-            OrderDetail orderDetail = new OrderDetail();
+           
+          
            
 
             try
@@ -94,13 +94,15 @@ namespace MarketOtomasyonu.WFA
                 
 
                 db.Insert(package);
-                orderDetail.PackageId = package.PackageId;
-                dbOrderDetail.Insert(orderDetail);
+                //orderDetail.PackageId = package.PackageId;
+                //dbOrderDetail.Insert(orderDetail);
+               
 
                 var packages = db.GetAll();
 
-                lstOrder.DataSource = packages;
-                lstOrder.DisplayMember = "PackageName";
+              
+
+                PaketleriGetir();
             }
             catch (Exception)
             {
@@ -111,6 +113,13 @@ namespace MarketOtomasyonu.WFA
 
 
         }
+
+        private void PaketleriGetir()
+        {
+            lstOrder.DataSource = new PackageRepo().GetAll();
+            lstOrder.DisplayMember = "PackageName";
+        }
+
         private void UrunleriGetir()
         {
             cmbOrderProduct.DataSource = new ProductRepo().GetAll();
@@ -119,6 +128,7 @@ namespace MarketOtomasyonu.WFA
         private void OrderForm_Load(object sender, EventArgs e)
         {
             UrunleriGetir();
+            PaketleriGetir();
         }
 
         private void cmbOrderProduct_DropDown(object sender, EventArgs e)
