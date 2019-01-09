@@ -22,12 +22,17 @@ namespace MarketOtomasyonu.Models.Entities
 
         public int PackageProductQuantity { get; set; }
 
+
+        public int OrderId { get; set; }
+
+        [ForeignKey("OrderId")]
+        public virtual Order Order { get; set; }
+
         public int ProductId { get; set; }
 
         [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }
 
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new HashSet<OrderDetail>();
 
     }
 }

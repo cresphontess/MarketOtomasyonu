@@ -38,7 +38,7 @@ namespace MarketOtomasyonu.WFA.Dialogs
                         CategoryId = (cmbCategory.SelectedItem as Category).CategoryId,
                          ProductName = txtProductName.Text,
                           ProductBarcode = txtProductBarcode.Text,
-                           ProductPurchasingPrice= Convert.ToInt32(txtProductPurchasingPrice.Text),
+                           ProductPurchasingPrice= Convert.ToDecimal(txtProductPurchasingPrice.Text),
                             ProductSellingPrice=0,
                              ProductStock=0
                                
@@ -93,7 +93,7 @@ namespace MarketOtomasyonu.WFA.Dialogs
         private string UrunKodu()
         {
             Random rnd = new Random();
-            int sayi = rnd.Next(10000, 99999);
+            int sayi = rnd.Next(10000, 50000);
             return sayi.ToString();
         }
 

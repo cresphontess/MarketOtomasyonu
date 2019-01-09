@@ -18,7 +18,7 @@ namespace MarketOtomasyonu.Models.Entities
         [MinLength(2)]
         public string ProductName { get; set; }
         [Required]
-        [StringLength(10)]
+        
         public string ProductBarcode { get; set; }
         [Required]
         public int ProductStock { get; set; }
