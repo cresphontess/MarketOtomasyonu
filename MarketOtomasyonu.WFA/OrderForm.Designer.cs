@@ -45,7 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPackageName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnBarcodeControl = new System.Windows.Forms.Button();
             this.pbPackageBarcode = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnNewProductAdd = new System.Windows.Forms.Button();
@@ -169,7 +168,6 @@
             // 
             // txtOrderBarcode
             // 
-            this.txtOrderBarcode.Location = new System.Drawing.Point(288, 130);
             this.txtOrderBarcode.Location = new System.Drawing.Point(12, 97);
             this.txtOrderBarcode.Name = "txtOrderBarcode";
             this.txtOrderBarcode.Size = new System.Drawing.Size(193, 20);
@@ -211,34 +209,6 @@
             this.label2.TabIndex = 29;
             this.label2.Text = "Paket Adı";
             // 
-            // btnNewProductAdd
-            // 
-            this.btnNewProductAdd.Enabled = false;
-            this.btnNewProductAdd.Location = new System.Drawing.Point(12, 266);
-            this.btnNewProductAdd.Name = "btnNewProductAdd";
-            this.btnNewProductAdd.Size = new System.Drawing.Size(166, 23);
-            this.btnNewProductAdd.TabIndex = 30;
-            this.btnNewProductAdd.Text = "Yeni Ürün Ekle";
-            this.btnNewProductAdd.UseVisualStyleBackColor = true;
-            this.btnNewProductAdd.Click += new System.EventHandler(this.btnBarcodeControl_Click);
-            // 
-            // btnOrderAdd
-            // 
-            this.btnOrderAdd.Location = new System.Drawing.Point(512, 393);
-            this.btnOrderAdd.Name = "btnOrderAdd";
-            this.btnOrderAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnOrderAdd.TabIndex = 31;
-            this.btnOrderAdd.Text = "Sipariş Ver";
-            this.btnOrderAdd.UseVisualStyleBackColor = true;
-            this.btnBarcodeControl.Enabled = false;
-            this.btnBarcodeControl.Location = new System.Drawing.Point(531, 81);
-            this.btnBarcodeControl.Name = "btnBarcodeControl";
-            this.btnBarcodeControl.Size = new System.Drawing.Size(155, 23);
-            this.btnBarcodeControl.TabIndex = 30;
-            this.btnBarcodeControl.Text = "Paket Barkod Var Mı";
-            this.btnBarcodeControl.UseVisualStyleBackColor = true;
-            this.btnBarcodeControl.Click += new System.EventHandler(this.btnBarcodeControl_Click);
-            // 
             // pbPackageBarcode
             // 
             this.pbPackageBarcode.Location = new System.Drawing.Point(274, 72);
@@ -257,6 +227,25 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnNewProductAdd
+            // 
+            this.btnNewProductAdd.Location = new System.Drawing.Point(12, 266);
+            this.btnNewProductAdd.Name = "btnNewProductAdd";
+            this.btnNewProductAdd.Size = new System.Drawing.Size(166, 23);
+            this.btnNewProductAdd.TabIndex = 30;
+            this.btnNewProductAdd.Text = "Yeni Ürün Ekle";
+            this.btnNewProductAdd.UseVisualStyleBackColor = true;
+            this.btnNewProductAdd.Click += new System.EventHandler(this.btnBarcodeControl_Click);
+            // 
+            // btnOrderAdd
+            // 
+            this.btnOrderAdd.Location = new System.Drawing.Point(512, 393);
+            this.btnOrderAdd.Name = "btnOrderAdd";
+            this.btnOrderAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnOrderAdd.TabIndex = 31;
+            this.btnOrderAdd.Text = "Sipariş Ver";
+            this.btnOrderAdd.UseVisualStyleBackColor = true;
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,7 +256,6 @@
             this.Controls.Add(this.btnNewProductAdd);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pbPackageBarcode);
-            this.Controls.Add(this.btnBarcodeControl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPackageName);
             this.Controls.Add(this.label1);
@@ -316,7 +304,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnNewProductAdd;
         private System.Windows.Forms.Button btnOrderAdd;
-        private System.Windows.Forms.Button btnBarcodeControl;
         private System.Windows.Forms.PictureBox pbPackageBarcode;
         private System.Windows.Forms.Button button1;
     }

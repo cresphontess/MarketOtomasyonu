@@ -47,6 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201901090758046_gl.cs" />
+    <Compile Include="Migrations\201901090758046_gl.Designer.cs">
+      <DependentUpon>201901090758046_gl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,7 +66,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-
+    <EmbeddedResource Include="Migrations\201901090758046_gl.resx">
+      <DependentUpon>201901090758046_gl.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
