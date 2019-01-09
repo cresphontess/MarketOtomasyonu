@@ -1,6 +1,6 @@
 ﻿namespace MarketOtomasyonu.WFA.Dialogs
 {
-    partial class GoodsAcceptanceDialogForm
+    partial class ProductInsertingDialogForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,43 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtCategory = new System.Windows.Forms.TextBox();
-            this.btnCategoryAdd = new System.Windows.Forms.Button();
             this.btnProductAdd = new System.Windows.Forms.Button();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.txtProductBarcode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.pbBarcode = new System.Windows.Forms.PictureBox();
             this.btnBarcode = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBarcode)).BeginInit();
             this.label5 = new System.Windows.Forms.Label();
             this.txtProductPurchasingPrice = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBarcode)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtCategory
-            // 
-            this.txtCategory.Location = new System.Drawing.Point(552, 29);
-            this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(100, 20);
-            this.txtCategory.TabIndex = 0;
-            // 
-            // btnCategoryAdd
-            // 
-            this.btnCategoryAdd.Location = new System.Drawing.Point(552, 75);
-            this.btnCategoryAdd.Name = "btnCategoryAdd";
-            this.btnCategoryAdd.Size = new System.Drawing.Size(100, 23);
-            this.btnCategoryAdd.TabIndex = 1;
-            this.btnCategoryAdd.Text = "Kategori Ekle";
-            this.btnCategoryAdd.UseVisualStyleBackColor = true;
-            this.btnCategoryAdd.Click += new System.EventHandler(this.btnCategoryAdd_Click);
             // 
             // btnProductAdd
             // 
-            this.btnProductAdd.Location = new System.Drawing.Point(107, 162);
+            this.btnProductAdd.Location = new System.Drawing.Point(112, 174);
             this.btnProductAdd.Name = "btnProductAdd";
             this.btnProductAdd.Size = new System.Drawing.Size(75, 23);
             this.btnProductAdd.TabIndex = 2;
@@ -115,15 +95,6 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Kategori";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(482, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Kategori Adı";
-            // 
             // cmbCategory
             // 
             this.cmbCategory.FormattingEnabled = true;
@@ -132,22 +103,6 @@
             this.cmbCategory.Size = new System.Drawing.Size(136, 21);
             this.cmbCategory.TabIndex = 10;
             this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 118);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Ürün Alış Fiyatı";
-            // 
-            // txtProductPurchasingPrice
-            // 
-            this.txtProductPurchasingPrice.Location = new System.Drawing.Point(91, 111);
-            this.txtProductPurchasingPrice.Name = "txtProductPurchasingPrice";
-            this.txtProductPurchasingPrice.Size = new System.Drawing.Size(121, 20);
-            this.txtProductPurchasingPrice.TabIndex = 11;
             // 
             // pbBarcode
             // 
@@ -167,27 +122,39 @@
             this.btnBarcode.UseVisualStyleBackColor = true;
             this.btnBarcode.Click += new System.EventHandler(this.btnBarcode_Click);
             // 
-            // GoodsAcceptanceDialogForm
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 118);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Ürün Alış Fiyatı";
+            // 
+            // txtProductPurchasingPrice
+            // 
+            this.txtProductPurchasingPrice.Location = new System.Drawing.Point(91, 111);
+            this.txtProductPurchasingPrice.Name = "txtProductPurchasingPrice";
+            this.txtProductPurchasingPrice.Size = new System.Drawing.Size(121, 20);
+            this.txtProductPurchasingPrice.TabIndex = 11;
+            // 
+            // ProductInserting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 231);
+            this.ClientSize = new System.Drawing.Size(480, 219);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtProductPurchasingPrice);
-            this.ClientSize = new System.Drawing.Size(683, 231);
             this.Controls.Add(this.btnBarcode);
             this.Controls.Add(this.pbBarcode);
             this.Controls.Add(this.cmbCategory);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtProductBarcode);
             this.Controls.Add(this.txtProductName);
             this.Controls.Add(this.btnProductAdd);
-            this.Controls.Add(this.btnCategoryAdd);
-            this.Controls.Add(this.txtCategory);
-            this.Name = "GoodsAcceptanceDialogForm";
+            this.Name = "ProductInserting";
             this.Text = "GoodsAcceptanceDialogForm";
             this.Load += new System.EventHandler(this.GoodsAcceptanceDialogForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbBarcode)).EndInit();
@@ -197,16 +164,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtCategory;
-        private System.Windows.Forms.Button btnCategoryAdd;
         private System.Windows.Forms.Button btnProductAdd;
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.TextBox txtProductBarcode;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.PictureBox pbBarcode;
         private System.Windows.Forms.Button btnBarcode;

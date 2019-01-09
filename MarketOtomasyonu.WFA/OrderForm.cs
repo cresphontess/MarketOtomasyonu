@@ -25,40 +25,11 @@ namespace MarketOtomasyonu.WFA
 
         private void btnBarcodeControl_Click(object sender, EventArgs e)
         {
-            PackageRepo db = new PackageRepo();
-            var koliler = db.GetAll();
 
-            bool control = false;
+             CategoryInsertingDialogForm CategoryInsertingDialogForm = new CategoryInsertingDialogForm();
 
+             CategoryInsertingDialogForm.Show();
 
-            if (koliler.Count != 0)
-            {
-
-                foreach (var item in koliler)
-                {
-                    if (txtOrderBarcode.Text == item.PackageBarcode.ToString())
-                    {
-                        control = true;
-                        break;
-                    }
-                   
-                }
-
-                if(control == false)
-                {
-                    GoodsAcceptanceDialogForm goodsAcceptanceDialogForm = new GoodsAcceptanceDialogForm();
-                    goodsAcceptanceDialogForm.Show();
-                }
-                else
-                {
-                    MessageBox.Show($"{txtOrderBarcode} numaralı paketiniz mevcuttur.");
-                }
-            }
-            else
-            {
-                GoodsAcceptanceDialogForm goodsAcceptanceDialogForm = new GoodsAcceptanceDialogForm();
-                goodsAcceptanceDialogForm.Show();
-            }
         }
 
         private void txtOrderBarcode_TextChanged(object sender, EventArgs e)

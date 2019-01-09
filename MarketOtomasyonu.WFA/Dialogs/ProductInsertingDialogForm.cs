@@ -13,23 +13,14 @@ using System.Windows.Forms;
 
 namespace MarketOtomasyonu.WFA.Dialogs
 {
-    public partial class GoodsAcceptanceDialogForm : Form
+    public partial class ProductInsertingDialogForm : Form
     {
-        public GoodsAcceptanceDialogForm()
+        public ProductInsertingDialogForm()
         {
             InitializeComponent();
         }
 
-        private void btnCategoryAdd_Click(object sender, EventArgs e)
-        {
-
-            new CategoryRepo().Insert(new Category()
-            {
-                CategoryName = txtCategory.Text
-               
-            });
-            KategorileriGetir();
-        }
+        
         private void KategorileriGetir()
         {
             cmbCategory.DataSource = new CategoryRepo().GetAll();
