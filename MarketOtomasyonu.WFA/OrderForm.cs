@@ -1,6 +1,7 @@
 ﻿using MarketOtomasyonu.BLL.Repository;
 using MarketOtomasyonu.Models.Entities;
 using MarketOtomasyonu.WFA.Dialogs;
+using MarketOtomasyonu.WFA.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace MarketOtomasyonu.WFA
 {
@@ -35,7 +37,7 @@ namespace MarketOtomasyonu.WFA
 
         private void txtOrderBarcode_TextChanged(object sender, EventArgs e)
         {
-            if(txtOrderBarcode.TextLength != 0)
+            if(txtPackageBarcode.TextLength != 0)
             {
                 btnNewProductAdd.Enabled = true;
 
@@ -50,25 +52,21 @@ namespace MarketOtomasyonu.WFA
         {
             PackageRepo db = new PackageRepo();
            
-          
-           
-
             try
             {
                 Package package = new Package();
 
 
                 package.PackageName = txtPackageName.Text;
-                package.ProductId = (cmbOrderProduct.SelectedItem as Product).ProductId;
+                package.ProductId = (cmbPackageProduct.SelectedItem as Product).ProductId;
                 package.OrderId = (cmbOrderName.SelectedItem as Order).OrderId;
                 package.PackagePurchasingPrice = Convert.ToDecimal(txtOrderPackagePrice.Text);
                 package.PackageProductQuantity = Convert.ToInt32(nmOrderQuantity.Value);
-                package.PackageBarcode = txtOrderBarcode.Text;
+                package.PackageBarcode = txtPackageBarcode.Text;
                  
 
                 db.Insert(package);
-                //orderDetail.PackageId = package.PackageId;
-                //dbOrderDetail.Insert(orderDetail);
+                
                
 
                 var packages = db.GetAll();
@@ -83,7 +81,7 @@ namespace MarketOtomasyonu.WFA
                 throw;
             }
 
-
+            FormHelper.FormuTemizle(this);
 
         }
 
@@ -91,18 +89,22 @@ namespace MarketOtomasyonu.WFA
         {
             lstOrder.DataSource = new PackageRepo().GetAll();
             lstOrder.DisplayMember = "PackageName";
+            cmbSavedPackages.DataSource = new PackageRepo().GetAll();
+            cmbSavedPackages.DisplayMember = "PackageName";
         }
 
         private void UrunleriGetir()
         {
-            cmbOrderProduct.DataSource = new ProductRepo().GetAll();
-            cmbOrderProduct.DisplayMember = "ProductName";
+            cmbPackageProduct.DataSource = new ProductRepo().GetAll();
+            cmbPackageProduct.DisplayMember = "ProductName";
         }
         private void OrderForm_Load(object sender, EventArgs e)
         {
-            UrunleriGetir();
-            PaketleriGetir();
-            SiparisleriGetir();
+
+            FormHelper.FormuTemizle(this);
+
+            
+            
         }
 
         private void SiparisleriGetir()
@@ -120,13 +122,18 @@ namespace MarketOtomasyonu.WFA
 
         private void nmOrderQuantity_ValueChanged(object sender, EventArgs e)
         {
+            if (cmbPackageProduct.SelectedItem == null) return;
+            
+
             txtOrderPackagePrice.Text = "0";
-            txtOrderPackagePrice.Text = ((cmbOrderProduct.SelectedItem as Product).ProductPurchasingPrice * nmOrderQuantity.Value).ToString();
+            txtOrderPackagePrice.Text = ((cmbPackageProduct.SelectedItem as Product).ProductPurchasingPrice * nmOrderQuantity.Value).ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            txtOrderBarcode.Visible = true;
+            FormHelper.FormuTemizle(this);
+
+            txtPackageBarcode.Visible = true;
             PrintDocument doc = new PrintDocument();
             MarketOtomasyonu.WFA.Barcode.Ean13 barkod = new MarketOtomasyonu.WFA.Barcode.Ean13();
 
@@ -142,11 +149,11 @@ namespace MarketOtomasyonu.WFA
             //Bu kısım boş geçilsede birşey değişmiyor EAN-13 te zaten 12 veri okuyorsunuz ,bu sayı  barkodun sonunda oluyor. kontrol kodu
             barkod.ChecksumDigit = "0";
             pbPackageBarcode.Image = barkod.CreateBitmap();
-            txtOrderBarcode.Text = barkod.ToString();
-            this.ActiveControl = txtOrderBarcode;
-            txtOrderBarcode.Focus();
-            txtOrderBarcode.Select(0, 0);
-            txtOrderBarcode.SelectionStart = txtOrderBarcode.MaxLength;
+            txtPackageBarcode.Text = barkod.ToString();
+            this.ActiveControl = txtPackageBarcode;
+            txtPackageBarcode.Focus();
+            txtPackageBarcode.Select(0, 0);
+            txtPackageBarcode.SelectionStart = txtPackageBarcode.MaxLength;
         }
 
         private string UrunKodu()
@@ -181,9 +188,38 @@ namespace MarketOtomasyonu.WFA
             }
         }
 
+        
+
         private void cmbOrderName_SelectedIndexChanged(object sender, EventArgs e)
         {
-       
+            SiparisleriGetir();
+        }
+
+        private void cmbSavedPackages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+
+            if (cmbSavedPackages.SelectedIndex == -1) return;
+
+            var secilenKoli = cmbSavedPackages.SelectedItem as Package;
+            var SecilenKoliUrun = cmbPackageProduct.SelectedItem as Product;
+
+                txtPackageBarcode.Text = secilenKoli.PackageBarcode.ToString();
+                txtPackageName.Text = secilenKoli.PackageName;
+                SecilenKoliUrun = (secilenKoli.Product as Product);
+            cmbPackageProduct.Text = SecilenKoliUrun.ProductName.ToString();
+
+
+                nmOrderQuantity.Value = secilenKoli.PackageProductQuantity;
+
+
+
+        }
+
+
+        private void cmbSavedPackages_DropDown(object sender, EventArgs e)
+        {
+            PaketleriGetir();
         }
     }
     
