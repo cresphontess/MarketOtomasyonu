@@ -16,8 +16,6 @@ namespace MarketOtomasyonu.WFA.Helpers
             {
                 if (control is TextBox)
                     control.Text = string.Empty;
-                else if (control is ComboBox cmb)
-                    cmb.SelectedIndex = -1;
                 else if (control is DateTimePicker dtp)
                     dtp.Value = DateTime.Now;
                else if (control is NumericUpDown nm)

@@ -48,9 +48,8 @@
             this.pbPackageBarcode = new System.Windows.Forms.PictureBox();
             this.btnAddBarcode = new System.Windows.Forms.Button();
             this.btnNewProductAdd = new System.Windows.Forms.Button();
-            this.btnOrderNameAdd = new System.Windows.Forms.Button();
             this.cmbOrderName = new System.Windows.Forms.ComboBox();
-            this.txtOrderName = new System.Windows.Forms.TextBox();
+            this.btnCreateOrder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nmOrderQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPackageBarcode)).BeginInit();
             this.SuspendLayout();
@@ -145,7 +144,7 @@
             // 
             this.lblOrderPriceText.AutoSize = true;
             this.lblOrderPriceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrderPriceText.Location = new System.Drawing.Point(357, 391);
+            this.lblOrderPriceText.Location = new System.Drawing.Point(335, 388);
             this.lblOrderPriceText.Name = "lblOrderPriceText";
             this.lblOrderPriceText.Size = new System.Drawing.Size(48, 29);
             this.lblOrderPriceText.TabIndex = 9;
@@ -153,7 +152,7 @@
             // 
             // dtOrder
             // 
-            this.dtOrder.Location = new System.Drawing.Point(304, 423);
+            this.dtOrder.Location = new System.Drawing.Point(305, 432);
             this.dtOrder.Name = "dtOrder";
             this.dtOrder.Size = new System.Drawing.Size(156, 20);
             this.dtOrder.TabIndex = 10;
@@ -241,31 +240,24 @@
             this.btnNewProductAdd.UseVisualStyleBackColor = true;
             this.btnNewProductAdd.Click += new System.EventHandler(this.btnBarcodeControl_Click);
             // 
-            // btnOrderNameAdd
-            // 
-            this.btnOrderNameAdd.Location = new System.Drawing.Point(640, 218);
-            this.btnOrderNameAdd.Name = "btnOrderNameAdd";
-            this.btnOrderNameAdd.Size = new System.Drawing.Size(93, 23);
-            this.btnOrderNameAdd.TabIndex = 33;
-            this.btnOrderNameAdd.Text = "Sipariş Adı Ekle";
-            this.btnOrderNameAdd.UseVisualStyleBackColor = true;
-            this.btnOrderNameAdd.Click += new System.EventHandler(this.btnOrderNameAdd_Click);
-            // 
             // cmbOrderName
             // 
             this.cmbOrderName.FormattingEnabled = true;
-            this.cmbOrderName.Location = new System.Drawing.Point(616, 132);
+            this.cmbOrderName.Location = new System.Drawing.Point(612, 215);
             this.cmbOrderName.Name = "cmbOrderName";
             this.cmbOrderName.Size = new System.Drawing.Size(121, 21);
             this.cmbOrderName.TabIndex = 34;
-            this.cmbOrderName.SelectedIndexChanged += new System.EventHandler(this.cmbOrderName_SelectedIndexChanged);
             // 
-            // txtOrderName
+            // btnCreateOrder
             // 
-            this.txtOrderName.Location = new System.Drawing.Point(633, 177);
-            this.txtOrderName.Name = "txtOrderName";
-            this.txtOrderName.Size = new System.Drawing.Size(100, 20);
-            this.txtOrderName.TabIndex = 35;
+            this.btnCreateOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCreateOrder.Location = new System.Drawing.Point(626, 157);
+            this.btnCreateOrder.Name = "btnCreateOrder";
+            this.btnCreateOrder.Size = new System.Drawing.Size(98, 36);
+            this.btnCreateOrder.TabIndex = 35;
+            this.btnCreateOrder.Text = "Sipariş Oluştur";
+            this.btnCreateOrder.UseVisualStyleBackColor = true;
+            this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
             // 
             // OrderForm
             // 
@@ -273,9 +265,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(854, 544);
-            this.Controls.Add(this.txtOrderName);
+            this.Controls.Add(this.btnCreateOrder);
             this.Controls.Add(this.cmbOrderName);
-            this.Controls.Add(this.btnOrderNameAdd);
             this.Controls.Add(this.btnNewProductAdd);
             this.Controls.Add(this.btnAddBarcode);
             this.Controls.Add(this.pbPackageBarcode);
@@ -328,8 +319,7 @@
         private System.Windows.Forms.Button btnNewProductAdd;
         private System.Windows.Forms.PictureBox pbPackageBarcode;
         private System.Windows.Forms.Button btnAddBarcode;
-        private System.Windows.Forms.Button btnOrderNameAdd;
         private System.Windows.Forms.ComboBox cmbOrderName;
-        private System.Windows.Forms.TextBox txtOrderName;
+        private System.Windows.Forms.Button btnCreateOrder;
     }
 }

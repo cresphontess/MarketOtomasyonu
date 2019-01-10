@@ -59,14 +59,11 @@ namespace MarketOtomasyonu.WFA
                  
 
                 db.Insert(package);
-                
-               
-
-                var packages = db.GetAll();
-
-              
 
                 PaketleriGetir();
+
+                SiparisFiyatHesapla();
+
             }
             catch (Exception)
             {
@@ -74,15 +71,31 @@ namespace MarketOtomasyonu.WFA
                 throw;
             }
 
-           FormHelper.FormuTemizle(this);
+            FormHelper.FormuTemizle(this);
 
+        }
+
+        private void SiparisFiyatHesapla()
+        {
+            PackageRepo db = new PackageRepo();
+
+            decimal total = 0;
+
+            foreach (var item in db.GetAll())
+            {
+                total += item.PackagePurchasingPrice;
+            }
+
+            lblOrderPriceText.Text = total.ToString();
         }
 
         private void PaketleriGetir()
         {
+            
             lstOrder.DataSource = new PackageRepo().GetAll();
             lstOrder.DisplayMember = "PackageName";
-    
+            cmbOrderName.DataSource = new OrderRepo().GetAll();
+            cmbOrderName.DisplayMember = "OrderName";
         }
 
         private void UrunleriGetir()
@@ -93,18 +106,16 @@ namespace MarketOtomasyonu.WFA
         private void OrderForm_Load(object sender, EventArgs e)
         {
 
-             FormHelper.FormuTemizle(this);
+            FormHelper.FormuTemizle(this);
+            UrunleriGetir();
+            PaketleriGetir();
+            SiparisFiyatHesapla();
 
-            SiparisleriGetir();
-            
-        }
 
-        private void SiparisleriGetir()
-        {
-            var db = new OrderRepo();
-            List<Order> siparisler = db.GetAll();
-            cmbOrderName.DataSource = siparisler;
-            cmbOrderName.DisplayMember = "OrderName";
+
+
+
+
         }
 
         private void cmbOrderProduct_DropDown(object sender, EventArgs e)
@@ -124,6 +135,8 @@ namespace MarketOtomasyonu.WFA
         private void button1_Click(object sender, EventArgs e)
         {
             FormHelper.FormuTemizle(this);
+
+            ReadOnly.UndoReadOnly(this);
 
             txtPackageBarcode.Visible = true;
             PrintDocument doc = new PrintDocument();
@@ -155,42 +168,17 @@ namespace MarketOtomasyonu.WFA
             return sayi.ToString();
         }
 
-        private void btnOrderNameAdd_Click(object sender, EventArgs e)
+        private void btnCreateOrder_Click(object sender, EventArgs e)
         {
-            try
+            OrderRepo db = new OrderRepo();
+            Order order = new Order()
             {
-                using (var orderRepo = new OrderRepo())
-                {
-                    orderRepo.Insert(new Order()
-                    {
-                        OrderName = txtOrderName.Text            
-                    });
-                }
-                
-                MessageBox.Show("Sipariş  Eklendi.");
-                SiparisleriGetir();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+                OrderName = "Sipariş"
+            };
+            db.Insert(order);
 
-        private void cmbOrderName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SiparisleriGetir();
-        }
+            cmbOrderName.DataSource = db.GetAll();
 
-        private void cmbSavedPackages_SelectedIndexChanged(object sender, EventArgs e)
-        {
-  
-            SiparisleriGetir();
-        }
-
-
-        private void cmbSavedPackages_DropDown(object sender, EventArgs e)
-        {
-            PaketleriGetir();
         }
     }
     
