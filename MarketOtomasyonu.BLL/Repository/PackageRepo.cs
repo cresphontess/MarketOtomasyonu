@@ -9,5 +9,6 @@ namespace MarketOtomasyonu.BLL.Repository
 {
     public class PackageRepo: RepositoryBase<Package>
     {
+        
     }
 }

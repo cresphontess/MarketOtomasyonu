@@ -72,6 +72,7 @@
       <DependentUpon>GoodsAcceptanceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\FormHelper.cs" />
+    <Compile Include="Helpers\ReadOnly.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

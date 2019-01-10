@@ -59,14 +59,11 @@ namespace MarketOtomasyonu.WFA
                  
 
                 db.Insert(package);
-                
-               
-
-                var packages = db.GetAll();
-
-              
 
                 PaketleriGetir();
+
+                SiparisFiyatHesapla();
+
             }
             catch (Exception)
             {
@@ -78,12 +75,27 @@ namespace MarketOtomasyonu.WFA
 
         }
 
+        private void SiparisFiyatHesapla()
+        {
+            PackageRepo db = new PackageRepo();
+
+            decimal total = 0;
+
+            foreach (var item in db.GetAll())
+            {
+                total += item.PackagePurchasingPrice;
+            }
+
+            lblOrderPriceText.Text = total.ToString();
+        }
+
         private void PaketleriGetir()
         {
+            
             lstOrder.DataSource = new PackageRepo().GetAll();
             lstOrder.DisplayMember = "PackageName";
-            cmbSavedPackages.DataSource = new PackageRepo().GetAll();
-            cmbSavedPackages.DisplayMember = "PackageName";
+            cmbOrderName.DataSource = new OrderRepo().GetAll();
+            cmbOrderName.DisplayMember = "OrderName";
         }
 
         private void UrunleriGetir()
@@ -95,17 +107,15 @@ namespace MarketOtomasyonu.WFA
         {
 
             FormHelper.FormuTemizle(this);
+            UrunleriGetir();
+            PaketleriGetir();
+            SiparisFiyatHesapla();
 
-            
-            
-        }
 
-        private void SiparisleriGetir()
-        {
-            var db = new OrderRepo();
-            List<Order> siparisler = db.GetAll();
-            cmbOrderName.DataSource = siparisler;
-            cmbOrderName.DisplayMember = "OrderName";
+
+
+
+
         }
 
         private void cmbOrderProduct_DropDown(object sender, EventArgs e)
@@ -125,6 +135,8 @@ namespace MarketOtomasyonu.WFA
         private void button1_Click(object sender, EventArgs e)
         {
             FormHelper.FormuTemizle(this);
+
+            ReadOnly.UndoReadOnly(this);
 
             txtPackageBarcode.Visible = true;
             PrintDocument doc = new PrintDocument();
@@ -156,63 +168,17 @@ namespace MarketOtomasyonu.WFA
             return sayi.ToString();
         }
 
-        private void btnOrderNameAdd_Click(object sender, EventArgs e)
+        private void btnCreateOrder_Click(object sender, EventArgs e)
         {
-            try
+            OrderRepo db = new OrderRepo();
+            Order order = new Order()
             {
-                using (var orderRepo = new OrderRepo())
-                {
-                    orderRepo.Insert(new Order()
-                    {
+                OrderName = "Sipariş"
+            };
+            db.Insert(order);
 
-                        OrderName = txtOrderName.Text
-               
+            cmbOrderName.DataSource = db.GetAll();
 
-
-                    });
-                }
-                
-                MessageBox.Show("Sipariş  Eklendi.");
-                SiparisleriGetir();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        
-
-        private void cmbOrderName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SiparisleriGetir();
-        }
-
-        private void cmbSavedPackages_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-
-            if (cmbSavedPackages.SelectedIndex == -1) return;
-
-            var secilenKoli = cmbSavedPackages.SelectedItem as Package;
-            var SecilenKoliUrun = cmbPackageProduct.SelectedItem as Product;
-
-                txtPackageBarcode.Text = secilenKoli.PackageBarcode.ToString();
-                txtPackageName.Text = secilenKoli.PackageName;
-                SecilenKoliUrun = (secilenKoli.Product as Product);
-            cmbPackageProduct.Text = SecilenKoliUrun.ProductName.ToString();
-
-
-                nmOrderQuantity.Value = secilenKoli.PackageProductQuantity;
-
-            SiparisleriGetir();
-
-        }
-
-
-        private void cmbSavedPackages_DropDown(object sender, EventArgs e)
-        {
-            PaketleriGetir();
         }
     }
     
