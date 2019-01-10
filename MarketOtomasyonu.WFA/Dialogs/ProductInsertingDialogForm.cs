@@ -47,6 +47,10 @@ namespace MarketOtomasyonu.WFA.Dialogs
                 }
 
                 MessageBox.Show("Urun ekleme islemi basarili");
+
+              
+
+                
             }
             catch (Exception ex)
             {
@@ -57,6 +61,8 @@ namespace MarketOtomasyonu.WFA.Dialogs
         private void GoodsAcceptanceDialogForm_Load(object sender, EventArgs e)
         {
             KategorileriGetir();
+
+            
         }
 
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)

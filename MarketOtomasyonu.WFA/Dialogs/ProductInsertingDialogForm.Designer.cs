@@ -138,7 +138,7 @@
             this.txtProductPurchasingPrice.Size = new System.Drawing.Size(121, 20);
             this.txtProductPurchasingPrice.TabIndex = 11;
             // 
-            // ProductInserting
+            // ProductInsertingDialogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -154,8 +154,8 @@
             this.Controls.Add(this.txtProductBarcode);
             this.Controls.Add(this.txtProductName);
             this.Controls.Add(this.btnProductAdd);
-            this.Name = "ProductInserting";
-            this.Text = "GoodsAcceptanceDialogForm";
+            this.Name = "ProductInsertingDialogForm";
+            this.Text = "ProductInsertingDialogForm";
             this.Load += new System.EventHandler(this.GoodsAcceptanceDialogForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbBarcode)).EndInit();
             this.ResumeLayout(false);

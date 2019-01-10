@@ -19,11 +19,12 @@ namespace MarketOtomasyonu.WFA
 
         }
 
+        int i = 1;
+
         private void btnBarcodeControl_Click(object sender, EventArgs e)
         {
 
              CategoryInsertingDialogForm CategoryInsertingDialogForm = new CategoryInsertingDialogForm();
-
              CategoryInsertingDialogForm.Show();
 
         }
@@ -56,6 +57,7 @@ namespace MarketOtomasyonu.WFA
                 package.PackagePurchasingPrice = Convert.ToDecimal(txtOrderPackagePrice.Text);
                 package.PackageProductQuantity = Convert.ToInt32(nmOrderQuantity.Value);
                 package.PackageBarcode = txtPackageBarcode.Text;
+                
                  
 
                 db.Insert(package);
@@ -92,10 +94,9 @@ namespace MarketOtomasyonu.WFA
         private void PaketleriGetir()
         {
             
-            lstOrder.DataSource = new PackageRepo().GetAll();
+            lstOrder.DataSource = new PackageRepo().GetAll(x=>x.OrderId == (cmbOrderName.SelectedItem as Order).OrderId);
             lstOrder.DisplayMember = "PackageName";
-            cmbOrderName.DataSource = new OrderRepo().GetAll();
-            cmbOrderName.DisplayMember = "OrderName";
+            
         }
 
         private void UrunleriGetir()
@@ -108,12 +109,8 @@ namespace MarketOtomasyonu.WFA
 
             FormHelper.FormuTemizle(this);
             UrunleriGetir();
-            PaketleriGetir();
             SiparisFiyatHesapla();
-
-
-
-
+            cmbPackageProduct.SelectedIndex = -1;
 
 
         }
@@ -159,6 +156,8 @@ namespace MarketOtomasyonu.WFA
             txtPackageBarcode.Focus();
             txtPackageBarcode.Select(0, 0);
             txtPackageBarcode.SelectionStart = txtPackageBarcode.MaxLength;
+
+            cmbPackageProduct.SelectedIndex = -1;
         }
 
         private string UrunKodu()
@@ -170,15 +169,48 @@ namespace MarketOtomasyonu.WFA
 
         private void btnCreateOrder_Click(object sender, EventArgs e)
         {
+            
             OrderRepo db = new OrderRepo();
             Order order = new Order()
             {
-                OrderName = "Sipariş"
+                OrderName = "Sipariş" + i,
+                OrderDateTime = dtOrder.Value
+                
             };
+            i++;
+
             db.Insert(order);
 
             cmbOrderName.DataSource = db.GetAll();
 
+        }
+
+        private void lstOrder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            var seciliPaket = lstOrder.SelectedItem as Package;
+
+            txtPackageBarcode.Text = seciliPaket.PackageBarcode.ToString();
+            txtPackageName.Text = seciliPaket.PackageName.ToString();
+            cmbPackageProduct.Text = seciliPaket.Product.ToString();
+            nmOrderQuantity.Value = seciliPaket.PackageProductQuantity;
+            txtOrderPackagePrice.Text = (seciliPaket.Product.ProductPurchasingPrice * seciliPaket.PackageProductQuantity).ToString();
+        }
+
+        private void cmbOrderName_DropDown(object sender, EventArgs e)
+        {
+            OrderRepo db = new OrderRepo();
+
+
+            cmbOrderName.DataSource = db.GetAll();
+            cmbOrderName.DisplayMember = "OrderName";
+        }
+
+        private void cmbOrderName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+
+            PaketleriGetir();
         }
     }
     

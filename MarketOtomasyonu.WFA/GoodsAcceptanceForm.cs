@@ -22,33 +22,12 @@ namespace MarketOtomasyonu.WFA
 
         private void GoodsAcceptanceForm_Load(object sender, EventArgs e)
         {
-            var orders = new List<OrderViewModel>();
-            try
-            {
-                orders.AddRange(new PackageRepo().GetAll()
-                    .OrderBy(x => x.PackageName)
-                    .Select(x => new OrderViewModel()
-                    {
-                          
-                        PackageName=x.PackageName,
-                         PackageBarcode=x.PackageBarcode,
-                          PackageId=x.PackageId,
-                           ProductId=x.Product.ProductId,
-                            ProductStock=x.Product.ProductStock,
-                            PackageProductQuantity=x.PackageProductQuantity
-                           
 
-                        
-                    }));
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            OrderRepo db = new OrderRepo();
 
-            cmbOrderProduct.DataSource = orders;
+            var cmbOrders = db.GetAll();
 
-
+            cmbGoodsAcceptanceOrders.DataSource = cmbOrders;
 
         }
 
@@ -137,11 +116,15 @@ namespace MarketOtomasyonu.WFA
 
             pr.Update();
             prodb.Update();
-      
+
+
+            cmbOrderProduct.DataSource = new List<Package>();
           
             PackageRepo db = new PackageRepo();
 
-            var orders1 = db.GetAll();
+
+
+            var orders1 = db.GetAll(x => x.OrderId == (cmbGoodsAcceptanceOrders.SelectedItem as Order).OrderId);
 
             foreach (var item in orders)
             {
@@ -169,7 +152,46 @@ namespace MarketOtomasyonu.WFA
             cmbOrderProduct.DataSource = orders;
 
 
+            cmbOrderProduct.SelectedIndex = -1;
 
+
+        }
+
+        private void cmbGoodsAcceptanceOrders_SelectedIndexChanged(object sender, EventArgs e)
+        {
+  
+            var orders = new List<OrderViewModel>();
+            try
+            {
+                orders.AddRange(new PackageRepo().GetAll(x => x.OrderId == (cmbGoodsAcceptanceOrders.SelectedItem as Order).OrderId)
+                    .OrderBy(x => x.PackageName)
+                    .Select(x => new OrderViewModel()
+                    {
+
+                        PackageName = x.PackageName,
+                        PackageBarcode = x.PackageBarcode,
+                        PackageId = x.PackageId,
+                        ProductId = x.Product.ProductId,
+                        ProductStock = x.Product.ProductStock,
+                        PackageProductQuantity = x.PackageProductQuantity
+
+
+
+                    }));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            cmbOrderProduct.DataSource = orders;
+
+
+        }
+
+        private void cmbGoodsAcceptanceOrders_DropDown(object sender, EventArgs e)
+        {
+            
         }
     }
 }

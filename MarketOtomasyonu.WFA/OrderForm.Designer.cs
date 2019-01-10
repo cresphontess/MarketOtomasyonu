@@ -119,6 +119,7 @@
             this.lstOrder.Name = "lstOrder";
             this.lstOrder.Size = new System.Drawing.Size(276, 199);
             this.lstOrder.TabIndex = 6;
+            this.lstOrder.SelectedIndexChanged += new System.EventHandler(this.lstOrder_SelectedIndexChanged);
             // 
             // lblOrderList
             // 
@@ -152,7 +153,7 @@
             // 
             // dtOrder
             // 
-            this.dtOrder.Location = new System.Drawing.Point(305, 432);
+            this.dtOrder.Location = new System.Drawing.Point(652, 28);
             this.dtOrder.Name = "dtOrder";
             this.dtOrder.Size = new System.Drawing.Size(156, 20);
             this.dtOrder.TabIndex = 10;
@@ -247,6 +248,8 @@
             this.cmbOrderName.Name = "cmbOrderName";
             this.cmbOrderName.Size = new System.Drawing.Size(121, 21);
             this.cmbOrderName.TabIndex = 34;
+            this.cmbOrderName.DropDown += new System.EventHandler(this.cmbOrderName_DropDown);
+            this.cmbOrderName.SelectedIndexChanged += new System.EventHandler(this.cmbOrderName_SelectedIndexChanged);
             // 
             // btnCreateOrder
             // 

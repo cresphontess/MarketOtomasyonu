@@ -21,12 +21,8 @@ namespace MarketOtomasyonu.WFA.Dialogs
 
         private void btnCategoryCancel_Click(object sender, EventArgs e)
         {
-            CategoryInsertingDialogForm categoryInsertingDialogForm = new CategoryInsertingDialogForm();
-
-            categoryInsertingDialogForm.Dispose();
 
             ProductInsertingDialogForm ProductInsertingDialogForm = new ProductInsertingDialogForm();
-
             ProductInsertingDialogForm.Show();
 
         }
@@ -40,19 +36,13 @@ namespace MarketOtomasyonu.WFA.Dialogs
                 Category category = new Category();
 
                 category.CategoryName = txtCategory.Text;
-
                 db.Insert(category);
 
                 MessageBox.Show($"{category.CategoryName} Kategorisi Eklendi");
 
-                System.Threading.Thread.Sleep(1000);
-
-                CategoryInsertingDialogForm categoryInsertingDialogForm = new CategoryInsertingDialogForm();
-
-                categoryInsertingDialogForm.Dispose();
+                System.Threading.Thread.Sleep(500);
 
                 ProductInsertingDialogForm ProductInsertingDialogForm = new ProductInsertingDialogForm();
-
                 ProductInsertingDialogForm.Show();
             }
             catch (Exception)
