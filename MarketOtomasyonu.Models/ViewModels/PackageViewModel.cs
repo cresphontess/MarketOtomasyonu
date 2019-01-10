@@ -6,25 +6,23 @@ using System.Threading.Tasks;
 
 namespace MarketOtomasyonu.Models.ViewModels
 {
-  public  class OrderViewModel
+   public class PackageViewModel
     {
-        
-        public string PackageName { get; set; }
 
-        public int PackageId { get; set; }
+        public int OrderId { get; set; }
+        public string PackageName { get; set; }
 
         public string PackageBarcode { get; set; }
 
         public int PackageProductQuantity { get; set; }
 
-        public int ProductId { get; set; }
-
-        public int ProductStock { get; set; }
 
         public DateTime OrderProductDateTime { get; set; } = DateTime.Now;
 
 
-        public override string ToString() => $"{PackageName} - ({PackageBarcode})";
+     
 
+
+        public override string ToString() => $"{PackageName} - ({PackageName})   {PackageProductQuantity}";
     }
 }

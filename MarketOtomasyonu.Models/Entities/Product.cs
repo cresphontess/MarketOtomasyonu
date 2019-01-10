@@ -38,5 +38,7 @@ namespace MarketOtomasyonu.Models.Entities
 
         public virtual ICollection<Package> Packages { get; set; } = new HashSet<Package>();
 
+       
+
     }
 }

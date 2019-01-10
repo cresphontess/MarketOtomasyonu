@@ -74,7 +74,7 @@ namespace MarketOtomasyonu.WFA
                 throw;
             }
 
-            FormHelper.FormuTemizle(this);
+           FormHelper.FormuTemizle(this);
 
         }
 
@@ -82,8 +82,7 @@ namespace MarketOtomasyonu.WFA
         {
             lstOrder.DataSource = new PackageRepo().GetAll();
             lstOrder.DisplayMember = "PackageName";
-            cmbSavedPackages.DataSource = new PackageRepo().GetAll();
-            cmbSavedPackages.DisplayMember = "PackageName";
+    
         }
 
         private void UrunleriGetir()
@@ -94,9 +93,9 @@ namespace MarketOtomasyonu.WFA
         private void OrderForm_Load(object sender, EventArgs e)
         {
 
-            FormHelper.FormuTemizle(this);
+             FormHelper.FormuTemizle(this);
 
-            
+            SiparisleriGetir();
             
         }
 
@@ -164,11 +163,7 @@ namespace MarketOtomasyonu.WFA
                 {
                     orderRepo.Insert(new Order()
                     {
-
-                        OrderName = txtOrderName.Text
-               
-
-
+                        OrderName = txtOrderName.Text            
                     });
                 }
                 
@@ -181,8 +176,6 @@ namespace MarketOtomasyonu.WFA
             }
         }
 
-        
-
         private void cmbOrderName_SelectedIndexChanged(object sender, EventArgs e)
         {
             SiparisleriGetir();
@@ -190,23 +183,8 @@ namespace MarketOtomasyonu.WFA
 
         private void cmbSavedPackages_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-
-            if (cmbSavedPackages.SelectedIndex == -1) return;
-
-            var secilenKoli = cmbSavedPackages.SelectedItem as Package;
-            var SecilenKoliUrun = cmbPackageProduct.SelectedItem as Product;
-
-                txtPackageBarcode.Text = secilenKoli.PackageBarcode.ToString();
-                txtPackageName.Text = secilenKoli.PackageName;
-                SecilenKoliUrun = (secilenKoli.Product as Product);
-            cmbPackageProduct.Text = SecilenKoliUrun.ProductName.ToString();
-
-
-                nmOrderQuantity.Value = secilenKoli.PackageProductQuantity;
-
+  
             SiparisleriGetir();
-
         }
 
 

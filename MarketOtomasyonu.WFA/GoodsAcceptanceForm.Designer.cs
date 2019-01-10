@@ -35,8 +35,6 @@
             this.btnOrderSave = new System.Windows.Forms.Button();
             this.lblGoodAcceptanceBarcode = new System.Windows.Forms.Label();
             this.cmbOrderProduct = new System.Windows.Forms.ComboBox();
-            this.cmbGoodAcceptanceOrders = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dtGoodAcceptance
@@ -59,9 +57,9 @@
             // lstGoodAcceptance
             // 
             this.lstGoodAcceptance.FormattingEnabled = true;
-            this.lstGoodAcceptance.Location = new System.Drawing.Point(564, 149);
+            this.lstGoodAcceptance.Location = new System.Drawing.Point(395, 149);
             this.lstGoodAcceptance.Name = "lstGoodAcceptance";
-            this.lstGoodAcceptance.Size = new System.Drawing.Size(206, 238);
+            this.lstGoodAcceptance.Size = new System.Drawing.Size(375, 238);
             this.lstGoodAcceptance.TabIndex = 17;
             // 
             // lblGoodAcceptanceTitle
@@ -77,18 +75,19 @@
             // btnOrderSave
             // 
             this.btnOrderSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOrderSave.Location = new System.Drawing.Point(28, 265);
+            this.btnOrderSave.Location = new System.Drawing.Point(6, 268);
             this.btnOrderSave.Name = "btnOrderSave";
-            this.btnOrderSave.Size = new System.Drawing.Size(471, 59);
+            this.btnOrderSave.Size = new System.Drawing.Size(349, 59);
             this.btnOrderSave.TabIndex = 11;
             this.btnOrderSave.Text = "Kaydet";
             this.btnOrderSave.UseVisualStyleBackColor = true;
+            this.btnOrderSave.Click += new System.EventHandler(this.btnOrderSave_Click);
             // 
             // lblGoodAcceptanceBarcode
             // 
             this.lblGoodAcceptanceBarcode.AutoSize = true;
             this.lblGoodAcceptanceBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblGoodAcceptanceBarcode.Location = new System.Drawing.Point(67, 204);
+            this.lblGoodAcceptanceBarcode.Location = new System.Drawing.Point(7, 201);
             this.lblGoodAcceptanceBarcode.Name = "lblGoodAcceptanceBarcode";
             this.lblGoodAcceptanceBarcode.Size = new System.Drawing.Size(161, 20);
             this.lblGoodAcceptanceBarcode.TabIndex = 23;
@@ -97,37 +96,17 @@
             // cmbOrderProduct
             // 
             this.cmbOrderProduct.FormattingEnabled = true;
-            this.cmbOrderProduct.Location = new System.Drawing.Point(243, 206);
+            this.cmbOrderProduct.Location = new System.Drawing.Point(183, 203);
             this.cmbOrderProduct.Name = "cmbOrderProduct";
-            this.cmbOrderProduct.Size = new System.Drawing.Size(185, 21);
+            this.cmbOrderProduct.Size = new System.Drawing.Size(172, 21);
             this.cmbOrderProduct.TabIndex = 24;
             this.cmbOrderProduct.SelectedIndexChanged += new System.EventHandler(this.cmbOrderProduct_SelectedIndexChanged);
-            // 
-            // cmbGoodAcceptanceOrders
-            // 
-            this.cmbGoodAcceptanceOrders.FormattingEnabled = true;
-            this.cmbGoodAcceptanceOrders.Location = new System.Drawing.Point(243, 139);
-            this.cmbGoodAcceptanceOrders.Name = "cmbGoodAcceptanceOrders";
-            this.cmbGoodAcceptanceOrders.Size = new System.Drawing.Size(121, 21);
-            this.cmbGoodAcceptanceOrders.TabIndex = 25;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(129, 139);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 20);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Siparişler : ";
             // 
             // GoodsAcceptanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbGoodAcceptanceOrders);
             this.Controls.Add(this.cmbOrderProduct);
             this.Controls.Add(this.lblGoodAcceptanceBarcode);
             this.Controls.Add(this.dtGoodAcceptance);
@@ -152,7 +131,5 @@
         private System.Windows.Forms.Button btnOrderSave;
         private System.Windows.Forms.Label lblGoodAcceptanceBarcode;
         private System.Windows.Forms.ComboBox cmbOrderProduct;
-        private System.Windows.Forms.ComboBox cmbGoodAcceptanceOrders;
-        private System.Windows.Forms.Label label1;
     }
 }
