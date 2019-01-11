@@ -80,15 +80,30 @@ namespace MarketOtomasyonu.WFA
         private void SiparisFiyatHesapla()
         {
             PackageRepo db = new PackageRepo();
+            OrderRepo dbOrder = new OrderRepo();
+            
 
-            decimal total = 0;
 
-            foreach (var item in db.GetAll())
+            foreach (var item1 in dbOrder.GetAll())
             {
-                total += item.PackagePurchasingPrice;
+                decimal total = 0;
+
+                if (cmbOrderName.SelectedItem.ToString() == item1.OrderName.ToString())
+                {
+                    foreach (var item in item1.Packages)
+                    {
+                        total += item.PackagePurchasingPrice;
+                    }
+
+                    lblOrderPriceText.Text = total.ToString();
+                }
+               
+                
             }
 
-            lblOrderPriceText.Text = total.ToString();
+            
+
+         
         }
 
         private void PaketleriGetir()
@@ -109,8 +124,12 @@ namespace MarketOtomasyonu.WFA
 
             FormHelper.FormuTemizle(this);
             UrunleriGetir();
-            SiparisFiyatHesapla();
             cmbPackageProduct.SelectedIndex = -1;
+
+            OrderRepo db = new OrderRepo();
+
+            cmbOrderName.DataSource = db.GetAll();
+            cmbOrderName.DisplayMember = "OrderName";
 
 
         }
@@ -183,10 +202,13 @@ namespace MarketOtomasyonu.WFA
 
             cmbOrderName.DataSource = db.GetAll();
 
+
         }
 
         private void lstOrder_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            if (lstOrder.SelectedIndex == -1) return;
 
             var seciliPaket = lstOrder.SelectedItem as Package;
 
@@ -197,20 +219,13 @@ namespace MarketOtomasyonu.WFA
             txtOrderPackagePrice.Text = (seciliPaket.Product.ProductPurchasingPrice * seciliPaket.PackageProductQuantity).ToString();
         }
 
-        private void cmbOrderName_DropDown(object sender, EventArgs e)
-        {
-            OrderRepo db = new OrderRepo();
-
-
-            cmbOrderName.DataSource = db.GetAll();
-            cmbOrderName.DisplayMember = "OrderName";
-        }
+       
 
         private void cmbOrderName_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
-
             PaketleriGetir();
+            SiparisFiyatHesapla();
+                
         }
     }
     

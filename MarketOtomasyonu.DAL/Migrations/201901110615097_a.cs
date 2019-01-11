@@ -3,7 +3,7 @@ namespace MarketOtomasyonu.DAL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class asdasd : DbMigration
+    public partial class a : DbMigration
     {
         public override void Up()
         {

@@ -248,7 +248,7 @@
             this.cmbOrderName.Name = "cmbOrderName";
             this.cmbOrderName.Size = new System.Drawing.Size(121, 21);
             this.cmbOrderName.TabIndex = 34;
-            this.cmbOrderName.DropDown += new System.EventHandler(this.cmbOrderName_DropDown);
+           
             this.cmbOrderName.SelectedIndexChanged += new System.EventHandler(this.cmbOrderName_SelectedIndexChanged);
             // 
             // btnCreateOrder
