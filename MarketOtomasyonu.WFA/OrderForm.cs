@@ -292,5 +292,5 @@ namespace MarketOtomasyonu.WFA
     }
     
     
- }   
+ 
 
