@@ -207,14 +207,23 @@ namespace MarketOtomasyonu.WFA
 
         private void lstOrder_SelectedIndexChanged(object sender, EventArgs e)
         {
+            PackageRepo db = new PackageRepo();
 
             if (lstOrder.SelectedIndex == -1) return;
 
             var seciliPaket = lstOrder.SelectedItem as Package;
 
+            foreach (var item in db.GetAll())
+            {
+                if(item.ProductId == seciliPaket.ProductId)
+                {
+                    seciliPaket.Product = item.Product;
+                }
+            }
+
             txtPackageBarcode.Text = seciliPaket.PackageBarcode.ToString();
             txtPackageName.Text = seciliPaket.PackageName.ToString();
-            cmbPackageProduct.Text = seciliPaket.Product.ToString();
+            cmbPackageProduct.Text = seciliPaket.Product.ProductName.ToString();
             nmOrderQuantity.Value = seciliPaket.PackageProductQuantity;
             txtOrderPackagePrice.Text = (seciliPaket.Product.ProductPurchasingPrice * seciliPaket.PackageProductQuantity).ToString();
         }
