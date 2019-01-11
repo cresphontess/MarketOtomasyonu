@@ -247,7 +247,51 @@ namespace MarketOtomasyonu.WFA
         {
             PaketleriGetir();
             SiparisFiyatHesapla();
-                
+ }
+
+        private void OrderİsmiSil()
+        {
+            OrderRepo db = new OrderRepo();
+            if (lstOrder.SelectedIndex == -1) return;
+            var seciliOrder = cmbOrderName.SelectedItem as Order;
+            foreach (var item in db.GetAll())
+            {
+                if (item.OrderId == seciliOrder.OrderId)
+                {
+                    db.Delete(seciliOrder);
+                    cmbOrderName.Text = "";
+                    break;
+                }
+            }
+
+            cmbOrderName.DataSource = db.GetAll();
+        }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            PackageRepo db = new PackageRepo();
+
+            if (lstOrder.SelectedIndex == -1) return;
+
+            var seciliPaketSil = lstOrder.SelectedItem as Package;
+
+            foreach (var item in db.GetAll())
+            {
+                if (item.OrderId == seciliPaketSil.OrderId)
+                {
+                    db.Delete(seciliPaketSil);
+                    OrderİsmiSil();
+                    break;
+                }
+            }
+
+            lstOrder.DataSource = db.GetAll();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            //güncelleme yap
+        }
+       
         }
 
         private void cmbOrderName_DropDown(object sender, EventArgs e)
@@ -255,6 +299,7 @@ namespace MarketOtomasyonu.WFA
             SiparisFiyatHesapla();
         }
     }
+    
     
  }   
 

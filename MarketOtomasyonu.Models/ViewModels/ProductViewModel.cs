@@ -18,16 +18,7 @@ namespace MarketOtomasyonu.Models.ViewModels
         public decimal ProductSellingPrice { get; set; }
         public int CategoryId { get; set; }
 
+        public override string ToString() => $"{ProductBarcode} - {ProductName}";
 
-
-        public int PackageId { get; set; }
-
-        public string PackageName { get; set; }
- 
-        public string PackageBarcode { get; set; }
-
-        public decimal PackagePurchasingPrice { get; set; }
-
-        public int PackageProductQuantity { get; set; }
     }
 }

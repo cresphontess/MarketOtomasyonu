@@ -47,12 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\SaleBusines.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CategoryRepo.cs" />
     <Compile Include="Repository\OrderRepo.cs" />
     <Compile Include="Repository\PackageRepo.cs" />
     <Compile Include="Repository\ProductRepo.cs" />
     <Compile Include="Repository\RepositoryBase.cs" />
+    <Compile Include="Repository\SaleDetailRepo.cs" />
+    <Compile Include="Repository\SaleRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MarketOtomasyonu.DAL\MarketOtomasyonu.DAL.csproj">

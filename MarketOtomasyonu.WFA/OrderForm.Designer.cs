@@ -50,6 +50,8 @@
             this.btnNewProductAdd = new System.Windows.Forms.Button();
             this.cmbOrderName = new System.Windows.Forms.ComboBox();
             this.btnCreateOrder = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nmOrderQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPackageBarcode)).BeginInit();
             this.SuspendLayout();
@@ -115,9 +117,9 @@
             // lstOrder
             // 
             this.lstOrder.FormattingEnabled = true;
-            this.lstOrder.Location = new System.Drawing.Point(532, 313);
+            this.lstOrder.Location = new System.Drawing.Point(479, 313);
             this.lstOrder.Name = "lstOrder";
-            this.lstOrder.Size = new System.Drawing.Size(276, 199);
+            this.lstOrder.Size = new System.Drawing.Size(329, 147);
             this.lstOrder.TabIndex = 6;
             this.lstOrder.SelectedIndexChanged += new System.EventHandler(this.lstOrder_SelectedIndexChanged);
             // 
@@ -262,12 +264,34 @@
             this.btnCreateOrder.UseVisualStyleBackColor = true;
             this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(490, 489);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 36;
+            this.btnDelete.Text = "Sil";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(595, 488);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 37;
+            this.btnUpdate.Text = "Güncelle";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(854, 544);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnCreateOrder);
             this.Controls.Add(this.cmbOrderName);
             this.Controls.Add(this.btnNewProductAdd);
@@ -324,5 +348,7 @@
         private System.Windows.Forms.Button btnAddBarcode;
         private System.Windows.Forms.ComboBox cmbOrderName;
         private System.Windows.Forms.Button btnCreateOrder;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

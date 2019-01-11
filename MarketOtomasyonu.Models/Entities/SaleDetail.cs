@@ -25,6 +25,8 @@ namespace MarketOtomasyonu.Models.Entities
 
         public int PaymentType { get; set; }
 
+        public int Quantity { get; set; }
+
         public decimal  ReceivedAmount { get; set; }
 
         public decimal GivenAmount { get; set; }
