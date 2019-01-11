@@ -19,7 +19,8 @@ namespace MarketOtomasyonu.WFA
 
         }
 
-        int i = 1;
+        
+        
 
         private void btnBarcodeControl_Click(object sender, EventArgs e)
         {
@@ -96,6 +97,7 @@ namespace MarketOtomasyonu.WFA
                     }
 
                     lblOrderPriceText.Text = total.ToString();
+                    break;
                 }
                
                 
@@ -188,15 +190,22 @@ namespace MarketOtomasyonu.WFA
 
         private void btnCreateOrder_Click(object sender, EventArgs e)
         {
-            
             OrderRepo db = new OrderRepo();
+
+            int i = 0;
+
+            foreach (var item in db.GetAll())
+            {
+                i++;
+            }
+           
             Order order = new Order()
             {
-                OrderName = "Sipariş" + i,
+                OrderName = "Sipariş" + (i+1),
                 OrderDateTime = dtOrder.Value
                 
             };
-            i++;
+            
 
             db.Insert(order);
 
