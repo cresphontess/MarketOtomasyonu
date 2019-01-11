@@ -35,7 +35,7 @@ namespace MarketOtomasyonu.WFA
         {
 
         }
-        private List<ProductViewModel> urunler = new List<ProductViewModel>();
+      
         private void btnOrderSave_Click(object sender, EventArgs e)
         {
 
