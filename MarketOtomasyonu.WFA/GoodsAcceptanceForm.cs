@@ -106,6 +106,7 @@ namespace MarketOtomasyonu.WFA
                         if (item2.ProductId == seciliPaket1.ProductId)
                         {
                             item2.ProductStock = seciliPaket1.PackageProductQuantity;
+                            item2.ProductSellingPrice = (item2.ProductPurchasingPrice * (1 + 0.18m));
                         }
                     }
 

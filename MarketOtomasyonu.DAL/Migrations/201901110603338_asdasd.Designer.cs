@@ -7,13 +7,13 @@ namespace MarketOtomasyonu.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class gfg : IMigrationMetadata
+    public sealed partial class asdasd : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(gfg));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(asdasd));
         
         string IMigrationMetadata.Id
         {
-            get { return "201901102157045_gfg"; }
+            get { return "201901110603338_asdasd"; }
         }
         
         string IMigrationMetadata.Source

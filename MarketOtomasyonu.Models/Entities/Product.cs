@@ -38,6 +38,9 @@ namespace MarketOtomasyonu.Models.Entities
 
         public virtual ICollection<Package> Packages { get; set; } = new HashSet<Package>();
 
+        public virtual ICollection<SaleDetail> SaleDetails { get; set; } = new HashSet<SaleDetail>();
+
+
         public override string ToString()
         {
             return $"{ProductName}";
