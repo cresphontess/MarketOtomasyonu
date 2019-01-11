@@ -227,6 +227,7 @@ namespace MarketOtomasyonu.WFA
                 if(item.ProductId == seciliPaket.ProductId)
                 {
                     seciliPaket.Product = item.Product;
+                    break;
                 }
             }
 
@@ -235,6 +236,9 @@ namespace MarketOtomasyonu.WFA
             cmbPackageProduct.Text = seciliPaket.Product.ProductName.ToString();
             nmOrderQuantity.Value = seciliPaket.PackageProductQuantity;
             txtOrderPackagePrice.Text = (seciliPaket.Product.ProductPurchasingPrice * seciliPaket.PackageProductQuantity).ToString();
+
+
+            SiparisFiyatHesapla();
         }
 
        
@@ -244,6 +248,11 @@ namespace MarketOtomasyonu.WFA
             PaketleriGetir();
             SiparisFiyatHesapla();
                 
+        }
+
+        private void cmbOrderName_DropDown(object sender, EventArgs e)
+        {
+            SiparisFiyatHesapla();
         }
     }
     
