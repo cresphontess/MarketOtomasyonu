@@ -38,7 +38,6 @@
             this.lblOrderList = new System.Windows.Forms.Label();
             this.lblOrderPrice = new System.Windows.Forms.Label();
             this.lblOrderPriceText = new System.Windows.Forms.Label();
-            this.dtOrder = new System.Windows.Forms.DateTimePicker();
             this.lblOrderBarcode = new System.Windows.Forms.Label();
             this.txtPackageBarcode = new System.Windows.Forms.TextBox();
             this.txtOrderPackagePrice = new System.Windows.Forms.TextBox();
@@ -52,6 +51,11 @@
             this.btnCreateOrder = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnOrderDelete = new System.Windows.Forms.Button();
+            this.txtOrderName = new System.Windows.Forms.TextBox();
+            this.lblOrderName = new System.Windows.Forms.Label();
+            this.dtOrder = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nmOrderQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPackageBarcode)).BeginInit();
             this.SuspendLayout();
@@ -117,9 +121,9 @@
             // lstOrder
             // 
             this.lstOrder.FormattingEnabled = true;
-            this.lstOrder.Location = new System.Drawing.Point(479, 313);
+            this.lstOrder.Location = new System.Drawing.Point(533, 271);
             this.lstOrder.Name = "lstOrder";
-            this.lstOrder.Size = new System.Drawing.Size(329, 147);
+            this.lstOrder.Size = new System.Drawing.Size(318, 186);
             this.lstOrder.TabIndex = 6;
             this.lstOrder.SelectedIndexChanged += new System.EventHandler(this.lstOrder_SelectedIndexChanged);
             // 
@@ -127,7 +131,7 @@
             // 
             this.lblOrderList.AutoSize = true;
             this.lblOrderList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrderList.Location = new System.Drawing.Point(612, 268);
+            this.lblOrderList.Location = new System.Drawing.Point(619, 239);
             this.lblOrderList.Name = "lblOrderList";
             this.lblOrderList.Size = new System.Drawing.Size(121, 20);
             this.lblOrderList.TabIndex = 7;
@@ -137,7 +141,7 @@
             // 
             this.lblOrderPrice.AutoSize = true;
             this.lblOrderPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrderPrice.Location = new System.Drawing.Point(323, 361);
+            this.lblOrderPrice.Location = new System.Drawing.Point(390, 345);
             this.lblOrderPrice.Name = "lblOrderPrice";
             this.lblOrderPrice.Size = new System.Drawing.Size(115, 20);
             this.lblOrderPrice.TabIndex = 8;
@@ -147,18 +151,11 @@
             // 
             this.lblOrderPriceText.AutoSize = true;
             this.lblOrderPriceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrderPriceText.Location = new System.Drawing.Point(335, 388);
+            this.lblOrderPriceText.Location = new System.Drawing.Point(402, 372);
             this.lblOrderPriceText.Name = "lblOrderPriceText";
             this.lblOrderPriceText.Size = new System.Drawing.Size(48, 29);
             this.lblOrderPriceText.TabIndex = 9;
             this.lblOrderPriceText.Text = "0 tl";
-            // 
-            // dtOrder
-            // 
-            this.dtOrder.Location = new System.Drawing.Point(652, 28);
-            this.dtOrder.Name = "dtOrder";
-            this.dtOrder.Size = new System.Drawing.Size(156, 20);
-            this.dtOrder.TabIndex = 10;
             // 
             // lblOrderBarcode
             // 
@@ -181,7 +178,7 @@
             // 
             // txtOrderPackagePrice
             // 
-            this.txtOrderPackagePrice.Location = new System.Drawing.Point(7, 411);
+            this.txtOrderPackagePrice.Location = new System.Drawing.Point(12, 411);
             this.txtOrderPackagePrice.Name = "txtOrderPackagePrice";
             this.txtOrderPackagePrice.Size = new System.Drawing.Size(166, 20);
             this.txtOrderPackagePrice.TabIndex = 26;
@@ -216,7 +213,7 @@
             // 
             // pbPackageBarcode
             // 
-            this.pbPackageBarcode.Location = new System.Drawing.Point(274, 132);
+            this.pbPackageBarcode.Location = new System.Drawing.Point(298, 107);
             this.pbPackageBarcode.Name = "pbPackageBarcode";
             this.pbPackageBarcode.Size = new System.Drawing.Size(207, 104);
             this.pbPackageBarcode.TabIndex = 31;
@@ -225,7 +222,7 @@
             // btnAddBarcode
             // 
             this.btnAddBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAddBarcode.Location = new System.Drawing.Point(305, 239);
+            this.btnAddBarcode.Location = new System.Drawing.Point(329, 214);
             this.btnAddBarcode.Name = "btnAddBarcode";
             this.btnAddBarcode.Size = new System.Drawing.Size(133, 28);
             this.btnAddBarcode.TabIndex = 32;
@@ -246,7 +243,7 @@
             // cmbOrderName
             // 
             this.cmbOrderName.FormattingEnabled = true;
-            this.cmbOrderName.Location = new System.Drawing.Point(612, 215);
+            this.cmbOrderName.Location = new System.Drawing.Point(621, 201);
             this.cmbOrderName.Name = "cmbOrderName";
             this.cmbOrderName.Size = new System.Drawing.Size(121, 21);
             this.cmbOrderName.TabIndex = 34;
@@ -256,9 +253,9 @@
             // btnCreateOrder
             // 
             this.btnCreateOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnCreateOrder.Location = new System.Drawing.Point(626, 157);
+            this.btnCreateOrder.Location = new System.Drawing.Point(642, 159);
             this.btnCreateOrder.Name = "btnCreateOrder";
-            this.btnCreateOrder.Size = new System.Drawing.Size(98, 36);
+            this.btnCreateOrder.Size = new System.Drawing.Size(82, 34);
             this.btnCreateOrder.TabIndex = 35;
             this.btnCreateOrder.Text = "Sipariş Oluştur";
             this.btnCreateOrder.UseVisualStyleBackColor = true;
@@ -266,9 +263,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(490, 489);
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnDelete.Location = new System.Drawing.Point(608, 479);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(81, 33);
             this.btnDelete.TabIndex = 36;
             this.btnDelete.Text = "Sil";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -276,13 +274,59 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(595, 488);
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUpdate.Location = new System.Drawing.Point(719, 479);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(81, 33);
             this.btnUpdate.TabIndex = 37;
             this.btnUpdate.Text = "Güncelle";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnOrderDelete
+            // 
+            this.btnOrderDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnOrderDelete.Location = new System.Drawing.Point(762, 201);
+            this.btnOrderDelete.Name = "btnOrderDelete";
+            this.btnOrderDelete.Size = new System.Drawing.Size(73, 26);
+            this.btnOrderDelete.TabIndex = 39;
+            this.btnOrderDelete.Text = "Sipariş Sil";
+            this.btnOrderDelete.UseVisualStyleBackColor = true;
+            this.btnOrderDelete.Click += new System.EventHandler(this.btnOrderDelete_Click);
+            // 
+            // txtOrderName
+            // 
+            this.txtOrderName.Location = new System.Drawing.Point(617, 130);
+            this.txtOrderName.Name = "txtOrderName";
+            this.txtOrderName.Size = new System.Drawing.Size(132, 20);
+            this.txtOrderName.TabIndex = 40;
+            // 
+            // lblOrderName
+            // 
+            this.lblOrderName.AutoSize = true;
+            this.lblOrderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblOrderName.Location = new System.Drawing.Point(638, 107);
+            this.lblOrderName.Name = "lblOrderName";
+            this.lblOrderName.Size = new System.Drawing.Size(95, 20);
+            this.lblOrderName.TabIndex = 41;
+            this.lblOrderName.Text = "Sipariş Adı";
+            // 
+            // dtOrder
+            // 
+            this.dtOrder.Location = new System.Drawing.Point(695, 31);
+            this.dtOrder.Name = "dtOrder";
+            this.dtOrder.Size = new System.Drawing.Size(156, 20);
+            this.dtOrder.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(566, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(123, 20);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "Sipariş Tarihi :";
             // 
             // OrderForm
             // 
@@ -290,6 +334,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(854, 544);
+            this.Controls.Add(this.lblOrderName);
+            this.Controls.Add(this.txtOrderName);
+            this.Controls.Add(this.btnOrderDelete);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnCreateOrder);
@@ -336,7 +384,6 @@
         private System.Windows.Forms.Label lblOrderList;
         private System.Windows.Forms.Label lblOrderPrice;
         private System.Windows.Forms.Label lblOrderPriceText;
-        private System.Windows.Forms.DateTimePicker dtOrder;
         private System.Windows.Forms.Label lblOrderBarcode;
         private System.Windows.Forms.TextBox txtPackageBarcode;
         private System.Windows.Forms.TextBox txtOrderPackagePrice;
@@ -350,5 +397,10 @@
         private System.Windows.Forms.Button btnCreateOrder;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnOrderDelete;
+        private System.Windows.Forms.TextBox txtOrderName;
+        private System.Windows.Forms.Label lblOrderName;
+        private System.Windows.Forms.DateTimePicker dtOrder;
+        private System.Windows.Forms.Label label3;
     }
 }

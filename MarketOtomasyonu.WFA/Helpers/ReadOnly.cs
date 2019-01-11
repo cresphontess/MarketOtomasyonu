@@ -45,7 +45,8 @@ namespace MarketOtomasyonu.WFA.Helpers
             foreach (Control control in form.Controls)
             {
                 if (control is TextBox txt)
-                    txt.ReadOnly = false;
+                    if(txt.Name != "txtPackageBarcode")
+                        txt.ReadOnly = false;
                 else if (control is NumericUpDown nm)
                     nm.Enabled = true ;
                 else if (control is ComboBox cmb)

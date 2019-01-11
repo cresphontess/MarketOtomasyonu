@@ -20,7 +20,9 @@ namespace MarketOtomasyonu.WFA.Helpers
                     dtp.Value = DateTime.Now;
                else if (control is NumericUpDown nm)
                     nm.Value = 0;
-                
+               
+
+
 
             }
         }
