@@ -21,7 +21,7 @@ namespace MarketOtomasyonu.Models.Entities
 
         public DateTime SaleDateTime { get; set; } = DateTime.Now;
 
-        public decimal SaleAmount { get; set; }
+        public decimal ProductSellingPrice { get; set; }
 
         public int PaymentType { get; set; }
 

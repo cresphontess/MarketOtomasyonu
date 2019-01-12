@@ -39,13 +39,12 @@
             this.rbSaleCreditCard = new System.Windows.Forms.RadioButton();
             this.gbPayingType = new System.Windows.Forms.GroupBox();
             this.lblOrderList = new System.Windows.Forms.Label();
-            this.txtSaleGivenAmount = new System.Windows.Forms.TextBox();
+            this.txtSaleReceivedAmount = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSaleRemainAmount = new System.Windows.Forms.Label();
             this.btnSaleBill = new System.Windows.Forms.Button();
             this.lblSaleRemainAmountText = new System.Windows.Forms.Label();
             this.cmbProductBarcode = new System.Windows.Forms.ComboBox();
-            this.txtChange = new System.Windows.Forms.TextBox();
             this.nmQuantity = new System.Windows.Forms.NumericUpDown();
             this.gbPayingType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmQuantity)).BeginInit();
@@ -109,7 +108,7 @@
             // btnSaleProductPass
             // 
             this.btnSaleProductPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSaleProductPass.Location = new System.Drawing.Point(497, 121);
+            this.btnSaleProductPass.Location = new System.Drawing.Point(485, 121);
             this.btnSaleProductPass.Name = "btnSaleProductPass";
             this.btnSaleProductPass.Size = new System.Drawing.Size(98, 32);
             this.btnSaleProductPass.TabIndex = 31;
@@ -161,12 +160,13 @@
             this.lblOrderList.TabIndex = 36;
             this.lblOrderList.Text = "Sepet";
             // 
-            // txtSaleGivenAmount
+            // txtSaleReceivedAmount
             // 
-            this.txtSaleGivenAmount.Location = new System.Drawing.Point(248, 388);
-            this.txtSaleGivenAmount.Name = "txtSaleGivenAmount";
-            this.txtSaleGivenAmount.Size = new System.Drawing.Size(100, 20);
-            this.txtSaleGivenAmount.TabIndex = 37;
+            this.txtSaleReceivedAmount.Location = new System.Drawing.Point(248, 388);
+            this.txtSaleReceivedAmount.Name = "txtSaleReceivedAmount";
+            this.txtSaleReceivedAmount.Size = new System.Drawing.Size(100, 20);
+            this.txtSaleReceivedAmount.TabIndex = 37;
+            this.txtSaleReceivedAmount.TextChanged += new System.EventHandler(this.txtSaleGivenAmount_TextChanged);
             // 
             // label1
             // 
@@ -217,16 +217,9 @@
             this.cmbProductBarcode.Size = new System.Drawing.Size(202, 21);
             this.cmbProductBarcode.TabIndex = 43;
             // 
-            // txtChange
-            // 
-            this.txtChange.Location = new System.Drawing.Point(120, 390);
-            this.txtChange.Name = "txtChange";
-            this.txtChange.Size = new System.Drawing.Size(100, 20);
-            this.txtChange.TabIndex = 44;
-            // 
             // nmQuantity
             // 
-            this.nmQuantity.Location = new System.Drawing.Point(100, 364);
+            this.nmQuantity.Location = new System.Drawing.Point(475, 164);
             this.nmQuantity.Name = "nmQuantity";
             this.nmQuantity.Size = new System.Drawing.Size(120, 20);
             this.nmQuantity.TabIndex = 45;
@@ -237,13 +230,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.nmQuantity);
-            this.Controls.Add(this.txtChange);
             this.Controls.Add(this.cmbProductBarcode);
             this.Controls.Add(this.lblSaleRemainAmountText);
             this.Controls.Add(this.btnSaleBill);
             this.Controls.Add(this.lblSaleRemainAmount);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtSaleGivenAmount);
+            this.Controls.Add(this.txtSaleReceivedAmount);
             this.Controls.Add(this.lblOrderList);
             this.Controls.Add(this.gbPayingType);
             this.Controls.Add(this.btnSaleProductPass);
@@ -277,13 +269,12 @@
         private System.Windows.Forms.RadioButton rbSaleCreditCard;
         private System.Windows.Forms.GroupBox gbPayingType;
         private System.Windows.Forms.Label lblOrderList;
-        private System.Windows.Forms.TextBox txtSaleGivenAmount;
+        private System.Windows.Forms.TextBox txtSaleReceivedAmount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblSaleRemainAmount;
         private System.Windows.Forms.Button btnSaleBill;
         private System.Windows.Forms.Label lblSaleRemainAmountText;
         private System.Windows.Forms.ComboBox cmbProductBarcode;
-        private System.Windows.Forms.TextBox txtChange;
         private System.Windows.Forms.NumericUpDown nmQuantity;
     }
 }

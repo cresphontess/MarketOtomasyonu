@@ -17,7 +17,7 @@ namespace MarketOtomasyonu.Models.ViewModels
 
         public string ProductName { get; set; }
 
-        public decimal SaleAmount { get; set; }
+        public decimal ProductSellingPrice { get; set; }
 
         public int PaymentType { get; set; }
 

@@ -14,7 +14,7 @@ namespace MarketOtomasyonu.Models.ViewModels
         public string ProductName { get; set; }
         public string ProductBarcode { get; set; }
         public int ProductStock { get; set; }   
-        public decimal ProductPurchasingPrice { get; set; }    
+        public decimal ProductPurchasingUnitPrice { get; set; }    
         public decimal ProductSellingPrice { get; set; }
         public int CategoryId { get; set; }
 

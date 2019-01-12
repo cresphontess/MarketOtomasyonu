@@ -17,24 +17,24 @@ namespace MarketOtomasyonu.BLL.BLL
             var detaylar = new SaleDetailRepo().GetAll();
 
 
-          
+
             var sale = new Sale()
-                {
-                    
-                };
-                  new SaleRepo().Insert(sale);
+            {
+
+            };
+            new SaleRepo().Insert(sale);
             foreach (var item in cart.CartModel)
             {
                 new SaleDetailRepo().Insert(new SaleDetail()
                 {
                     SaleDateTime = DateTime.Now,
-                     SaleAmount=item.SaleAmount,
-                      SaleId=sale.SaleId,
-                       GivenAmount=item.GivenAmount ,
-                        PaymentType=item.PaymentType ,
-                         Quantity=item.Quantity,
-                          ReceivedAmount=item.ReceivedAmount,
-                           ProductId=item.ProductId 
+                    ProductSellingPrice = item.ProductSellingPrice,
+                    SaleId = sale.SaleId,
+                    GivenAmount = item.GivenAmount,
+                    PaymentType = item.PaymentType,
+                    Quantity = item.Quantity,
+                    ReceivedAmount = item.ReceivedAmount,
+                    ProductId = item.ProductId
 
                 });
             }

@@ -27,7 +27,7 @@ namespace MarketOtomasyonu.WFA
 
             var cmbOrders = db.GetAll();
 
-            cmbGoodsAcceptanceOrders.DataSource = cmbOrders;
+            cmbGoodsAcceptanceOrders.DataSource = cmbOrders.ToArray();
 
         }
 

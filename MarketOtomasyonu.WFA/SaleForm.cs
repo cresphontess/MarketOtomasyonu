@@ -19,6 +19,7 @@ namespace MarketOtomasyonu.WFA
         public SaleForm()
         {
             InitializeComponent();
+            
         }
         private List<SepetViewModel> sepet = new List<SepetViewModel>();
         private void SaleForm_Load(object sender, EventArgs e)
@@ -35,7 +36,7 @@ namespace MarketOtomasyonu.WFA
                           ProductName=x.ProductName,
                            CategoryId=x.CategoryId,
                             ProductBarcode=x.ProductBarcode ,
-                             ProductPurchasingPrice=x.ProductPurchasingPrice ,
+                             ProductPurchasingUnitPrice=x.ProductPurchasingPrice,
                               ProductSellingPrice=x.ProductSellingPrice ,
                                ProductStock = x.ProductStock 
 
@@ -47,10 +48,15 @@ namespace MarketOtomasyonu.WFA
             }
 
             cmbProductBarcode.DataSource = products;
+
+            lblTotalAmountText.Text = "0";
         }
 
         private void btnSaleProductPass_Click(object sender, EventArgs e)
         {
+
+            decimal total = Convert.ToDecimal(lblTotalAmountText.Text);
+
             var products = new List<SepetViewModel>();
             try
             {
@@ -60,6 +66,8 @@ namespace MarketOtomasyonu.WFA
                     {
                         ProductId = x.ProductId,
                         ProductName = x.ProductName,
+                        Quantity = Convert.ToInt32(nmQuantity.Value),
+                        ProductSellingPrice = nmQuantity.Value * x.ProductSellingPrice
 
                     }));
             }
@@ -68,13 +76,23 @@ namespace MarketOtomasyonu.WFA
                 MessageBox.Show(ex.Message);
             }
 
+            
+
             foreach (var item in products)
             {
+                
                 if(item.ProductId == (cmbProductBarcode.SelectedItem as ProductViewModel).ProductId)
                 {
                     lstProduct.Items.Add(item);
+                    sepet.Add(item);
+
+                    total += item.ProductSellingPrice;
                 }
+
+                lblTotalAmountText.Text = total.ToString();
             }
+
+
 
         }
        
@@ -89,7 +107,7 @@ namespace MarketOtomasyonu.WFA
             };
             new SaleRepo().Insert(sale);
 
-
+           
 
             //if (!sepet.Any())
             //{
@@ -121,32 +139,41 @@ namespace MarketOtomasyonu.WFA
 
                 
                 }
+
+                foreach (var item in sepet)
+                {
+                    item.PaymentType = i;
+                    item.GivenAmount = (Convert.ToDecimal(txtSaleReceivedAmount.Text) - Convert.ToDecimal(lblTotalAmountText.Text)); 
+                    item.ReceivedAmount = Convert.ToDecimal(txtSaleReceivedAmount.Text);
+                    item.SaleId = sale.SaleId;
+
+            }
+
+                lblSaleRemainAmountText.Text = (Convert.ToDecimal(txtSaleReceivedAmount.Text) - Convert.ToDecimal(lblTotalAmountText.Text)).ToString();
+
                 var orderBusiness = new SaleBusines();
                 var dbSale = new SaleDetailRepo();
+
                 var cartModel = new CartViewModel()
                 {
                     CartModel = sepet,
                     
                 };
-                SaleDetail siparis = new SaleDetail ();
-                siparis.SaleId = sale.SaleId;
-                siparis.ProductId = (cmbProductBarcode.SelectedItem as ProductViewModel).ProductId;
-                siparis.Quantity = (int)nmQuantity.Value;
-                siparis.GivenAmount = 5;
-                siparis.PaymentType = i;
-                siparis.ReceivedAmount = Convert.ToDecimal(txtSaleGivenAmount.Text);
-                siparis.SaleAmount = 5;
-                dbSale.Insert(siparis);
 
                 var sipNo = orderBusiness.MakeOrder(cartModel);
                 
-                sepet = new List<SepetViewModel>();
+                
                 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void txtSaleGivenAmount_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
