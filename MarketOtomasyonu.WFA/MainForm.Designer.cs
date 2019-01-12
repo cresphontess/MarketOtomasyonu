@@ -32,6 +32,7 @@
             this.btnProductOrder = new System.Windows.Forms.Button();
             this.btnGoodsAcceptance = new System.Windows.Forms.Button();
             this.btnSelling = new System.Windows.Forms.Button();
+            this.btnBills = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnProductOrder
@@ -41,7 +42,7 @@
             this.btnProductOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProductOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnProductOrder.ForeColor = System.Drawing.Color.Yellow;
-            this.btnProductOrder.Location = new System.Drawing.Point(194, 45);
+            this.btnProductOrder.Location = new System.Drawing.Point(194, 50);
             this.btnProductOrder.Name = "btnProductOrder";
             this.btnProductOrder.Size = new System.Drawing.Size(360, 77);
             this.btnProductOrder.TabIndex = 0;
@@ -56,7 +57,7 @@
             this.btnGoodsAcceptance.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGoodsAcceptance.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGoodsAcceptance.ForeColor = System.Drawing.Color.Yellow;
-            this.btnGoodsAcceptance.Location = new System.Drawing.Point(194, 199);
+            this.btnGoodsAcceptance.Location = new System.Drawing.Point(194, 167);
             this.btnGoodsAcceptance.Name = "btnGoodsAcceptance";
             this.btnGoodsAcceptance.Size = new System.Drawing.Size(360, 77);
             this.btnGoodsAcceptance.TabIndex = 1;
@@ -71,7 +72,7 @@
             this.btnSelling.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSelling.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSelling.ForeColor = System.Drawing.Color.Yellow;
-            this.btnSelling.Location = new System.Drawing.Point(194, 343);
+            this.btnSelling.Location = new System.Drawing.Point(194, 288);
             this.btnSelling.Name = "btnSelling";
             this.btnSelling.Size = new System.Drawing.Size(360, 77);
             this.btnSelling.TabIndex = 2;
@@ -79,13 +80,28 @@
             this.btnSelling.UseVisualStyleBackColor = false;
             this.btnSelling.Click += new System.EventHandler(this.btnSelling_Click);
             // 
+            // btnBills
+            // 
+            this.btnBills.AutoEllipsis = true;
+            this.btnBills.BackColor = System.Drawing.Color.DarkOrchid;
+            this.btnBills.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBills.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnBills.ForeColor = System.Drawing.Color.Yellow;
+            this.btnBills.Location = new System.Drawing.Point(194, 406);
+            this.btnBills.Name = "btnBills";
+            this.btnBills.Size = new System.Drawing.Size(360, 77);
+            this.btnBills.TabIndex = 3;
+            this.btnBills.Text = "Fişler";
+            this.btnBills.UseVisualStyleBackColor = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 461);
+            this.ClientSize = new System.Drawing.Size(800, 531);
+            this.Controls.Add(this.btnBills);
             this.Controls.Add(this.btnSelling);
             this.Controls.Add(this.btnGoodsAcceptance);
             this.Controls.Add(this.btnProductOrder);
@@ -100,6 +116,7 @@
         private System.Windows.Forms.Button btnProductOrder;
         private System.Windows.Forms.Button btnGoodsAcceptance;
         private System.Windows.Forms.Button btnSelling;
+        private System.Windows.Forms.Button btnBills;
     }
 }
 

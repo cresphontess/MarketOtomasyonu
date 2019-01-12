@@ -197,7 +197,6 @@ namespace MarketOtomasyonu.WFA
             }
 
             cmbOrderProduct.Items.Clear();
-
             cmbOrderProduct.Items.AddRange(orders.ToArray());
         }
 
