@@ -76,7 +76,8 @@ namespace MarketOtomasyonu.WFA
                 throw;
             }
 
-      
+            dbOrder.Update();
+            db.Update();
 
         }
 
@@ -211,7 +212,7 @@ namespace MarketOtomasyonu.WFA
             Order order = new Order()
             {
                 OrderName = txtOrderName.Text,
-                OrderDateTime = dtOrder.Value
+                
                 
             };
             

@@ -27,7 +27,8 @@ namespace MarketOtomasyonu.WFA
 
             var cmbOrders = db.GetAll();
 
-            cmbGoodsAcceptanceOrders.DataSource = cmbOrders.ToArray();
+            cmbOrderProduct.Items.Clear();
+            cmbGoodsAcceptanceOrders.Items.AddRange(cmbOrders.ToArray());
 
         }
 
@@ -38,6 +39,7 @@ namespace MarketOtomasyonu.WFA
       
         private void btnOrderSave_Click(object sender, EventArgs e)
         {
+            if (cmbOrderProduct.SelectedIndex == -1) return;
 
             bool control = false;
 
@@ -118,8 +120,8 @@ namespace MarketOtomasyonu.WFA
             pr.Update();
             prodb.Update();
 
-
-            cmbOrderProduct.DataSource = new List<Package>();
+            cmbOrderProduct.Items.Clear();
+            cmbOrderProduct.Items.AddRange(new List<Package>().ToArray());
           
             PackageRepo db = new PackageRepo();
 
@@ -150,17 +152,26 @@ namespace MarketOtomasyonu.WFA
 
             control = false;
             db.Update();
-            cmbOrderProduct.DataSource = orders;
+            cmbOrderProduct.Items.Clear();
+            cmbOrderProduct.Items.AddRange(orders.ToArray());
 
 
             cmbOrderProduct.SelectedIndex = -1;
+            cmbOrderProduct.Text = "";
+            
 
 
         }
 
         private void cmbGoodsAcceptanceOrders_SelectedIndexChanged(object sender, EventArgs e)
         {
-  
+            PaketleriGetirMalKabul();
+        }
+
+        private void PaketleriGetirMalKabul()
+        {
+            if (cmbGoodsAcceptanceOrders.SelectedIndex == -1) return;
+
             var orders = new List<OrderViewModel>();
             try
             {
@@ -185,14 +196,15 @@ namespace MarketOtomasyonu.WFA
                 MessageBox.Show(ex.Message);
             }
 
-            cmbOrderProduct.DataSource = orders;
+            cmbOrderProduct.Items.Clear();
 
-
+            cmbOrderProduct.Items.AddRange(orders.ToArray());
         }
 
-        private void cmbGoodsAcceptanceOrders_DropDown(object sender, EventArgs e)
+        private void cmbOrderProduct_DropDown(object sender, EventArgs e)
         {
-            
+            PaketleriGetirMalKabul();
+
         }
     }
 }

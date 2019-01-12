@@ -21,9 +21,6 @@ namespace MarketOtomasyonu.Models.ViewModels
 
         public int ProductStock { get; set; }
 
-        public DateTime OrderProductDateTime { get; set; } = DateTime.Now;
-
-
         public override string ToString() => $"{PackageName} - ({PackageBarcode})";
 
     }

@@ -54,8 +54,6 @@
             this.btnOrderDelete = new System.Windows.Forms.Button();
             this.txtOrderName = new System.Windows.Forms.TextBox();
             this.lblOrderName = new System.Windows.Forms.Label();
-            this.dtOrder = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nmOrderQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPackageBarcode)).BeginInit();
             this.SuspendLayout();
@@ -311,23 +309,6 @@
             this.lblOrderName.TabIndex = 41;
             this.lblOrderName.Text = "Sipariş Adı";
             // 
-            // dtOrder
-            // 
-            this.dtOrder.Location = new System.Drawing.Point(695, 31);
-            this.dtOrder.Name = "dtOrder";
-            this.dtOrder.Size = new System.Drawing.Size(156, 20);
-            this.dtOrder.TabIndex = 10;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(566, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 20);
-            this.label3.TabIndex = 38;
-            this.label3.Text = "Sipariş Tarihi :";
-            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,7 +318,6 @@
             this.Controls.Add(this.lblOrderName);
             this.Controls.Add(this.txtOrderName);
             this.Controls.Add(this.btnOrderDelete);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnCreateOrder);
@@ -351,7 +331,6 @@
             this.Controls.Add(this.txtOrderPackagePrice);
             this.Controls.Add(this.lblOrderBarcode);
             this.Controls.Add(this.txtPackageBarcode);
-            this.Controls.Add(this.dtOrder);
             this.Controls.Add(this.lblOrderPriceText);
             this.Controls.Add(this.lblOrderPrice);
             this.Controls.Add(this.lblOrderList);
@@ -400,7 +379,5 @@
         private System.Windows.Forms.Button btnOrderDelete;
         private System.Windows.Forms.TextBox txtOrderName;
         private System.Windows.Forms.Label lblOrderName;
-        private System.Windows.Forms.DateTimePicker dtOrder;
-        private System.Windows.Forms.Label label3;
     }
 }
