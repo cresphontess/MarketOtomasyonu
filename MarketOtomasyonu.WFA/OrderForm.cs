@@ -295,7 +295,40 @@ namespace MarketOtomasyonu.WFA
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            //güncelleme yap
+            PackageRepo packagedb = new PackageRepo();
+            ProductRepo productdb = new ProductRepo();
+
+            var seciliPaketGuncelle = lstOrder.SelectedItem as Package;
+
+            foreach (var item in packagedb.GetAll())
+            {
+                if (item.ProductId == seciliPaketGuncelle.ProductId)
+                {
+                    foreach (var item2 in productdb.GetAll())
+                    {
+                        if (item2.ProductId == seciliPaketGuncelle.ProductId)
+                        {
+
+                            item2.ProductStock = Convert.ToInt32(nmOrderQuantity.Value);
+                            item2.ProductSellingPrice = (item2.ProductPurchasingPrice * (1 + 0.18m));
+                        }
+                    }
+                    break;
+                }
+            }
+            seciliPaketGuncelle.PackageName = txtPackageName.Text;
+            seciliPaketGuncelle.ProductId = (cmbPackageProduct.SelectedItem as Product).ProductId;
+            seciliPaketGuncelle.OrderId = (cmbOrderName.SelectedItem as Order).OrderId;
+            seciliPaketGuncelle.PackagePurchasingPrice = Convert.ToDecimal(txtOrderPackagePrice.Text);
+            seciliPaketGuncelle.PackageProductQuantity = Convert.ToInt32(nmOrderQuantity.Value);
+            seciliPaketGuncelle.PackageBarcode = txtPackageBarcode.Text;
+
+            
+            SiparisFiyatHesapla();
+            packagedb.Update();
+            productdb.Update();
+            MessageBox.Show($"Güncelleme başarılı");
+            
         }
 
         private void cmbOrderName_DropDown(object sender, EventArgs e)

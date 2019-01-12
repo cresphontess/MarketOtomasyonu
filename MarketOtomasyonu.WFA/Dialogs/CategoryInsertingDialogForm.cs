@@ -24,6 +24,7 @@ namespace MarketOtomasyonu.WFA.Dialogs
 
             ProductInsertingDialogForm ProductInsertingDialogForm = new ProductInsertingDialogForm();
             ProductInsertingDialogForm.Show();
+            this.Close();
 
         }
 
@@ -39,11 +40,12 @@ namespace MarketOtomasyonu.WFA.Dialogs
                 db.Insert(category);
 
                 MessageBox.Show($"{category.CategoryName} Kategorisi Eklendi");
-
+                
                 System.Threading.Thread.Sleep(500);
 
                 ProductInsertingDialogForm ProductInsertingDialogForm = new ProductInsertingDialogForm();
                 ProductInsertingDialogForm.Show();
+                this.Close();
             }
             catch (Exception)
             {
@@ -51,6 +53,7 @@ namespace MarketOtomasyonu.WFA.Dialogs
                 throw;
             }
 
+           
 
         }
     }
