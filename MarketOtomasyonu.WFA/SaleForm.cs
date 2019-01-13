@@ -27,7 +27,7 @@ namespace MarketOtomasyonu.WFA
             var products = new List<ProductViewModel>();
             try
             {
-                products.AddRange(new ProductRepo().GetAll()
+                products.AddRange(new ProductRepo().GetAll(x=>x.ProductStock>0)
                     .OrderBy(x => x.ProductName)
                     .Select(x => new ProductViewModel()
                     {
@@ -212,14 +212,7 @@ namespace MarketOtomasyonu.WFA
             }
 
             db.Update();
-
-
-
         }
 
-        private void txtSaleGivenAmount_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -3,7 +3,7 @@ namespace MarketOtomasyonu.DAL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class dfd : DbMigration
+    public partial class aasdasd : DbMigration
     {
         public override void Up()
         {
@@ -56,7 +56,6 @@ namespace MarketOtomasyonu.DAL.Migrations
                     {
                         OrderId = c.Int(nullable: false, identity: true),
                         OrderName = c.String(),
-                        OrderDateTime = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.OrderId);
             

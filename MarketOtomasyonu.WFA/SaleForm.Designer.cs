@@ -168,7 +168,7 @@
             this.txtSaleReceivedAmount.Name = "txtSaleReceivedAmount";
             this.txtSaleReceivedAmount.Size = new System.Drawing.Size(100, 20);
             this.txtSaleReceivedAmount.TabIndex = 37;
-            this.txtSaleReceivedAmount.TextChanged += new System.EventHandler(this.txtSaleGivenAmount_TextChanged);
+          
             // 
             // label1
             // 
