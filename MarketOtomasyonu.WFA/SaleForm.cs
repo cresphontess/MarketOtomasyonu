@@ -19,7 +19,7 @@ namespace MarketOtomasyonu.WFA
         public SaleForm()
         {
             InitializeComponent();
-            
+
         }
         private List<SepetViewModel> sepet = new List<SepetViewModel>();
         private void SaleForm_Load(object sender, EventArgs e)
@@ -32,13 +32,13 @@ namespace MarketOtomasyonu.WFA
                     .Select(x => new ProductViewModel()
                     {
 
-                         ProductId=x.ProductId,
-                          ProductName=x.ProductName,
-                           CategoryId=x.CategoryId,
-                            ProductBarcode=x.ProductBarcode ,
-                             ProductPurchasingUnitPrice=x.ProductPurchasingPrice,
-                              ProductSellingPrice=x.ProductSellingPrice ,
-                               ProductStock = x.ProductStock 
+                        ProductId = x.ProductId,
+                        ProductName = x.ProductName,
+                        CategoryId = x.CategoryId,
+                        ProductBarcode = x.ProductBarcode,
+                        ProductPurchasingUnitPrice = x.ProductPurchasingPrice,
+                        ProductSellingPrice = x.ProductSellingPrice,
+                        ProductStock = x.ProductStock
 
                     }));
             }
@@ -88,7 +88,6 @@ namespace MarketOtomasyonu.WFA
                         control = true;
                         break;
                     }
-
                 }
 
                 if (item.ProductId == (cmbProductBarcode.SelectedItem as ProductViewModel).ProductId)
@@ -112,14 +111,8 @@ namespace MarketOtomasyonu.WFA
                     control = false;
                     break;
                 }
-
-
-
             }
         }
-       
-
-       
 
         private void btnSaleBill_Click(object sender, EventArgs e)
         {
@@ -129,7 +122,7 @@ namespace MarketOtomasyonu.WFA
             };
             new SaleRepo().Insert(sale);
 
-           
+
 
             //if (!sepet.Any())
             //{
@@ -158,19 +151,16 @@ namespace MarketOtomasyonu.WFA
                             i = 1;
                         break;
                     }
-
-                
                 }
 
                 foreach (var item in sepet)
                 {
                     item.PaymentType = i;
-                    item.GivenAmount = (Convert.ToDecimal(txtSaleReceivedAmount.Text) - Convert.ToDecimal(lblTotalAmountText.Text)); 
+                    item.GivenAmount = (Convert.ToDecimal(txtSaleReceivedAmount.Text) - Convert.ToDecimal(lblTotalAmountText.Text));
                     item.ReceivedAmount = Convert.ToDecimal(txtSaleReceivedAmount.Text);
                     item.SaleId = sale.SaleId;
                     item.SaleDateTime = dtSale.Value;
-
-            }
+                }
 
                 lblSaleRemainAmountText.Text = (Convert.ToDecimal(txtSaleReceivedAmount.Text) - Convert.ToDecimal(lblTotalAmountText.Text)).ToString();
 
@@ -180,10 +170,10 @@ namespace MarketOtomasyonu.WFA
                 var cartModel = new CartViewModel()
                 {
                     CartModel = sepet,
-                    
+
                 };
 
-                var sipNo = orderBusiness.MakeOrder(cartModel);
+                orderBusiness.MakeOrder(cartModel);
                 
                 
                 
@@ -192,8 +182,6 @@ namespace MarketOtomasyonu.WFA
             {
                 MessageBox.Show(ex.Message);
             }
-
-
 
             ProductRepo db = new ProductRepo();
 
@@ -205,14 +193,60 @@ namespace MarketOtomasyonu.WFA
                     if (item.ProductId == (item1 as SepetViewModel).ProductId)
                     {
                         item.ProductStock = item.ProductStock - (item1 as SepetViewModel).Quantity;
-                        
                     }
                 }
-                 
             }
 
             db.Update();
         }
 
+        
+
+        private void btnSaleDelete_Click(object sender, EventArgs e)
+        {
+            if (lstProduct.SelectedItem == null) return;
+
+            var seciliSepet1 = lstProduct.SelectedItem as SepetViewModel;
+
+            db.Update();
+            sepet.Remove(seciliSepet1);
+            lstProduct.Items.Clear();
+            foreach (var item in sepet)
+            {
+                lstProduct.Items.Add(item);
+            }
+        }
+
+        private SepetViewModel seciliSepet;
+        private void btnSaleUpdate_Click(object sender, EventArgs e)
+        {
+           
+            seciliSepet = lstProduct.SelectedItem as SepetViewModel;
+            foreach (var item in sepet)
+            {
+                if (seciliSepet.ProductId == item.ProductId)
+                {
+                    
+                    item.Quantity = Convert.ToInt32(nmQuantity.Value);
+                    break;
+                }
+            }
+            seciliSepet = null;
+            lstProduct.Items.Clear();
+            foreach (var item in sepet)
+            {
+                lstProduct.Items.Add(item);
+            }
+        }
+
+        private void lstProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstProduct.SelectedItem == null) return;
+            seciliSepet = lstProduct.SelectedItem as SepetViewModel;
+            nmQuantity.Value = seciliSepet.Quantity;
+            cmbProductBarcode.Text = (lstProduct.SelectedItem as SepetViewModel).ToString();    
+        }
+    }
+}
     }
 }

@@ -9,11 +9,18 @@ using System.Threading.Tasks;
 namespace MarketOtomasyonu.Models.Entities
 {
     [Table("Sales")]
-    public  class Sale
+    public class Sale
     {
         [Key]
         public int SaleId { get; set; }
 
+
         public virtual ICollection<SaleDetail>  SaleDetails { get; set; } = new HashSet<SaleDetail>();
+
+
+        public override string ToString()
+        {
+            return $"{SaleId}";
+        }
     }
 }

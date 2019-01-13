@@ -48,6 +48,8 @@
             this.nmQuantity = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnSaleDelete = new System.Windows.Forms.Button();
+            this.btnSaleUpdate = new System.Windows.Forms.Button();
             this.gbPayingType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmQuantity)).BeginInit();
             this.SuspendLayout();
@@ -102,19 +104,20 @@
             // lstProduct
             // 
             this.lstProduct.FormattingEnabled = true;
-            this.lstProduct.Location = new System.Drawing.Point(582, 140);
+            this.lstProduct.Location = new System.Drawing.Point(519, 140);
             this.lstProduct.Name = "lstProduct";
-            this.lstProduct.Size = new System.Drawing.Size(168, 290);
+            this.lstProduct.Size = new System.Drawing.Size(250, 199);
             this.lstProduct.TabIndex = 30;
+            this.lstProduct.SelectedIndexChanged += new System.EventHandler(this.lstProduct_SelectedIndexChanged);
             // 
             // btnSaleProductPass
             // 
             this.btnSaleProductPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSaleProductPass.Location = new System.Drawing.Point(389, 258);
+            this.btnSaleProductPass.Location = new System.Drawing.Point(341, 233);
             this.btnSaleProductPass.Name = "btnSaleProductPass";
-            this.btnSaleProductPass.Size = new System.Drawing.Size(126, 66);
+            this.btnSaleProductPass.Size = new System.Drawing.Size(147, 49);
             this.btnSaleProductPass.TabIndex = 31;
-            this.btnSaleProductPass.Text = "Ürün Geç";
+            this.btnSaleProductPass.Text = "Ürün Geç -->";
             this.btnSaleProductPass.UseVisualStyleBackColor = true;
             this.btnSaleProductPass.Click += new System.EventHandler(this.btnSaleProductPass_Click);
             // 
@@ -246,11 +249,35 @@
             this.label3.TabIndex = 47;
             this.label3.Text = "Tarih :";
             // 
+            // btnSaleDelete
+            // 
+            this.btnSaleDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSaleDelete.Location = new System.Drawing.Point(542, 352);
+            this.btnSaleDelete.Name = "btnSaleDelete";
+            this.btnSaleDelete.Size = new System.Drawing.Size(99, 30);
+            this.btnSaleDelete.TabIndex = 48;
+            this.btnSaleDelete.Text = " Sil";
+            this.btnSaleDelete.UseVisualStyleBackColor = true;
+            this.btnSaleDelete.Click += new System.EventHandler(this.btnSaleDelete_Click);
+            // 
+            // btnSaleUpdate
+            // 
+            this.btnSaleUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSaleUpdate.Location = new System.Drawing.Point(647, 352);
+            this.btnSaleUpdate.Name = "btnSaleUpdate";
+            this.btnSaleUpdate.Size = new System.Drawing.Size(93, 30);
+            this.btnSaleUpdate.TabIndex = 49;
+            this.btnSaleUpdate.Text = "Güncelle";
+            this.btnSaleUpdate.UseVisualStyleBackColor = true;
+            this.btnSaleUpdate.Click += new System.EventHandler(this.btnSaleUpdate_Click);
+            // 
             // SaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSaleUpdate);
+            this.Controls.Add(this.btnSaleDelete);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nmQuantity);
@@ -302,5 +329,7 @@
         private System.Windows.Forms.NumericUpDown nmQuantity;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnSaleDelete;
+        private System.Windows.Forms.Button btnSaleUpdate;
     }
 }

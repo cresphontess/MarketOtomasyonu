@@ -34,8 +34,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblBillNo = new System.Windows.Forms.Label();
             this.lstBillProducts = new System.Windows.Forms.ListBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblBillTotalKDV = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblBillTotalAmount = new System.Windows.Forms.Label();
             this.cmbBills = new System.Windows.Forms.ComboBox();
@@ -104,31 +102,10 @@
             this.lstBillProducts.ItemHeight = 16;
             this.lstBillProducts.Location = new System.Drawing.Point(331, 183);
             this.lstBillProducts.Margin = new System.Windows.Forms.Padding(4);
+            this.lstBillProducts.Location = new System.Drawing.Point(259, 155);
             this.lstBillProducts.Name = "lstBillProducts";
             this.lstBillProducts.Size = new System.Drawing.Size(597, 276);
             this.lstBillProducts.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(351, 492);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(166, 25);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "TOPLAM KDV :";
-            // 
-            // lblBillTotalKDV
-            // 
-            this.lblBillTotalKDV.AutoSize = true;
-            this.lblBillTotalKDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblBillTotalKDV.Location = new System.Drawing.Point(525, 492);
-            this.lblBillTotalKDV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblBillTotalKDV.Name = "lblBillTotalKDV";
-            this.lblBillTotalKDV.Size = new System.Drawing.Size(70, 25);
-            this.lblBillTotalKDV.TabIndex = 11;
-            this.lblBillTotalKDV.Text = "label6";
             // 
             // label7
             // 
@@ -136,6 +113,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.Location = new System.Drawing.Point(399, 522);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(321, 398);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(115, 25);
             this.label7.TabIndex = 12;
@@ -147,10 +125,12 @@
             this.lblBillTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblBillTotalAmount.Location = new System.Drawing.Point(524, 522);
             this.lblBillTotalAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBillTotalAmount.Location = new System.Drawing.Point(415, 398);
             this.lblBillTotalAmount.Name = "lblBillTotalAmount";
             this.lblBillTotalAmount.Size = new System.Drawing.Size(70, 25);
+            this.lblBillTotalAmount.Size = new System.Drawing.Size(19, 20);
             this.lblBillTotalAmount.TabIndex = 13;
-            this.lblBillTotalAmount.Text = "label8";
+            this.lblBillTotalAmount.Text = "0";
             // 
             // cmbBills
             // 
@@ -160,6 +140,7 @@
             this.cmbBills.Name = "cmbBills";
             this.cmbBills.Size = new System.Drawing.Size(288, 24);
             this.cmbBills.TabIndex = 14;
+            this.cmbBills.SelectedIndexChanged += new System.EventHandler(this.cmbBills_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -192,8 +173,6 @@
             this.Controls.Add(this.cmbBills);
             this.Controls.Add(this.lblBillTotalAmount);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.lblBillTotalKDV);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.lstBillProducts);
             this.Controls.Add(this.lblBillNo);
             this.Controls.Add(this.label3);
@@ -217,8 +196,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblBillNo;
         private System.Windows.Forms.ListBox lstBillProducts;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblBillTotalKDV;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblBillTotalAmount;
         private System.Windows.Forms.ComboBox cmbBills;
