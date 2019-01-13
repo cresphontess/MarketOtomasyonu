@@ -19,5 +19,7 @@ namespace MarketOtomasyonu.DAL
         public virtual DbSet<Order> Orders { get; set; }
        
         public virtual DbSet<Package> Packages { get; set; }
+
+      
     }
 }

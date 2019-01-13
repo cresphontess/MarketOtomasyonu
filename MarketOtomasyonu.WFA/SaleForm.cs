@@ -170,7 +170,7 @@ namespace MarketOtomasyonu.WFA
                     item.SaleId = sale.SaleId;
                     item.SaleDateTime = dtSale.Value;
 
-            }
+                }
 
                 lblSaleRemainAmountText.Text = (Convert.ToDecimal(txtSaleReceivedAmount.Text) - Convert.ToDecimal(lblTotalAmountText.Text)).ToString();
 
@@ -183,7 +183,7 @@ namespace MarketOtomasyonu.WFA
                     
                 };
 
-                var sipNo = orderBusiness.MakeOrder(cartModel);
+                orderBusiness.MakeOrder(cartModel);
                 
                 
                 

@@ -93,6 +93,7 @@
             this.btnBills.TabIndex = 3;
             this.btnBills.Text = "Fişler";
             this.btnBills.UseVisualStyleBackColor = false;
+            this.btnBills.Click += new System.EventHandler(this.btnBills_Click);
             // 
             // MainForm
             // 

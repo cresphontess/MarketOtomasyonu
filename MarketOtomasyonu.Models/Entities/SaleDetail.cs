@@ -37,5 +37,11 @@ namespace MarketOtomasyonu.Models.Entities
 
         [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }
+
+
+        public override string ToString()
+        {
+            return $"{Product.ProductName}       x {Quantity}                 {ProductSellingPrice}";
+        }
     }
 }

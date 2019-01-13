@@ -11,25 +11,19 @@ namespace MarketOtomasyonu.BLL.BLL
     public class SaleBusines
     {
 
-        public int MakeOrder(CartViewModel cart)
+        public void MakeOrder(CartViewModel cart)
         {
-            var satislar = new SaleRepo().GetAll();
-            var detaylar = new SaleDetailRepo().GetAll();
+
+            var dbDetails = new SaleDetailRepo();
 
 
-
-            var sale = new Sale()
-            {
-
-            };
-            new SaleRepo().Insert(sale);
             foreach (var item in cart.CartModel)
             {
-                new SaleDetailRepo().Insert(new SaleDetail()
+                dbDetails.Insert(new SaleDetail()
                 {
                     SaleDateTime = item.SaleDateTime,
                     ProductSellingPrice = item.ProductSellingPrice,
-                    SaleId = sale.SaleId,
+                    SaleId = item.SaleId,
                     GivenAmount = item.GivenAmount,
                     PaymentType = item.PaymentType,
                     Quantity = item.Quantity,
@@ -37,9 +31,11 @@ namespace MarketOtomasyonu.BLL.BLL
                     ProductId = item.ProductId
 
                 });
+
             }
 
-            return sale.SaleId;
+
+            return;
         }
     }
 }
