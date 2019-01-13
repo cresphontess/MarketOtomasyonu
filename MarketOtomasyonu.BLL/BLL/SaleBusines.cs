@@ -27,7 +27,7 @@ namespace MarketOtomasyonu.BLL.BLL
             {
                 new SaleDetailRepo().Insert(new SaleDetail()
                 {
-                    SaleDateTime = DateTime.Now,
+                    SaleDateTime = item.SaleDateTime,
                     ProductSellingPrice = item.ProductSellingPrice,
                     SaleId = sale.SaleId,
                     GivenAmount = item.GivenAmount,

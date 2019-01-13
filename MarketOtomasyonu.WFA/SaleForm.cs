@@ -76,24 +76,46 @@ namespace MarketOtomasyonu.WFA
                 MessageBox.Show(ex.Message);
             }
 
-            
+            var control = false;
 
             foreach (var item in products)
             {
-                
-                if(item.ProductId == (cmbProductBarcode.SelectedItem as ProductViewModel).ProductId)
+                foreach (var item1 in lstProduct.Items)
                 {
-                    lstProduct.Items.Add(item);
-                    sepet.Add(item);
 
-                    total += item.ProductSellingPrice;
+                    if ((cmbProductBarcode.SelectedItem as ProductViewModel).ProductId == (item1 as SepetViewModel).ProductId)
+                    {
+                        control = true;
+                        break;
+                    }
+
                 }
 
-                lblTotalAmountText.Text = total.ToString();
+                if (item.ProductId == (cmbProductBarcode.SelectedItem as ProductViewModel).ProductId)
+                {
+                    if (control == false)
+                    {
+                        lstProduct.Items.Add(item);
+                        sepet.Add(item);
+
+                        total += item.ProductSellingPrice;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bu ürün daha önce sepete eklenmiştir.");
+                    }
+
+
+                    lblTotalAmountText.Text = total.ToString();
+
+                    control = false;
+                    break;
+                }
+
+
+
             }
-
-
-
         }
        
 
@@ -146,6 +168,7 @@ namespace MarketOtomasyonu.WFA
                     item.GivenAmount = (Convert.ToDecimal(txtSaleReceivedAmount.Text) - Convert.ToDecimal(lblTotalAmountText.Text)); 
                     item.ReceivedAmount = Convert.ToDecimal(txtSaleReceivedAmount.Text);
                     item.SaleId = sale.SaleId;
+                    item.SaleDateTime = dtSale.Value;
 
             }
 
@@ -169,6 +192,29 @@ namespace MarketOtomasyonu.WFA
             {
                 MessageBox.Show(ex.Message);
             }
+
+
+
+            ProductRepo db = new ProductRepo();
+
+            foreach (var item in db.GetAll())
+            {
+
+                foreach (var item1 in lstProduct.Items)
+                {
+                    if (item.ProductId == (item1 as SepetViewModel).ProductId)
+                    {
+                        item.ProductStock = item.ProductStock - (item1 as SepetViewModel).Quantity;
+                        
+                    }
+                }
+                 
+            }
+
+            db.Update();
+
+
+
         }
 
         private void txtSaleGivenAmount_TextChanged(object sender, EventArgs e)

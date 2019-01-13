@@ -16,5 +16,12 @@ namespace MarketOtomasyonu.WFA
         {
             InitializeComponent();
         }
+
+        private void BillForm_Load(object sender, EventArgs e)
+        {
+
+
+       
+        }
     }
 }

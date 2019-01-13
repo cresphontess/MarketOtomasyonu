@@ -177,6 +177,7 @@
             this.Controls.Add(this.lblBillTitle);
             this.Name = "BillForm";
             this.Text = "BillForm";
+            this.Load += new System.EventHandler(this.BillForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
