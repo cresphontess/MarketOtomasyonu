@@ -47,9 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201901131846496_a2.cs" />
-    <Compile Include="Migrations\201901131846496_a2.Designer.cs">
-      <DependentUpon>201901131846496_a2.cs</DependentUpon>
     <Compile Include="Migrations\201901131455472_aasdasd.cs" />
     <Compile Include="Migrations\201901131455472_aasdasd.Designer.cs">
       <DependentUpon>201901131455472_aasdasd.cs</DependentUpon>
@@ -69,11 +66,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201901131846496_a2.resx">
-      <DependentUpon>201901131846496_a2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901131911087_afgf.resx">
-      <DependentUpon>201901131911087_afgf.cs</DependentUpon>
     <EmbeddedResource Include="Migrations\201901131455472_aasdasd.resx">
       <DependentUpon>201901131455472_aasdasd.cs</DependentUpon>
     </EmbeddedResource>
