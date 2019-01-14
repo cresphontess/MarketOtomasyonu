@@ -47,9 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201901131455472_aasdasd.cs" />
-    <Compile Include="Migrations\201901131455472_aasdasd.Designer.cs">
-      <DependentUpon>201901131455472_aasdasd.cs</DependentUpon>
+    <Compile Include="Migrations\201901140543364_dfd.cs" />
+    <Compile Include="Migrations\201901140543364_dfd.Designer.cs">
+      <DependentUpon>201901140543364_dfd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyContext.cs" />
@@ -66,8 +66,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201901131455472_aasdasd.resx">
-      <DependentUpon>201901131455472_aasdasd.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201901140543364_dfd.resx">
+      <DependentUpon>201901140543364_dfd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

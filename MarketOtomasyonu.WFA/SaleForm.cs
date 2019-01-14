@@ -204,6 +204,8 @@ namespace MarketOtomasyonu.WFA
 
         private void btnSaleDelete_Click(object sender, EventArgs e)
         {
+            ProductRepo db = new ProductRepo();
+
             if (lstProduct.SelectedItem == null) return;
 
             var seciliSepet1 = lstProduct.SelectedItem as SepetViewModel;
@@ -248,5 +250,5 @@ namespace MarketOtomasyonu.WFA
         }
     }
 }
-    }
-}
+    
+
