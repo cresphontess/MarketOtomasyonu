@@ -246,7 +246,19 @@ namespace MarketOtomasyonu.WFA
             if (lstProduct.SelectedItem == null) return;
             seciliSepet = lstProduct.SelectedItem as SepetViewModel;
             nmQuantity.Value = seciliSepet.Quantity;
-            cmbProductBarcode.Text = (lstProduct.SelectedItem as SepetViewModel).ToString();    
+
+
+            ProductRepo db = new ProductRepo();
+
+            foreach (var item in db.GetAll())
+            {
+
+                if (item.ProductId == (seciliSepet).ProductId)
+                {
+                    cmbProductBarcode.Text = (item.ProductBarcode) + " - " + item.ProductName;
+
+                }
+            }
         }
     }
 }
