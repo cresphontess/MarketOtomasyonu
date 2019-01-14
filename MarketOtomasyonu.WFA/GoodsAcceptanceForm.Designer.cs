@@ -94,7 +94,7 @@
             this.cmbOrderProduct.Name = "cmbOrderProduct";
             this.cmbOrderProduct.Size = new System.Drawing.Size(187, 21);
             this.cmbOrderProduct.TabIndex = 24;
-            this.cmbOrderProduct.DropDown += new System.EventHandler(this.cmbOrderProduct_DropDown);
+            
             this.cmbOrderProduct.SelectedIndexChanged += new System.EventHandler(this.cmbOrderProduct_SelectedIndexChanged);
             // 
             // cmbGoodsAcceptanceOrders

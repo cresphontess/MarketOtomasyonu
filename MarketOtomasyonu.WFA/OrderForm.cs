@@ -280,24 +280,29 @@ namespace MarketOtomasyonu.WFA
         {
 
             PackageRepo db = new PackageRepo();
+            ProductRepo dbpro = new ProductRepo();
 
             var seciliPaket = lstOrder.SelectedItem as Package;
 
             foreach (var item in db.GetAll())
             {
-                if (item.ProductId == seciliPaket.ProductId)
+                if(item.ProductId == seciliPaket.ProductId)
                 {
-                    seciliPaket.Product = item.Product;
-                    break;
+                    cmbPackageProduct.SelectedItem = item.Product;
+                    txtPackageBarcode.Text = item.PackageBarcode;
+                    txtPackageName.Text = item.PackageName;
+                    nmOrderQuantity.Value = item.PackageProductQuantity;
+
+                    foreach (var item1 in dbpro.GetAll())
+                    {
+                        if(item1.ProductPurchasingPrice == seciliPaket.PackagePurchasingPrice)
+                        {
+                            txtOrderPackagePrice.Text = (item1.ProductPurchasingPrice * item.PackageProductQuantity).ToString();
+                        }
+                    }
+                    
                 }
             }
-
-            txtPackageBarcode.Text = seciliPaket.PackageBarcode.ToString();
-            txtPackageName.Text = seciliPaket.PackageName.ToString();
-            cmbPackageProduct.SelectedIndex = -1;
-            cmbPackageProduct.Text = seciliPaket.Product.ProductName.ToString();
-            nmOrderQuantity.Value = seciliPaket.PackageProductQuantity;
-            txtOrderPackagePrice.Text = (seciliPaket.Product.ProductPurchasingPrice * seciliPaket.PackageProductQuantity).ToString();
 
 
         }
