@@ -61,9 +61,9 @@
             // btnOrderSave
             // 
             this.btnOrderSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOrderSave.Location = new System.Drawing.Point(12, 469);
+            this.btnOrderSave.Location = new System.Drawing.Point(44, 657);
             this.btnOrderSave.Name = "btnOrderSave";
-            this.btnOrderSave.Size = new System.Drawing.Size(341, 59);
+            this.btnOrderSave.Size = new System.Drawing.Size(480, 93);
             this.btnOrderSave.TabIndex = 0;
             this.btnOrderSave.Text = "Kaydet";
             this.btnOrderSave.UseVisualStyleBackColor = true;
@@ -71,147 +71,154 @@
             // 
             // cmbPackageProduct
             // 
+            this.cmbPackageProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbPackageProduct.FormattingEnabled = true;
-            this.cmbPackageProduct.Location = new System.Drawing.Point(12, 315);
+            this.cmbPackageProduct.Location = new System.Drawing.Point(101, 436);
             this.cmbPackageProduct.Name = "cmbPackageProduct";
-            this.cmbPackageProduct.Size = new System.Drawing.Size(166, 21);
+            this.cmbPackageProduct.Size = new System.Drawing.Size(193, 32);
             this.cmbPackageProduct.TabIndex = 1;
             this.cmbPackageProduct.DropDown += new System.EventHandler(this.cmbOrderProduct_DropDown);
             // 
             // nmOrderQuantity
             // 
-            this.nmOrderQuantity.Location = new System.Drawing.Point(202, 316);
+            this.nmOrderQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.nmOrderQuantity.Location = new System.Drawing.Point(349, 436);
             this.nmOrderQuantity.Name = "nmOrderQuantity";
-            this.nmOrderQuantity.Size = new System.Drawing.Size(91, 20);
+            this.nmOrderQuantity.Size = new System.Drawing.Size(91, 29);
             this.nmOrderQuantity.TabIndex = 2;
             this.nmOrderQuantity.ValueChanged += new System.EventHandler(this.nmOrderQuantity_ValueChanged);
             // 
             // lblOrderTitle
             // 
             this.lblOrderTitle.AutoSize = true;
-            this.lblOrderTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrderTitle.Location = new System.Drawing.Point(304, 14);
+            this.lblOrderTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 54.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblOrderTitle.Location = new System.Drawing.Point(486, 21);
             this.lblOrderTitle.Name = "lblOrderTitle";
-            this.lblOrderTitle.Size = new System.Drawing.Size(177, 55);
+            this.lblOrderTitle.Size = new System.Drawing.Size(268, 83);
             this.lblOrderTitle.TabIndex = 3;
             this.lblOrderTitle.Text = "Sipariş";
             // 
             // LblOrderProduct
             // 
             this.LblOrderProduct.AutoSize = true;
-            this.LblOrderProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.LblOrderProduct.Location = new System.Drawing.Point(69, 292);
+            this.LblOrderProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblOrderProduct.Location = new System.Drawing.Point(162, 404);
             this.LblOrderProduct.Name = "LblOrderProduct";
-            this.LblOrderProduct.Size = new System.Drawing.Size(48, 20);
+            this.LblOrderProduct.Size = new System.Drawing.Size(68, 29);
             this.LblOrderProduct.TabIndex = 4;
             this.LblOrderProduct.Text = "Ürün";
             // 
             // lblOrderQuantity
             // 
             this.lblOrderQuantity.AutoSize = true;
-            this.lblOrderQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrderQuantity.Location = new System.Drawing.Point(222, 292);
+            this.lblOrderQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblOrderQuantity.Location = new System.Drawing.Point(358, 404);
             this.lblOrderQuantity.Name = "lblOrderQuantity";
-            this.lblOrderQuantity.Size = new System.Drawing.Size(47, 20);
+            this.lblOrderQuantity.Size = new System.Drawing.Size(66, 29);
             this.lblOrderQuantity.TabIndex = 5;
             this.lblOrderQuantity.Text = "Adet";
             // 
             // lstOrder
             // 
+            this.lstOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lstOrder.FormattingEnabled = true;
-            this.lstOrder.Location = new System.Drawing.Point(533, 271);
+            this.lstOrder.ItemHeight = 29;
+            this.lstOrder.Location = new System.Drawing.Point(1064, 292);
             this.lstOrder.Name = "lstOrder";
-            this.lstOrder.Size = new System.Drawing.Size(318, 186);
+            this.lstOrder.Size = new System.Drawing.Size(341, 294);
             this.lstOrder.TabIndex = 6;
             this.lstOrder.SelectedIndexChanged += new System.EventHandler(this.lstOrder_SelectedIndexChanged);
             // 
             // lblOrderList
             // 
             this.lblOrderList.AutoSize = true;
-            this.lblOrderList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrderList.Location = new System.Drawing.Point(619, 239);
+            this.lblOrderList.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblOrderList.Location = new System.Drawing.Point(1140, 239);
             this.lblOrderList.Name = "lblOrderList";
-            this.lblOrderList.Size = new System.Drawing.Size(121, 20);
+            this.lblOrderList.Size = new System.Drawing.Size(178, 29);
             this.lblOrderList.TabIndex = 7;
             this.lblOrderList.Text = "Sipariş Listesi";
             // 
             // lblOrderPrice
             // 
             this.lblOrderPrice.AutoSize = true;
-            this.lblOrderPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrderPrice.Location = new System.Drawing.Point(390, 345);
+            this.lblOrderPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblOrderPrice.Location = new System.Drawing.Point(725, 426);
             this.lblOrderPrice.Name = "lblOrderPrice";
-            this.lblOrderPrice.Size = new System.Drawing.Size(115, 20);
+            this.lblOrderPrice.Size = new System.Drawing.Size(170, 29);
             this.lblOrderPrice.TabIndex = 8;
             this.lblOrderPrice.Text = "Sipariş Tutarı";
             // 
             // lblOrderPriceText
             // 
             this.lblOrderPriceText.AutoSize = true;
-            this.lblOrderPriceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrderPriceText.Location = new System.Drawing.Point(402, 372);
+            this.lblOrderPriceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblOrderPriceText.Location = new System.Drawing.Point(772, 474);
             this.lblOrderPriceText.Name = "lblOrderPriceText";
-            this.lblOrderPriceText.Size = new System.Drawing.Size(48, 29);
+            this.lblOrderPriceText.Size = new System.Drawing.Size(64, 37);
             this.lblOrderPriceText.TabIndex = 9;
             this.lblOrderPriceText.Text = "0 tl";
             // 
             // lblOrderBarcode
             // 
             this.lblOrderBarcode.AutoSize = true;
-            this.lblOrderBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrderBarcode.Location = new System.Drawing.Point(54, 150);
+            this.lblOrderBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblOrderBarcode.Location = new System.Drawing.Point(118, 239);
             this.lblOrderBarcode.Name = "lblOrderBarcode";
-            this.lblOrderBarcode.Size = new System.Drawing.Size(110, 20);
+            this.lblOrderBarcode.Size = new System.Drawing.Size(163, 29);
             this.lblOrderBarcode.TabIndex = 25;
             this.lblOrderBarcode.Text = "Koli Barkodu";
             // 
             // txtPackageBarcode
             // 
-            this.txtPackageBarcode.Location = new System.Drawing.Point(12, 173);
+            this.txtPackageBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtPackageBarcode.Location = new System.Drawing.Point(101, 277);
             this.txtPackageBarcode.Name = "txtPackageBarcode";
             this.txtPackageBarcode.ReadOnly = true;
-            this.txtPackageBarcode.Size = new System.Drawing.Size(193, 20);
+            this.txtPackageBarcode.Size = new System.Drawing.Size(193, 29);
             this.txtPackageBarcode.TabIndex = 24;
             this.txtPackageBarcode.TextChanged += new System.EventHandler(this.txtOrderBarcode_TextChanged);
             // 
             // txtOrderPackagePrice
             // 
-            this.txtOrderPackagePrice.Location = new System.Drawing.Point(12, 411);
+            this.txtOrderPackagePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtOrderPackagePrice.Location = new System.Drawing.Point(107, 572);
             this.txtOrderPackagePrice.Name = "txtOrderPackagePrice";
-            this.txtOrderPackagePrice.Size = new System.Drawing.Size(166, 20);
+            this.txtOrderPackagePrice.Size = new System.Drawing.Size(166, 29);
             this.txtOrderPackagePrice.TabIndex = 26;
             this.txtOrderPackagePrice.Text = "0";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(41, 388);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(118, 540);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 20);
+            this.label1.Size = new System.Drawing.Size(142, 29);
             this.label1.TabIndex = 27;
             this.label1.Text = "Paket Fiyat";
             // 
             // txtPackageName
             // 
-            this.txtPackageName.Location = new System.Drawing.Point(12, 239);
+            this.txtPackageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtPackageName.Location = new System.Drawing.Point(101, 359);
             this.txtPackageName.Name = "txtPackageName";
-            this.txtPackageName.Size = new System.Drawing.Size(166, 20);
+            this.txtPackageName.Size = new System.Drawing.Size(193, 29);
             this.txtPackageName.TabIndex = 28;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(54, 216);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(136, 327);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.Size = new System.Drawing.Size(124, 29);
             this.label2.TabIndex = 29;
             this.label2.Text = "Paket Adı";
             // 
             // pbPackageBarcode
             // 
-            this.pbPackageBarcode.Location = new System.Drawing.Point(298, 107);
+            this.pbPackageBarcode.Location = new System.Drawing.Point(500, 173);
             this.pbPackageBarcode.Name = "pbPackageBarcode";
             this.pbPackageBarcode.Size = new System.Drawing.Size(207, 104);
             this.pbPackageBarcode.TabIndex = 31;
@@ -219,10 +226,11 @@
             // 
             // btnAddBarcode
             // 
+            this.btnAddBarcode.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAddBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAddBarcode.Location = new System.Drawing.Point(329, 214);
+            this.btnAddBarcode.Location = new System.Drawing.Point(531, 280);
             this.btnAddBarcode.Name = "btnAddBarcode";
-            this.btnAddBarcode.Size = new System.Drawing.Size(133, 28);
+            this.btnAddBarcode.Size = new System.Drawing.Size(143, 49);
             this.btnAddBarcode.TabIndex = 32;
             this.btnAddBarcode.Text = "Barkod Ekle";
             this.btnAddBarcode.UseVisualStyleBackColor = true;
@@ -230,9 +238,10 @@
             // 
             // btnNewProductAdd
             // 
-            this.btnNewProductAdd.Location = new System.Drawing.Point(12, 342);
+            this.btnNewProductAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnNewProductAdd.Location = new System.Drawing.Point(115, 476);
             this.btnNewProductAdd.Name = "btnNewProductAdd";
-            this.btnNewProductAdd.Size = new System.Drawing.Size(166, 23);
+            this.btnNewProductAdd.Size = new System.Drawing.Size(158, 35);
             this.btnNewProductAdd.TabIndex = 30;
             this.btnNewProductAdd.Text = "Yeni Ürün Ekle";
             this.btnNewProductAdd.UseVisualStyleBackColor = true;
@@ -240,20 +249,21 @@
             // 
             // cmbOrderName
             // 
+            this.cmbOrderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbOrderName.FormattingEnabled = true;
-            this.cmbOrderName.Location = new System.Drawing.Point(628, 205);
+            this.cmbOrderName.Location = new System.Drawing.Point(1159, 173);
             this.cmbOrderName.Name = "cmbOrderName";
-            this.cmbOrderName.Size = new System.Drawing.Size(121, 21);
+            this.cmbOrderName.Size = new System.Drawing.Size(121, 32);
             this.cmbOrderName.TabIndex = 34;
             this.cmbOrderName.DropDown += new System.EventHandler(this.cmbOrderName_DropDown);
             this.cmbOrderName.SelectedIndexChanged += new System.EventHandler(this.cmbOrderName_SelectedIndexChanged);
             // 
             // btnCreateOrder
             // 
-            this.btnCreateOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnCreateOrder.Location = new System.Drawing.Point(642, 159);
+            this.btnCreateOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCreateOrder.Location = new System.Drawing.Point(1087, 93);
             this.btnCreateOrder.Name = "btnCreateOrder";
-            this.btnCreateOrder.Size = new System.Drawing.Size(82, 34);
+            this.btnCreateOrder.Size = new System.Drawing.Size(121, 55);
             this.btnCreateOrder.TabIndex = 35;
             this.btnCreateOrder.Text = "Sipariş Oluştur";
             this.btnCreateOrder.UseVisualStyleBackColor = true;
@@ -261,10 +271,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDelete.Location = new System.Drawing.Point(608, 479);
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnDelete.Location = new System.Drawing.Point(1096, 640);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(81, 33);
+            this.btnDelete.Size = new System.Drawing.Size(118, 53);
             this.btnDelete.TabIndex = 36;
             this.btnDelete.Text = "Sil";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -272,10 +282,10 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUpdate.Location = new System.Drawing.Point(719, 479);
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUpdate.Location = new System.Drawing.Point(1254, 640);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(81, 33);
+            this.btnUpdate.Size = new System.Drawing.Size(118, 53);
             this.btnUpdate.TabIndex = 37;
             this.btnUpdate.Text = "Güncelle";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -283,10 +293,10 @@
             // 
             // btnOrderDelete
             // 
-            this.btnOrderDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOrderDelete.Location = new System.Drawing.Point(762, 201);
+            this.btnOrderDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnOrderDelete.Location = new System.Drawing.Point(1251, 93);
             this.btnOrderDelete.Name = "btnOrderDelete";
-            this.btnOrderDelete.Size = new System.Drawing.Size(73, 26);
+            this.btnOrderDelete.Size = new System.Drawing.Size(121, 55);
             this.btnOrderDelete.TabIndex = 39;
             this.btnOrderDelete.Text = "Sipariş Sil";
             this.btnOrderDelete.UseVisualStyleBackColor = true;
@@ -294,18 +304,19 @@
             // 
             // txtOrderName
             // 
-            this.txtOrderName.Location = new System.Drawing.Point(617, 130);
+            this.txtOrderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtOrderName.Location = new System.Drawing.Point(1159, 50);
             this.txtOrderName.Name = "txtOrderName";
-            this.txtOrderName.Size = new System.Drawing.Size(132, 20);
+            this.txtOrderName.Size = new System.Drawing.Size(132, 29);
             this.txtOrderName.TabIndex = 40;
             // 
             // lblOrderName
             // 
             this.lblOrderName.AutoSize = true;
-            this.lblOrderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrderName.Location = new System.Drawing.Point(638, 107);
+            this.lblOrderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblOrderName.Location = new System.Drawing.Point(1154, 18);
             this.lblOrderName.Name = "lblOrderName";
-            this.lblOrderName.Size = new System.Drawing.Size(95, 20);
+            this.lblOrderName.Size = new System.Drawing.Size(140, 29);
             this.lblOrderName.TabIndex = 41;
             this.lblOrderName.Text = "Sipariş Adı";
             // 
@@ -314,7 +325,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(854, 544);
+            this.ClientSize = new System.Drawing.Size(1584, 861);
             this.Controls.Add(this.lblOrderName);
             this.Controls.Add(this.txtOrderName);
             this.Controls.Add(this.btnOrderDelete);

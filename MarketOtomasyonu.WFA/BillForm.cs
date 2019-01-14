@@ -36,7 +36,7 @@ namespace MarketOtomasyonu.WFA
                      SaleDateTime = x.SaleDateTime,
                      SaleId = x.SaleId
 
-                 }).Distinct().ToList();
+                 }).ToList();
 
             //var fisler = new SaleDetailRepo().GetAll();
 
@@ -122,7 +122,7 @@ namespace MarketOtomasyonu.WFA
                               ProductStock = x.ProductStock
                           }).ToList();
 
-            lstBillProducts.DataSource = urunler;
+           lstReport.DataSource = urunler;
 
 
         }
@@ -155,7 +155,7 @@ namespace MarketOtomasyonu.WFA
                                   Total = gp.Sum(x => x.p.ProductStock)
                               };
 
-            lstBillProducts.DataSource = kategoriler.ToList();
+            lstReport.DataSource = kategoriler.ToList();
         }
 
         private void btnGetSaleCard_Click(object sender, EventArgs e)
@@ -188,7 +188,7 @@ namespace MarketOtomasyonu.WFA
                 sum += (item.ProductSellingPrice);
             }
             lblSum.Text = Convert.ToString(sum);
-            lstBillProducts.DataSource = satislar.ToList();
+            lstReport.DataSource = satislar.ToList();
         }
 
         private void btnGetCash_Click(object sender, EventArgs e)
@@ -221,7 +221,7 @@ namespace MarketOtomasyonu.WFA
                 sum += (item.ProductSellingPrice);
             }
             lblSum.Text = Convert.ToString(sum);
-            lstBillProducts.DataSource = satislar.ToList();
+            lstReport.DataSource = satislar.ToList();
         }
 
         private void btnGetDaySale_Click(object sender, EventArgs e)
@@ -240,7 +240,7 @@ namespace MarketOtomasyonu.WFA
                                 s.SaleDateTime,
 
                             };
-            lstBillProducts.DataSource = satislar2.ToList();
+            lstReport.DataSource = satislar2.ToList();
         }
 
         private void btnGetMonth_Click(object sender, EventArgs e)
@@ -260,7 +260,7 @@ namespace MarketOtomasyonu.WFA
                                 s.SaleDateTime,
 
                             };
-            lstBillProducts.DataSource = satislar2.ToList();
+            lstReport.DataSource = satislar2.ToList();
         }
     }
 }

@@ -41,37 +41,39 @@
             // lblGoodsAcceptanceList
             // 
             this.lblGoodsAcceptanceList.AutoSize = true;
-            this.lblGoodsAcceptanceList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblGoodsAcceptanceList.Location = new System.Drawing.Point(513, 114);
+            this.lblGoodsAcceptanceList.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblGoodsAcceptanceList.Location = new System.Drawing.Point(989, 220);
             this.lblGoodsAcceptanceList.Name = "lblGoodsAcceptanceList";
-            this.lblGoodsAcceptanceList.Size = new System.Drawing.Size(174, 20);
+            this.lblGoodsAcceptanceList.Size = new System.Drawing.Size(255, 29);
             this.lblGoodsAcceptanceList.TabIndex = 18;
             this.lblGoodsAcceptanceList.Text = "Gelen Sipariş Listesi";
             // 
             // lstGoodAcceptance
             // 
+            this.lstGoodAcceptance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lstGoodAcceptance.FormattingEnabled = true;
-            this.lstGoodAcceptance.Location = new System.Drawing.Point(415, 149);
+            this.lstGoodAcceptance.ItemHeight = 25;
+            this.lstGoodAcceptance.Location = new System.Drawing.Point(935, 265);
             this.lstGoodAcceptance.Name = "lstGoodAcceptance";
-            this.lstGoodAcceptance.Size = new System.Drawing.Size(355, 238);
+            this.lstGoodAcceptance.Size = new System.Drawing.Size(355, 379);
             this.lstGoodAcceptance.TabIndex = 17;
             // 
             // lblGoodAcceptanceTitle
             // 
             this.lblGoodAcceptanceTitle.AutoSize = true;
-            this.lblGoodAcceptanceTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblGoodAcceptanceTitle.Location = new System.Drawing.Point(248, 12);
+            this.lblGoodAcceptanceTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 54.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblGoodAcceptanceTitle.Location = new System.Drawing.Point(492, 18);
             this.lblGoodAcceptanceTitle.Name = "lblGoodAcceptanceTitle";
-            this.lblGoodAcceptanceTitle.Size = new System.Drawing.Size(229, 55);
+            this.lblGoodAcceptanceTitle.Size = new System.Drawing.Size(346, 83);
             this.lblGoodAcceptanceTitle.TabIndex = 14;
             this.lblGoodAcceptanceTitle.Text = "Mal Kayıt";
             // 
             // btnOrderSave
             // 
             this.btnOrderSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOrderSave.Location = new System.Drawing.Point(11, 328);
+            this.btnOrderSave.Location = new System.Drawing.Point(205, 556);
             this.btnOrderSave.Name = "btnOrderSave";
-            this.btnOrderSave.Size = new System.Drawing.Size(364, 59);
+            this.btnOrderSave.Size = new System.Drawing.Size(479, 90);
             this.btnOrderSave.TabIndex = 11;
             this.btnOrderSave.Text = "Kaydet";
             this.btnOrderSave.UseVisualStyleBackColor = true;
@@ -80,39 +82,41 @@
             // lblGoodAcceptanceBarcode
             // 
             this.lblGoodAcceptanceBarcode.AutoSize = true;
-            this.lblGoodAcceptanceBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblGoodAcceptanceBarcode.Location = new System.Drawing.Point(27, 248);
+            this.lblGoodAcceptanceBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblGoodAcceptanceBarcode.Location = new System.Drawing.Point(229, 422);
             this.lblGoodAcceptanceBarcode.Name = "lblGoodAcceptanceBarcode";
-            this.lblGoodAcceptanceBarcode.Size = new System.Drawing.Size(161, 20);
+            this.lblGoodAcceptanceBarcode.Size = new System.Drawing.Size(235, 29);
             this.lblGoodAcceptanceBarcode.TabIndex = 23;
             this.lblGoodAcceptanceBarcode.Text = "Barkod Numarası : ";
             // 
             // cmbOrderProduct
             // 
+            this.cmbOrderProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbOrderProduct.FormattingEnabled = true;
-            this.cmbOrderProduct.Location = new System.Drawing.Point(188, 250);
+            this.cmbOrderProduct.Location = new System.Drawing.Point(470, 419);
             this.cmbOrderProduct.Name = "cmbOrderProduct";
-            this.cmbOrderProduct.Size = new System.Drawing.Size(187, 21);
+            this.cmbOrderProduct.Size = new System.Drawing.Size(187, 32);
             this.cmbOrderProduct.TabIndex = 24;
-            
+            this.cmbOrderProduct.DropDown += new System.EventHandler(this.cmbOrderProduct_DropDown);
             this.cmbOrderProduct.SelectedIndexChanged += new System.EventHandler(this.cmbOrderProduct_SelectedIndexChanged);
             // 
             // cmbGoodsAcceptanceOrders
             // 
+            this.cmbGoodsAcceptanceOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbGoodsAcceptanceOrders.FormattingEnabled = true;
-            this.cmbGoodsAcceptanceOrders.Location = new System.Drawing.Point(188, 196);
+            this.cmbGoodsAcceptanceOrders.Location = new System.Drawing.Point(470, 340);
             this.cmbGoodsAcceptanceOrders.Name = "cmbGoodsAcceptanceOrders";
-            this.cmbGoodsAcceptanceOrders.Size = new System.Drawing.Size(121, 21);
+            this.cmbGoodsAcceptanceOrders.Size = new System.Drawing.Size(168, 32);
             this.cmbGoodsAcceptanceOrders.TabIndex = 25;
             this.cmbGoodsAcceptanceOrders.SelectedIndexChanged += new System.EventHandler(this.cmbGoodsAcceptanceOrders_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(71, 194);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(273, 339);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 20);
+            this.label1.Size = new System.Drawing.Size(175, 29);
             this.label1.TabIndex = 26;
             this.label1.Text = "Siparişlerim : ";
             // 
@@ -120,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1584, 861);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbGoodsAcceptanceOrders);
             this.Controls.Add(this.cmbOrderProduct);
