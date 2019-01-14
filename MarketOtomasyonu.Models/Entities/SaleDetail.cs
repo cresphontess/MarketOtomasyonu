@@ -15,7 +15,7 @@ namespace MarketOtomasyonu.Models.Entities
         [Key]
         [Column(Order =1)]
         public int ProductId { get; set; }
-        [Column(Order = 2)]
+        [Column(Order =2)]
         [Key]
         public int SaleId { get; set; }
 

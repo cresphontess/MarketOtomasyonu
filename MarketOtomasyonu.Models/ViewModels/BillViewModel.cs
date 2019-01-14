@@ -28,6 +28,6 @@ namespace MarketOtomasyonu.Models.ViewModels
 
 
 
-        public override string ToString() => $" Ürün Adı : {ProductName} - Ürün Adeti :  {Quantity} Ürün Birim Fiyatı : {ProductSellingPrice} ";
+        public override string ToString() => $"  {ProductName}  x   {Quantity}  Fiyatı  : {ProductSellingPrice} ";
     }
 }

@@ -171,7 +171,6 @@
             this.txtSaleReceivedAmount.Name = "txtSaleReceivedAmount";
             this.txtSaleReceivedAmount.Size = new System.Drawing.Size(100, 20);
             this.txtSaleReceivedAmount.TabIndex = 37;
-          
             // 
             // label1
             // 
@@ -275,7 +274,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 455);
             this.Controls.Add(this.btnSaleUpdate);
             this.Controls.Add(this.btnSaleDelete);
             this.Controls.Add(this.label3);
