@@ -53,6 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Barcode\Ean13.cs" />
+    <Compile Include="BillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BillForm.Designer.cs">
+      <DependentUpon>BillForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\CategoryInsertingDialogForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BillForm.resx">
+      <DependentUpon>BillForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\CategoryInsertingDialogForm.resx">
       <DependentUpon>CategoryInsertingDialogForm.cs</DependentUpon>
     </EmbeddedResource>

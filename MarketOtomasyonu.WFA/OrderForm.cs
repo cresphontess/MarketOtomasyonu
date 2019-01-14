@@ -46,6 +46,7 @@ namespace MarketOtomasyonu.WFA
         private void btnOrderSave_Click(object sender, EventArgs e)
         {
             PackageRepo db = new PackageRepo();
+            OrderRepo dbOrder = new OrderRepo();
            
             try
             {
@@ -62,6 +63,7 @@ namespace MarketOtomasyonu.WFA
                  
 
                 db.Insert(package);
+                dbOrder.Update();
 
                 PaketleriGetir();
 
@@ -74,16 +76,20 @@ namespace MarketOtomasyonu.WFA
                 throw;
             }
 
-            FormHelper.FormuTemizle(this);
+            dbOrder.Update();
+            db.Update();
 
         }
 
         private void SiparisFiyatHesapla()
         {
+
+            if (cmbOrderName.SelectedIndex == -1) return;
+
             PackageRepo db = new PackageRepo();
             OrderRepo dbOrder = new OrderRepo();
             
-
+            
 
             foreach (var item1 in dbOrder.GetAll())
             {
@@ -91,9 +97,10 @@ namespace MarketOtomasyonu.WFA
 
                 if (cmbOrderName.SelectedItem.ToString() == item1.OrderName.ToString())
                 {
-                    foreach (var item in item1.Packages)
+                    foreach (var item in db.GetAll())
                     {
-                        total += item.PackagePurchasingPrice;
+                        if(item.OrderId == (cmbOrderName.SelectedItem as Order).OrderId)
+                             total += item.PackagePurchasingPrice;
                     }
 
                     lblOrderPriceText.Text = total.ToString();
@@ -110,8 +117,8 @@ namespace MarketOtomasyonu.WFA
 
         private void PaketleriGetir()
         {
-            
-            lstOrder.DataSource = new PackageRepo().GetAll(x=>x.OrderId == (cmbOrderName.SelectedItem as Order).OrderId);
+            lstOrder.Items.Clear();
+            lstOrder.Items.AddRange(new PackageRepo().GetAll(x=>x.OrderId == (cmbOrderName.SelectedItem as Order).OrderId).ToArray());
             lstOrder.DisplayMember = "PackageName";
             
         }
@@ -124,14 +131,23 @@ namespace MarketOtomasyonu.WFA
         private void OrderForm_Load(object sender, EventArgs e)
         {
 
-            FormHelper.FormuTemizle(this);
+            
             UrunleriGetir();
-            cmbPackageProduct.SelectedIndex = -1;
 
             OrderRepo db = new OrderRepo();
 
             cmbOrderName.DataSource = db.GetAll();
             cmbOrderName.DisplayMember = "OrderName";
+
+
+            cmbPackageProduct.SelectedIndex = -1;
+            cmbOrderName.SelectedIndex = -1;
+            lstOrder.SelectedIndex = -1;
+
+            FormHelper.FormuTemizle(this);
+            lstOrder.Items.Clear();
+            lblOrderPriceText.Text = "0";
+                
 
 
         }
@@ -153,7 +169,7 @@ namespace MarketOtomasyonu.WFA
         private void button1_Click(object sender, EventArgs e)
         {
             FormHelper.FormuTemizle(this);
-
+           
             ReadOnly.UndoReadOnly(this);
 
             txtPackageBarcode.Visible = true;
@@ -179,6 +195,7 @@ namespace MarketOtomasyonu.WFA
             txtPackageBarcode.SelectionStart = txtPackageBarcode.MaxLength;
 
             cmbPackageProduct.SelectedIndex = -1;
+           
         }
 
         private string UrunKodu()
@@ -192,17 +209,10 @@ namespace MarketOtomasyonu.WFA
         {
             OrderRepo db = new OrderRepo();
 
-            int i = 0;
-
-            foreach (var item in db.GetAll())
-            {
-                i++;
-            }
-           
             Order order = new Order()
             {
-                OrderName = "Sipariş" + (i+1),
-                OrderDateTime = dtOrder.Value
+                OrderName = txtOrderName.Text,
+                
                 
             };
             
@@ -211,44 +221,125 @@ namespace MarketOtomasyonu.WFA
 
             cmbOrderName.DataSource = db.GetAll();
 
+            FormHelper.FormuTemizle(this);
+            cmbPackageProduct.SelectedIndex = -1;
+
+            cmbOrderName.SelectedIndex = cmbOrderName.Items.Count - 1;
 
         }
 
         private void lstOrder_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PackageRepo db = new PackageRepo();
-
             if (lstOrder.SelectedIndex == -1) return;
+            FormControlleriDoldur();
+            SiparisFiyatHesapla();
+        }
+
+        private void FormControlleriDoldur()
+        {
+
+            PackageRepo db = new PackageRepo();
 
             var seciliPaket = lstOrder.SelectedItem as Package;
 
             foreach (var item in db.GetAll())
             {
-                if(item.ProductId == seciliPaket.ProductId)
+                if (item.ProductId == seciliPaket.ProductId)
                 {
                     seciliPaket.Product = item.Product;
+                    break;
                 }
             }
 
             txtPackageBarcode.Text = seciliPaket.PackageBarcode.ToString();
             txtPackageName.Text = seciliPaket.PackageName.ToString();
+            cmbPackageProduct.SelectedIndex = -1;
             cmbPackageProduct.Text = seciliPaket.Product.ProductName.ToString();
             nmOrderQuantity.Value = seciliPaket.PackageProductQuantity;
             txtOrderPackagePrice.Text = (seciliPaket.Product.ProductPurchasingPrice * seciliPaket.PackageProductQuantity).ToString();
-        }
 
-       
+
+        }
 
         private void cmbOrderName_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cmbOrderName.SelectedIndex == -1) return;
             PaketleriGetir();
             SiparisFiyatHesapla();
  }
 
-        private void OrderİsmiSil()
+       
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            PackageRepo db = new PackageRepo();
+
+            if (lstOrder.SelectedIndex == -1) return;
+            var seciliPaketSil = lstOrder.SelectedItem as Package;
+
+            foreach (var item in db.GetAll())
+            {
+                if (item.OrderId == seciliPaketSil.OrderId)
+                {
+                    db.Delete(seciliPaketSil);
+                    break;
+                }
+            }
+
+            lstOrder.Items.Clear();
+            lstOrder.Items.AddRange(db.GetAll(x => x.OrderId == (cmbOrderName.SelectedItem as Order).OrderId).ToArray());
+
+            FormHelper.FormuTemizle(this);
+            cmbPackageProduct.SelectedIndex = -1;
+            SiparisFiyatHesapla();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            PackageRepo packagedb = new PackageRepo();
+            ProductRepo productdb = new ProductRepo();
+
+            var seciliPaketGuncelle = lstOrder.SelectedItem as Package;
+
+            foreach (var item in packagedb.GetAll())
+            {
+                if (item.ProductId == seciliPaketGuncelle.ProductId)
+                {
+                    foreach (var item2 in productdb.GetAll())
+                    {
+                        if (item2.ProductId == seciliPaketGuncelle.ProductId)
+                        {
+
+                            item2.ProductStock = Convert.ToInt32(nmOrderQuantity.Value);
+                            item2.ProductSellingPrice = (item2.ProductPurchasingPrice * (1 + 0.18m));
+                        }
+                    }
+                    break;
+                }
+            }
+            seciliPaketGuncelle.PackageName = txtPackageName.Text;
+            seciliPaketGuncelle.ProductId = (cmbPackageProduct.SelectedItem as Product).ProductId;
+            seciliPaketGuncelle.OrderId = (cmbOrderName.SelectedItem as Order).OrderId;
+            seciliPaketGuncelle.PackagePurchasingPrice = Convert.ToDecimal(txtOrderPackagePrice.Text);
+            seciliPaketGuncelle.PackageProductQuantity = Convert.ToInt32(nmOrderQuantity.Value);
+            seciliPaketGuncelle.PackageBarcode = txtPackageBarcode.Text;
+
+            
+            SiparisFiyatHesapla();
+            packagedb.Update();
+            productdb.Update();
+            MessageBox.Show($"Güncelleme başarılı");
+            
+        }
+
+        private void cmbOrderName_DropDown(object sender, EventArgs e)
+        {
+            SiparisFiyatHesapla();
+        }
+
+        private void btnOrderDelete_Click(object sender, EventArgs e)
         {
             OrderRepo db = new OrderRepo();
-            if (lstOrder.SelectedIndex == -1) return;
+            if (cmbOrderName.SelectedIndex == -1) return;
             var seciliOrder = cmbOrderName.SelectedItem as Order;
             foreach (var item in db.GetAll())
             {
@@ -261,34 +352,18 @@ namespace MarketOtomasyonu.WFA
             }
 
             cmbOrderName.DataSource = db.GetAll();
-        }
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            PackageRepo db = new PackageRepo();
+            lstOrder.Items.Clear();
+            lstOrder.Items.AddRange(new PackageRepo().GetAll(x => x.OrderId == (cmbOrderName.SelectedItem as Order).OrderId).ToArray());
+            SiparisFiyatHesapla();
 
-            if (lstOrder.SelectedIndex == -1) return;
-
-            var seciliPaketSil = lstOrder.SelectedItem as Package;
-
-            foreach (var item in db.GetAll())
+            if(cmbOrderName.Items.Count == 0)
             {
-                if (item.OrderId == seciliPaketSil.OrderId)
-                {
-                    db.Delete(seciliPaketSil);
-                    OrderİsmiSil();
-                    break;
-                }
+                lblOrderPriceText.Text = "0";
             }
+        }
+    }
 
-            lstOrder.DataSource = db.GetAll();
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            //güncelleme yap
-        }
-       
-        }
+  
     }
     
     

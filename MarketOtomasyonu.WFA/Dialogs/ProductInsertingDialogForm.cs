@@ -47,7 +47,7 @@ namespace MarketOtomasyonu.WFA.Dialogs
                 }
 
                 MessageBox.Show("Urun ekleme islemi basarili");
-
+                this.Close();
               
 
                 

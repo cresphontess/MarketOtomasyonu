@@ -19,6 +19,7 @@ namespace MarketOtomasyonu.WFA
         public SaleForm()
         {
             InitializeComponent();
+
         }
         private List<SepetViewModel> sepet = new List<SepetViewModel>();
         private void SaleForm_Load(object sender, EventArgs e)
@@ -26,18 +27,18 @@ namespace MarketOtomasyonu.WFA
             var products = new List<ProductViewModel>();
             try
             {
-                products.AddRange(new ProductRepo().GetAll()
+                products.AddRange(new ProductRepo().GetAll(x=>x.ProductStock>0)
                     .OrderBy(x => x.ProductName)
                     .Select(x => new ProductViewModel()
                     {
 
-                         ProductId=x.ProductId,
-                          ProductName=x.ProductName,
-                           CategoryId=x.CategoryId,
-                            ProductBarcode=x.ProductBarcode ,
-                             ProductPurchasingPrice=x.ProductPurchasingPrice ,
-                              ProductSellingPrice=x.ProductSellingPrice ,
-                               ProductStock = x.ProductStock 
+                        ProductId = x.ProductId,
+                        ProductName = x.ProductName,
+                        CategoryId = x.CategoryId,
+                        ProductBarcode = x.ProductBarcode,
+                        ProductPurchasingUnitPrice = x.ProductPurchasingPrice,
+                        ProductSellingPrice = x.ProductSellingPrice,
+                        ProductStock = x.ProductStock
 
                     }));
             }
@@ -47,10 +48,15 @@ namespace MarketOtomasyonu.WFA
             }
 
             cmbProductBarcode.DataSource = products;
+
+            lblTotalAmountText.Text = "0";
         }
 
         private void btnSaleProductPass_Click(object sender, EventArgs e)
         {
+
+            decimal total = Convert.ToDecimal(lblTotalAmountText.Text);
+
             var products = new List<SepetViewModel>();
             try
             {
@@ -60,6 +66,8 @@ namespace MarketOtomasyonu.WFA
                     {
                         ProductId = x.ProductId,
                         ProductName = x.ProductName,
+                        Quantity = Convert.ToInt32(nmQuantity.Value),
+                        ProductSellingPrice = nmQuantity.Value * x.ProductSellingPrice
 
                     }));
             }
@@ -68,18 +76,43 @@ namespace MarketOtomasyonu.WFA
                 MessageBox.Show(ex.Message);
             }
 
+            var control = false;
+
             foreach (var item in products)
             {
-                if(item.ProductId == (cmbProductBarcode.SelectedItem as ProductViewModel).ProductId)
+                foreach (var item1 in lstProduct.Items)
                 {
-                    lstProduct.Items.Add(item);
+
+                    if ((cmbProductBarcode.SelectedItem as ProductViewModel).ProductId == (item1 as SepetViewModel).ProductId)
+                    {
+                        control = true;
+                        break;
+                    }
+                }
+
+                if (item.ProductId == (cmbProductBarcode.SelectedItem as ProductViewModel).ProductId)
+                {
+                    if (control == false)
+                    {
+                        lstProduct.Items.Add(item);
+                        sepet.Add(item);
+
+                        total += item.ProductSellingPrice;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bu ürün daha önce sepete eklenmiştir.");
+                    }
+
+
+                    lblTotalAmountText.Text = total.ToString();
+
+                    control = false;
+                    break;
                 }
             }
-
         }
-       
-
-       
 
         private void btnSaleBill_Click(object sender, EventArgs e)
         {
@@ -118,35 +151,102 @@ namespace MarketOtomasyonu.WFA
                             i = 1;
                         break;
                     }
-
-                
                 }
+
+                foreach (var item in sepet)
+                {
+                    item.PaymentType = i;
+                    item.GivenAmount = (Convert.ToDecimal(txtSaleReceivedAmount.Text) - Convert.ToDecimal(lblTotalAmountText.Text));
+                    item.ReceivedAmount = Convert.ToDecimal(txtSaleReceivedAmount.Text);
+                    item.SaleId = sale.SaleId;
+                    item.SaleDateTime = dtSale.Value;
+                }
+
+                lblSaleRemainAmountText.Text = (Convert.ToDecimal(txtSaleReceivedAmount.Text) - Convert.ToDecimal(lblTotalAmountText.Text)).ToString();
+
                 var orderBusiness = new SaleBusines();
                 var dbSale = new SaleDetailRepo();
+
                 var cartModel = new CartViewModel()
                 {
                     CartModel = sepet,
-                    
-                };
-                SaleDetail siparis = new SaleDetail ();
-                siparis.SaleId = sale.SaleId;
-                siparis.ProductId = (cmbProductBarcode.SelectedItem as ProductViewModel).ProductId;
-                siparis.Quantity = (int)nmQuantity.Value;
-                siparis.GivenAmount = 5;
-                siparis.PaymentType = i;
-                siparis.ReceivedAmount = Convert.ToDecimal(txtSaleGivenAmount.Text);
-                siparis.SaleAmount = 5;
-                dbSale.Insert(siparis);
 
-                var sipNo = orderBusiness.MakeOrder(cartModel);
+                };
+
+                orderBusiness.MakeOrder(cartModel);
                 
-                sepet = new List<SepetViewModel>();
+                
                 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+            ProductRepo db = new ProductRepo();
+
+            foreach (var item in db.GetAll())
+            {
+
+                foreach (var item1 in lstProduct.Items)
+                {
+                    if (item.ProductId == (item1 as SepetViewModel).ProductId)
+                    {
+                        item.ProductStock = item.ProductStock - (item1 as SepetViewModel).Quantity;
+                    }
+                }
+            }
+
+            db.Update();
         }
+
+        
+
+        private void btnSaleDelete_Click(object sender, EventArgs e)
+        {
+            if (lstProduct.SelectedItem == null) return;
+
+            var seciliSepet1 = lstProduct.SelectedItem as SepetViewModel;
+
+            db.Update();
+            sepet.Remove(seciliSepet1);
+            lstProduct.Items.Clear();
+            foreach (var item in sepet)
+            {
+                lstProduct.Items.Add(item);
+            }
+        }
+
+        private SepetViewModel seciliSepet;
+        private void btnSaleUpdate_Click(object sender, EventArgs e)
+        {
+           
+            seciliSepet = lstProduct.SelectedItem as SepetViewModel;
+            foreach (var item in sepet)
+            {
+                if (seciliSepet.ProductId == item.ProductId)
+                {
+                    
+                    item.Quantity = Convert.ToInt32(nmQuantity.Value);
+                    break;
+                }
+            }
+            seciliSepet = null;
+            lstProduct.Items.Clear();
+            foreach (var item in sepet)
+            {
+                lstProduct.Items.Add(item);
+            }
+        }
+
+        private void lstProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstProduct.SelectedItem == null) return;
+            seciliSepet = lstProduct.SelectedItem as SepetViewModel;
+            nmQuantity.Value = seciliSepet.Quantity;
+            cmbProductBarcode.Text = (lstProduct.SelectedItem as SepetViewModel).ToString();    
+        }
+    }
+}
     }
 }

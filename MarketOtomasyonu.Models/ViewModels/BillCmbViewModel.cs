@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace MarketOtomasyonu.Models.ViewModels
 {
-   public  class SepetViewModel
+   public class BillCmbViewModel
     {
-     
         public int ProductId { get; set; }
-  
+
         public int SaleId { get; set; }
 
-        public DateTime SaleDateTime { get; set; } = DateTime.Now;
+        public DateTime SaleDateTime { get; set; }
 
         public string ProductName { get; set; }
 
@@ -29,7 +28,6 @@ namespace MarketOtomasyonu.Models.ViewModels
 
 
 
-        public override string ToString() => $"{ProductName} - {Quantity} ";
-
+        public override string ToString() => $"{SaleId} - {SaleDateTime}  ";
     }
 }

@@ -21,7 +21,7 @@ namespace MarketOtomasyonu.Models.Entities
 
         public DateTime SaleDateTime { get; set; } = DateTime.Now;
 
-        public decimal SaleAmount { get; set; }
+        public decimal ProductSellingPrice { get; set; }
 
         public int PaymentType { get; set; }
 
@@ -37,5 +37,11 @@ namespace MarketOtomasyonu.Models.Entities
 
         [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }
+
+
+        public override string ToString()
+        {
+            return $"{Product.ProductName}       x {Quantity}                 {ProductSellingPrice}";
+        }
     }
 }

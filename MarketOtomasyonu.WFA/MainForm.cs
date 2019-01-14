@@ -36,5 +36,11 @@ namespace MarketOtomasyonu.WFA
             SaleForm saleForm = new SaleForm();
             saleForm.Show();
         }
+
+        private void btnBills_Click(object sender, EventArgs e)
+        {
+            BillForm billForm = new BillForm();
+            billForm.Show();
+        }
     }
 }
