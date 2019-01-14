@@ -241,7 +241,7 @@
             // cmbOrderName
             // 
             this.cmbOrderName.FormattingEnabled = true;
-            this.cmbOrderName.Location = new System.Drawing.Point(621, 201);
+            this.cmbOrderName.Location = new System.Drawing.Point(628, 205);
             this.cmbOrderName.Name = "cmbOrderName";
             this.cmbOrderName.Size = new System.Drawing.Size(121, 21);
             this.cmbOrderName.TabIndex = 34;

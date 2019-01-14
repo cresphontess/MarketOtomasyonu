@@ -172,24 +172,49 @@ namespace MarketOtomasyonu.WFA
         {
             if (cmbGoodsAcceptanceOrders.SelectedIndex == -1) return;
 
+            ProductRepo dbpro = new ProductRepo();
+            OrderRepo dbord = new OrderRepo();
+            PackageRepo dbpck = new PackageRepo();
+
+
             var orders = new List<OrderViewModel>();
             try
             {
-                orders.AddRange(new PackageRepo().GetAll(x => x.OrderId == (cmbGoodsAcceptanceOrders.SelectedItem as Order).OrderId)
-                    .OrderBy(x => x.PackageName)
-                    .Select(x => new OrderViewModel()
-                    {
 
-                        PackageName = x.PackageName,
-                        PackageBarcode = x.PackageBarcode,
-                        PackageId = x.PackageId,
-                        ProductId = x.Product.ProductId,
-                        ProductStock = x.Product.ProductStock,
-                        PackageProductQuantity = x.PackageProductQuantity
+                foreach (var item in dbord.GetAll())
+                {
+                    if (item.OrderId == (cmbGoodsAcceptanceOrders.SelectedItem as Order).OrderId)
+                    { 
+                        foreach (var item1 in dbpck.GetAll())
+                        {
+                            if (item1.OrderId == item.OrderId)
+                            {
+                                foreach (var item2 in dbpro.GetAll())
+                                {
+                                    if(item2.ProductId == item1.ProductId)
+                                    {
+                                        orders.Add(new OrderViewModel()
+                                        {
 
+                                            PackageName = item1.PackageName,
+                                            PackageBarcode = item1.PackageBarcode,
+                                            PackageId = item1.PackageId,
+                                            ProductId = item2.ProductId,
+                                            ProductStock = item2.ProductStock,
+                                            PackageProductQuantity = item1.PackageProductQuantity
 
+                                        });
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
 
-                    }));
+                       
+                            
+                        
+ 
             }
             catch (Exception ex)
             {
@@ -200,10 +225,6 @@ namespace MarketOtomasyonu.WFA
             cmbOrderProduct.Items.AddRange(orders.ToArray());
         }
 
-        private void cmbOrderProduct_DropDown(object sender, EventArgs e)
-        {
-            PaketleriGetirMalKabul();
-
-        }
+     
     }
 }

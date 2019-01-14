@@ -14,6 +14,10 @@ namespace MarketOtomasyonu.Models.Entities
         [Key]
         public int SaleId { get; set; }
 
+        public int PaymentType { get; set; }
+
+        public DateTime SaleDateTime { get; set; } = DateTime.Now;
+
 
         public virtual ICollection<SaleDetail>  SaleDetails { get; set; } = new HashSet<SaleDetail>();
 

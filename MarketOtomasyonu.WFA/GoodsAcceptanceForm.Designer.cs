@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dtGoodAcceptance = new System.Windows.Forms.DateTimePicker();
             this.lblGoodsAcceptanceList = new System.Windows.Forms.Label();
             this.lstGoodAcceptance = new System.Windows.Forms.ListBox();
             this.lblGoodAcceptanceTitle = new System.Windows.Forms.Label();
@@ -38,13 +37,6 @@
             this.cmbGoodsAcceptanceOrders = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // dtGoodAcceptance
-            // 
-            this.dtGoodAcceptance.Location = new System.Drawing.Point(614, 12);
-            this.dtGoodAcceptance.Name = "dtGoodAcceptance";
-            this.dtGoodAcceptance.Size = new System.Drawing.Size(156, 20);
-            this.dtGoodAcceptance.TabIndex = 21;
             // 
             // lblGoodsAcceptanceList
             // 
@@ -102,7 +94,7 @@
             this.cmbOrderProduct.Name = "cmbOrderProduct";
             this.cmbOrderProduct.Size = new System.Drawing.Size(187, 21);
             this.cmbOrderProduct.TabIndex = 24;
-            this.cmbOrderProduct.DropDown += new System.EventHandler(this.cmbOrderProduct_DropDown);
+            
             this.cmbOrderProduct.SelectedIndexChanged += new System.EventHandler(this.cmbOrderProduct_SelectedIndexChanged);
             // 
             // cmbGoodsAcceptanceOrders
@@ -133,7 +125,6 @@
             this.Controls.Add(this.cmbGoodsAcceptanceOrders);
             this.Controls.Add(this.cmbOrderProduct);
             this.Controls.Add(this.lblGoodAcceptanceBarcode);
-            this.Controls.Add(this.dtGoodAcceptance);
             this.Controls.Add(this.lblGoodsAcceptanceList);
             this.Controls.Add(this.lstGoodAcceptance);
             this.Controls.Add(this.lblGoodAcceptanceTitle);
@@ -147,8 +138,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker dtGoodAcceptance;
         private System.Windows.Forms.Label lblGoodsAcceptanceList;
         private System.Windows.Forms.ListBox lstGoodAcceptance;
         private System.Windows.Forms.Label lblGoodAcceptanceTitle;
