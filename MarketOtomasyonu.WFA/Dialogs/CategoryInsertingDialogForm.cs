@@ -31,21 +31,41 @@ namespace MarketOtomasyonu.WFA.Dialogs
         private void btnCategoryAdd_Click(object sender, EventArgs e)
         {
 
+            bool varMi = false;
+
             try
             {
                 CategoryRepo db = new CategoryRepo();
                 Category category = new Category();
 
-                category.CategoryName = txtCategory.Text;
-                db.Insert(category);
 
-                MessageBox.Show($"{category.CategoryName} Kategorisi Eklendi");
-                
-                System.Threading.Thread.Sleep(500);
+                foreach (var item in db.GetAll())
+                {
+                    if(item.CategoryName.ToLower() == txtCategory.Text.ToLower())
+                    {
+                        varMi = true;
+                        break;
+                    }
 
-                ProductInsertingDialogForm ProductInsertingDialogForm = new ProductInsertingDialogForm();
-                ProductInsertingDialogForm.Show();
-                this.Close();
+                }
+
+                if(varMi == false)
+                {
+                    category.CategoryName = txtCategory.Text;
+                    db.Insert(category);
+                    MessageBox.Show($"{category.CategoryName} Kategorisi Eklendi");
+
+                    System.Threading.Thread.Sleep(500);
+
+                    ProductInsertingDialogForm ProductInsertingDialogForm = new ProductInsertingDialogForm();
+                    ProductInsertingDialogForm.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Bu isimde kategoriniz zaten mevcuttur.");
+                }
+
             }
             catch (Exception)
             {

@@ -1,14 +1,7 @@
 ﻿using MarketOtomasyonu.BLL.Repository;
 using MarketOtomasyonu.Models.Entities;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Drawing.Printing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MarketOtomasyonu.WFA.Dialogs
@@ -20,7 +13,7 @@ namespace MarketOtomasyonu.WFA.Dialogs
             InitializeComponent();
         }
 
-        
+
         private void KategorileriGetir()
         {
             cmbCategory.DataSource = new CategoryRepo().GetAll();
@@ -28,29 +21,55 @@ namespace MarketOtomasyonu.WFA.Dialogs
         }
         private void btnProductAdd_Click(object sender, EventArgs e)
         {
-           
+
+            bool varMi = false;
+
             try
             {
+
                 using (var productRepo = new ProductRepo())
                 {
-                    productRepo.Insert(new Product()
+
+                    foreach (var item in productRepo.GetAll())
                     {
-                        CategoryId = (cmbCategory.SelectedItem as Category).CategoryId,
-                         ProductName = txtProductName.Text,
-                          ProductBarcode = txtProductBarcode.Text,
-                           ProductPurchasingPrice= Convert.ToDecimal(txtProductPurchasingPrice.Text),
-                            ProductSellingPrice=0,
-                             ProductStock=0
-                               
-                        
-                    });
+                        if (item.ProductName.ToLower() == (txtProductName.Text).ToLower())
+                        {
+                            varMi = true;
+                            break;
+                        }
+
+                    }
+
+                    if (varMi == false)
+                    {
+
+                        Product product = new Product()
+                        {
+
+                            CategoryId = (cmbCategory.SelectedItem as Category).CategoryId,
+                            ProductName = txtProductName.Text,
+                            ProductBarcode = txtProductBarcode.Text,
+                            ProductPurchasingPrice = Convert.ToDecimal(txtProductPurchasingPrice.Text),
+                            ProductSellingPrice = 0,
+                            ProductStock = 0
+                        };
+
+                        productRepo.Insert(product);
+
+                        MessageBox.Show($"{product.ProductName} Ürünü Eklendi");
+
+                        System.Threading.Thread.Sleep(500);
+
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bu isimde Ürün zaten mevcuttur.");
+
+                    }
                 }
 
-                MessageBox.Show("Urun ekleme islemi basarili");
-                this.Close();
-              
 
-                
             }
             catch (Exception ex)
             {
@@ -62,7 +81,7 @@ namespace MarketOtomasyonu.WFA.Dialogs
         {
             KategorileriGetir();
 
-            
+
         }
 
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)

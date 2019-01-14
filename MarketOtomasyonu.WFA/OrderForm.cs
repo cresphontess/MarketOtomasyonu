@@ -45,6 +45,8 @@ namespace MarketOtomasyonu.WFA
 
         private void btnOrderSave_Click(object sender, EventArgs e)
         {
+            bool varMi = false;
+
             PackageRepo db = new PackageRepo();
             OrderRepo dbOrder = new OrderRepo();
            
@@ -59,10 +61,28 @@ namespace MarketOtomasyonu.WFA
                 package.PackagePurchasingPrice = Convert.ToDecimal(txtOrderPackagePrice.Text);
                 package.PackageProductQuantity = Convert.ToInt32(nmOrderQuantity.Value);
                 package.PackageBarcode = txtPackageBarcode.Text;
-                
-                 
 
-                db.Insert(package);
+
+                foreach (var item in lstOrder.Items)
+                {
+                    if (package.PackageBarcode == (item as Package).PackageBarcode || package.PackageName == (item as Package).PackageName)
+                    {
+                        varMi = true;
+                        break;
+                    }
+
+                }
+                 
+                if(varMi == false)
+                {
+                    db.Insert(package);
+                    MessageBox.Show("Sipariş sepetine yeni ürün eklenmiştir.");
+                }
+                else
+                {
+                    MessageBox.Show("Seçili olan siparişte bu ürün zaten mevcuttur.");
+                }
+                
                 dbOrder.Update();
 
                 PaketleriGetir();
@@ -207,17 +227,38 @@ namespace MarketOtomasyonu.WFA
 
         private void btnCreateOrder_Click(object sender, EventArgs e)
         {
+            bool varMi = false;
+
             OrderRepo db = new OrderRepo();
 
-            Order order = new Order()
+            foreach (var item in db.GetAll())
             {
-                OrderName = txtOrderName.Text,
-                
-                
-            };
-            
+                if(item.OrderName.ToLower() == txtOrderName.Text.ToLower())
+                {
+                    varMi = true;
+                    break;
+                }
+            }
 
-            db.Insert(order);
+
+            if (varMi == false)
+            {
+                Order order = new Order()
+                {
+
+                    OrderName = txtOrderName.Text,
+
+                };
+
+                db.Insert(order);
+                MessageBox.Show("Yeni Sipariş Eklendi");
+
+            }
+            else
+            {
+                MessageBox.Show("Bu isimde başka bir siparişiniz zaten mevcuttur.");
+            }
+
 
             cmbOrderName.DataSource = db.GetAll();
 
@@ -264,8 +305,11 @@ namespace MarketOtomasyonu.WFA
         private void cmbOrderName_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbOrderName.SelectedIndex == -1) return;
+            
             PaketleriGetir();
             SiparisFiyatHesapla();
+            FormHelper.FormuTemizle(this);
+            cmbPackageProduct.SelectedIndex = -1;
  }
 
        
@@ -295,6 +339,8 @@ namespace MarketOtomasyonu.WFA
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (lstOrder.SelectedIndex == -1) return;
+
             PackageRepo packagedb = new PackageRepo();
             ProductRepo productdb = new ProductRepo();
 
@@ -311,8 +357,10 @@ namespace MarketOtomasyonu.WFA
 
                             item2.ProductStock = Convert.ToInt32(nmOrderQuantity.Value);
                             item2.ProductSellingPrice = (item2.ProductPurchasingPrice * (1 + 0.18m));
+                            
                         }
                     }
+
                     break;
                 }
             }
@@ -323,12 +371,19 @@ namespace MarketOtomasyonu.WFA
             seciliPaketGuncelle.PackageProductQuantity = Convert.ToInt32(nmOrderQuantity.Value);
             seciliPaketGuncelle.PackageBarcode = txtPackageBarcode.Text;
 
-            
+
             SiparisFiyatHesapla();
             packagedb.Update();
             productdb.Update();
+
+            PaketleriGetir();
+
             MessageBox.Show($"Güncelleme başarılı");
+
             
+
+
+
         }
 
         private void cmbOrderName_DropDown(object sender, EventArgs e)
