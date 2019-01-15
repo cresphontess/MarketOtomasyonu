@@ -15,7 +15,7 @@ namespace MarketOtomasyonu.WFA
 {
     public partial class BillForm : Form
     {
-        public BillForm()
+        public BillForm() 
         {
             InitializeComponent();
         }

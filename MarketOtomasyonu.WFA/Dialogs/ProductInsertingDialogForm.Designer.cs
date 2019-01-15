@@ -44,9 +44,10 @@
             // 
             // btnProductAdd
             // 
-            this.btnProductAdd.Location = new System.Drawing.Point(112, 174);
+            this.btnProductAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnProductAdd.Location = new System.Drawing.Point(87, 250);
             this.btnProductAdd.Name = "btnProductAdd";
-            this.btnProductAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnProductAdd.Size = new System.Drawing.Size(486, 70);
             this.btnProductAdd.TabIndex = 2;
             this.btnProductAdd.Text = "Ürün Ekle";
             this.btnProductAdd.UseVisualStyleBackColor = true;
@@ -54,59 +55,65 @@
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(91, 29);
+            this.txtProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtProductName.Location = new System.Drawing.Point(157, 37);
             this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(136, 20);
+            this.txtProductName.Size = new System.Drawing.Size(136, 29);
             this.txtProductName.TabIndex = 3;
             // 
             // txtProductBarcode
             // 
-            this.txtProductBarcode.Location = new System.Drawing.Point(91, 73);
+            this.txtProductBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtProductBarcode.Location = new System.Drawing.Point(157, 81);
             this.txtProductBarcode.Name = "txtProductBarcode";
             this.txtProductBarcode.ReadOnly = true;
-            this.txtProductBarcode.Size = new System.Drawing.Size(136, 20);
+            this.txtProductBarcode.Size = new System.Drawing.Size(136, 29);
             this.txtProductBarcode.TabIndex = 3;
             this.txtProductBarcode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductBarcode_KeyDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 29);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(55, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.Size = new System.Drawing.Size(89, 20);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Ürün Adı";
+            this.label1.Text = "Ürün Adı :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 80);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(14, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.Size = new System.Drawing.Size(130, 20);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Ürün Barkodu";
+            this.label2.Text = "Ürün Barkodu :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 150);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(55, 167);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.Size = new System.Drawing.Size(86, 20);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Kategori";
+            this.label3.Text = "Kategori :";
             // 
             // cmbCategory
             // 
+            this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(91, 147);
+            this.cmbCategory.Location = new System.Drawing.Point(157, 161);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(136, 21);
+            this.cmbCategory.Size = new System.Drawing.Size(136, 32);
             this.cmbCategory.TabIndex = 10;
             this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
             // 
             // pbBarcode
             // 
-            this.pbBarcode.Location = new System.Drawing.Point(246, 12);
+            this.pbBarcode.Location = new System.Drawing.Point(384, 54);
             this.pbBarcode.Name = "pbBarcode";
             this.pbBarcode.Size = new System.Drawing.Size(209, 93);
             this.pbBarcode.TabIndex = 11;
@@ -114,9 +121,10 @@
             // 
             // btnBarcode
             // 
-            this.btnBarcode.Location = new System.Drawing.Point(302, 111);
+            this.btnBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnBarcode.Location = new System.Drawing.Point(440, 153);
             this.btnBarcode.Name = "btnBarcode";
-            this.btnBarcode.Size = new System.Drawing.Size(75, 23);
+            this.btnBarcode.Size = new System.Drawing.Size(112, 55);
             this.btnBarcode.TabIndex = 12;
             this.btnBarcode.Text = "Barkod Ekle";
             this.btnBarcode.UseVisualStyleBackColor = true;
@@ -125,24 +133,26 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 118);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(4, 125);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 13);
+            this.label5.Size = new System.Drawing.Size(140, 20);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Ürün Alış Fiyatı";
+            this.label5.Text = "Ürün Alış Fiyatı :";
             // 
             // txtProductPurchasingPrice
             // 
-            this.txtProductPurchasingPrice.Location = new System.Drawing.Point(91, 111);
+            this.txtProductPurchasingPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtProductPurchasingPrice.Location = new System.Drawing.Point(157, 119);
             this.txtProductPurchasingPrice.Name = "txtProductPurchasingPrice";
-            this.txtProductPurchasingPrice.Size = new System.Drawing.Size(121, 20);
+            this.txtProductPurchasingPrice.Size = new System.Drawing.Size(121, 29);
             this.txtProductPurchasingPrice.TabIndex = 11;
             // 
             // ProductInsertingDialogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 219);
+            this.ClientSize = new System.Drawing.Size(652, 355);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtProductPurchasingPrice);
             this.Controls.Add(this.btnBarcode);

@@ -37,17 +37,19 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 41);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(51, 68);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.Size = new System.Drawing.Size(117, 20);
             this.label4.TabIndex = 12;
             this.label4.Text = "Kategori Adı :";
             // 
             // btnCategoryAdd
             // 
-            this.btnCategoryAdd.Location = new System.Drawing.Point(138, 94);
+            this.btnCategoryAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCategoryAdd.Location = new System.Drawing.Point(223, 125);
             this.btnCategoryAdd.Name = "btnCategoryAdd";
-            this.btnCategoryAdd.Size = new System.Drawing.Size(100, 23);
+            this.btnCategoryAdd.Size = new System.Drawing.Size(123, 63);
             this.btnCategoryAdd.TabIndex = 11;
             this.btnCategoryAdd.Text = "Ekle";
             this.btnCategoryAdd.UseVisualStyleBackColor = true;
@@ -55,16 +57,18 @@
             // 
             // txtCategory
             // 
-            this.txtCategory.Location = new System.Drawing.Point(92, 38);
+            this.txtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtCategory.Location = new System.Drawing.Point(174, 61);
             this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(135, 20);
+            this.txtCategory.Size = new System.Drawing.Size(135, 31);
             this.txtCategory.TabIndex = 10;
             // 
             // btnCategoryCancel
             // 
-            this.btnCategoryCancel.Location = new System.Drawing.Point(12, 94);
+            this.btnCategoryCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCategoryCancel.Location = new System.Drawing.Point(33, 125);
             this.btnCategoryCancel.Name = "btnCategoryCancel";
-            this.btnCategoryCancel.Size = new System.Drawing.Size(100, 23);
+            this.btnCategoryCancel.Size = new System.Drawing.Size(145, 63);
             this.btnCategoryCancel.TabIndex = 13;
             this.btnCategoryCancel.Text = "Vazgeç";
             this.btnCategoryCancel.UseVisualStyleBackColor = true;
@@ -74,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(267, 153);
+            this.ClientSize = new System.Drawing.Size(398, 242);
             this.Controls.Add(this.btnCategoryCancel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnCategoryAdd);

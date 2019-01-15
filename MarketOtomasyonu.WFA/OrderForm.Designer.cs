@@ -61,7 +61,7 @@
             // btnOrderSave
             // 
             this.btnOrderSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOrderSave.Location = new System.Drawing.Point(44, 657);
+            this.btnOrderSave.Location = new System.Drawing.Point(47, 624);
             this.btnOrderSave.Name = "btnOrderSave";
             this.btnOrderSave.Size = new System.Drawing.Size(480, 93);
             this.btnOrderSave.TabIndex = 0;
@@ -123,7 +123,7 @@
             this.lstOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lstOrder.FormattingEnabled = true;
             this.lstOrder.ItemHeight = 29;
-            this.lstOrder.Location = new System.Drawing.Point(1064, 292);
+            this.lstOrder.Location = new System.Drawing.Point(953, 298);
             this.lstOrder.Name = "lstOrder";
             this.lstOrder.Size = new System.Drawing.Size(341, 294);
             this.lstOrder.TabIndex = 6;
@@ -133,7 +133,7 @@
             // 
             this.lblOrderList.AutoSize = true;
             this.lblOrderList.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrderList.Location = new System.Drawing.Point(1140, 239);
+            this.lblOrderList.Location = new System.Drawing.Point(1047, 242);
             this.lblOrderList.Name = "lblOrderList";
             this.lblOrderList.Size = new System.Drawing.Size(178, 29);
             this.lblOrderList.TabIndex = 7;
@@ -251,7 +251,7 @@
             // 
             this.cmbOrderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbOrderName.FormattingEnabled = true;
-            this.cmbOrderName.Location = new System.Drawing.Point(1159, 173);
+            this.cmbOrderName.Location = new System.Drawing.Point(1066, 176);
             this.cmbOrderName.Name = "cmbOrderName";
             this.cmbOrderName.Size = new System.Drawing.Size(121, 32);
             this.cmbOrderName.TabIndex = 34;
@@ -261,7 +261,7 @@
             // btnCreateOrder
             // 
             this.btnCreateOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnCreateOrder.Location = new System.Drawing.Point(1087, 93);
+            this.btnCreateOrder.Location = new System.Drawing.Point(994, 96);
             this.btnCreateOrder.Name = "btnCreateOrder";
             this.btnCreateOrder.Size = new System.Drawing.Size(121, 55);
             this.btnCreateOrder.TabIndex = 35;
@@ -272,7 +272,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDelete.Location = new System.Drawing.Point(1096, 640);
+            this.btnDelete.Location = new System.Drawing.Point(985, 646);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(118, 53);
             this.btnDelete.TabIndex = 36;
@@ -283,7 +283,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUpdate.Location = new System.Drawing.Point(1254, 640);
+            this.btnUpdate.Location = new System.Drawing.Point(1143, 646);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(118, 53);
             this.btnUpdate.TabIndex = 37;
@@ -294,7 +294,7 @@
             // btnOrderDelete
             // 
             this.btnOrderDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOrderDelete.Location = new System.Drawing.Point(1251, 93);
+            this.btnOrderDelete.Location = new System.Drawing.Point(1158, 96);
             this.btnOrderDelete.Name = "btnOrderDelete";
             this.btnOrderDelete.Size = new System.Drawing.Size(121, 55);
             this.btnOrderDelete.TabIndex = 39;
@@ -305,7 +305,7 @@
             // txtOrderName
             // 
             this.txtOrderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtOrderName.Location = new System.Drawing.Point(1159, 50);
+            this.txtOrderName.Location = new System.Drawing.Point(1066, 53);
             this.txtOrderName.Name = "txtOrderName";
             this.txtOrderName.Size = new System.Drawing.Size(132, 29);
             this.txtOrderName.TabIndex = 40;
@@ -314,7 +314,7 @@
             // 
             this.lblOrderName.AutoSize = true;
             this.lblOrderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrderName.Location = new System.Drawing.Point(1154, 18);
+            this.lblOrderName.Location = new System.Drawing.Point(1061, 21);
             this.lblOrderName.Name = "lblOrderName";
             this.lblOrderName.Size = new System.Drawing.Size(140, 29);
             this.lblOrderName.TabIndex = 41;
@@ -325,7 +325,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.lblOrderName);
             this.Controls.Add(this.txtOrderName);
             this.Controls.Add(this.btnOrderDelete);

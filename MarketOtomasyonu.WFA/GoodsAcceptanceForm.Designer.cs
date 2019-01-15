@@ -71,7 +71,7 @@
             // btnOrderSave
             // 
             this.btnOrderSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOrderSave.Location = new System.Drawing.Point(205, 556);
+            this.btnOrderSave.Location = new System.Drawing.Point(213, 515);
             this.btnOrderSave.Name = "btnOrderSave";
             this.btnOrderSave.Size = new System.Drawing.Size(479, 90);
             this.btnOrderSave.TabIndex = 11;
@@ -83,7 +83,7 @@
             // 
             this.lblGoodAcceptanceBarcode.AutoSize = true;
             this.lblGoodAcceptanceBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblGoodAcceptanceBarcode.Location = new System.Drawing.Point(229, 422);
+            this.lblGoodAcceptanceBarcode.Location = new System.Drawing.Point(237, 381);
             this.lblGoodAcceptanceBarcode.Name = "lblGoodAcceptanceBarcode";
             this.lblGoodAcceptanceBarcode.Size = new System.Drawing.Size(235, 29);
             this.lblGoodAcceptanceBarcode.TabIndex = 23;
@@ -93,7 +93,7 @@
             // 
             this.cmbOrderProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbOrderProduct.FormattingEnabled = true;
-            this.cmbOrderProduct.Location = new System.Drawing.Point(470, 419);
+            this.cmbOrderProduct.Location = new System.Drawing.Point(478, 378);
             this.cmbOrderProduct.Name = "cmbOrderProduct";
             this.cmbOrderProduct.Size = new System.Drawing.Size(187, 32);
             this.cmbOrderProduct.TabIndex = 24;
@@ -104,7 +104,7 @@
             // 
             this.cmbGoodsAcceptanceOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbGoodsAcceptanceOrders.FormattingEnabled = true;
-            this.cmbGoodsAcceptanceOrders.Location = new System.Drawing.Point(470, 340);
+            this.cmbGoodsAcceptanceOrders.Location = new System.Drawing.Point(478, 299);
             this.cmbGoodsAcceptanceOrders.Name = "cmbGoodsAcceptanceOrders";
             this.cmbGoodsAcceptanceOrders.Size = new System.Drawing.Size(168, 32);
             this.cmbGoodsAcceptanceOrders.TabIndex = 25;
@@ -114,7 +114,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(273, 339);
+            this.label1.Location = new System.Drawing.Point(281, 298);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(175, 29);
             this.label1.TabIndex = 26;
@@ -124,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbGoodsAcceptanceOrders);
             this.Controls.Add(this.cmbOrderProduct);
