@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblSaleTitle = new System.Windows.Forms.Label();
-            this.dtSale = new System.Windows.Forms.DateTimePicker();
             this.lblOrderBarcode = new System.Windows.Forms.Label();
             this.lblTotalAmountText = new System.Windows.Forms.Label();
             this.lblSaleTotalAmount = new System.Windows.Forms.Label();
@@ -48,10 +47,16 @@
             this.nmQuantity = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnSaleDelete = new System.Windows.Forms.Button();
+            this.nudPochetteQuantity = new System.Windows.Forms.NumericUpDown();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtSale = new System.Windows.Forms.DateTimePicker();
             this.btnSaleUpdate = new System.Windows.Forms.Button();
+            this.btnSaleDelete = new System.Windows.Forms.Button();
             this.gbPayingType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPochetteQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // lblSaleTitle
@@ -62,13 +67,6 @@
             this.lblSaleTitle.Size = new System.Drawing.Size(207, 93);
             this.lblSaleTitle.TabIndex = 4;
             this.lblSaleTitle.Text = "Satış";
-            // 
-            // dtSale
-            // 
-            this.dtSale.Location = new System.Drawing.Point(1373, 30);
-            this.dtSale.Name = "dtSale";
-            this.dtSale.Size = new System.Drawing.Size(164, 20);
-            this.dtSale.TabIndex = 5;
             // 
             // lblOrderBarcode
             // 
@@ -84,7 +82,7 @@
             // 
             this.lblTotalAmountText.AutoSize = true;
             this.lblTotalAmountText.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTotalAmountText.Location = new System.Drawing.Point(1119, 242);
+            this.lblTotalAmountText.Location = new System.Drawing.Point(1111, 117);
             this.lblTotalAmountText.Name = "lblTotalAmountText";
             this.lblTotalAmountText.Size = new System.Drawing.Size(71, 42);
             this.lblTotalAmountText.TabIndex = 29;
@@ -94,18 +92,18 @@
             // 
             this.lblSaleTotalAmount.AutoSize = true;
             this.lblSaleTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSaleTotalAmount.Location = new System.Drawing.Point(1079, 213);
+            this.lblSaleTotalAmount.Location = new System.Drawing.Point(1108, 88);
             this.lblSaleTotalAmount.Name = "lblSaleTotalAmount";
-            this.lblSaleTotalAmount.Size = new System.Drawing.Size(170, 29);
+            this.lblSaleTotalAmount.Size = new System.Drawing.Size(74, 29);
             this.lblSaleTotalAmount.TabIndex = 28;
-            this.lblSaleTotalAmount.Text = "Toplam Tutar";
+            this.lblSaleTotalAmount.Text = "Tutar";
             // 
             // lstProduct
             // 
             this.lstProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lstProduct.FormattingEnabled = true;
             this.lstProduct.ItemHeight = 29;
-            this.lstProduct.Location = new System.Drawing.Point(552, 292);
+            this.lstProduct.Location = new System.Drawing.Point(552, 259);
             this.lstProduct.Name = "lstProduct";
             this.lstProduct.Size = new System.Drawing.Size(331, 381);
             this.lstProduct.TabIndex = 30;
@@ -138,7 +136,7 @@
             this.gbPayingType.Controls.Add(this.rbSaleCash);
             this.gbPayingType.Controls.Add(this.rbSaleCreditCard);
             this.gbPayingType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.gbPayingType.Location = new System.Drawing.Point(1007, 334);
+            this.gbPayingType.Location = new System.Drawing.Point(985, 253);
             this.gbPayingType.Name = "gbPayingType";
             this.gbPayingType.Size = new System.Drawing.Size(332, 135);
             this.gbPayingType.TabIndex = 35;
@@ -159,7 +157,7 @@
             // lblOrderList
             // 
             this.lblOrderList.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrderList.Location = new System.Drawing.Point(664, 228);
+            this.lblOrderList.Location = new System.Drawing.Point(664, 195);
             this.lblOrderList.Name = "lblOrderList";
             this.lblOrderList.Size = new System.Drawing.Size(111, 42);
             this.lblOrderList.TabIndex = 36;
@@ -168,7 +166,7 @@
             // txtSaleReceivedAmount
             // 
             this.txtSaleReceivedAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtSaleReceivedAmount.Location = new System.Drawing.Point(1028, 545);
+            this.txtSaleReceivedAmount.Location = new System.Drawing.Point(1025, 453);
             this.txtSaleReceivedAmount.Name = "txtSaleReceivedAmount";
             this.txtSaleReceivedAmount.Size = new System.Drawing.Size(100, 29);
             this.txtSaleReceivedAmount.TabIndex = 37;
@@ -177,7 +175,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(1020, 510);
+            this.label1.Location = new System.Drawing.Point(1017, 418);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 24);
             this.label1.TabIndex = 38;
@@ -187,7 +185,7 @@
             // 
             this.lblSaleRemainAmount.AutoSize = true;
             this.lblSaleRemainAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSaleRemainAmount.Location = new System.Drawing.Point(1186, 510);
+            this.lblSaleRemainAmount.Location = new System.Drawing.Point(1183, 418);
             this.lblSaleRemainAmount.Name = "lblSaleRemainAmount";
             this.lblSaleRemainAmount.Size = new System.Drawing.Size(99, 24);
             this.lblSaleRemainAmount.TabIndex = 40;
@@ -196,7 +194,7 @@
             // btnSaleBill
             // 
             this.btnSaleBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSaleBill.Location = new System.Drawing.Point(958, 614);
+            this.btnSaleBill.Location = new System.Drawing.Point(958, 524);
             this.btnSaleBill.Name = "btnSaleBill";
             this.btnSaleBill.Size = new System.Drawing.Size(392, 98);
             this.btnSaleBill.TabIndex = 41;
@@ -208,7 +206,7 @@
             // 
             this.lblSaleRemainAmountText.AutoSize = true;
             this.lblSaleRemainAmountText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSaleRemainAmountText.Location = new System.Drawing.Point(1200, 545);
+            this.lblSaleRemainAmountText.Location = new System.Drawing.Point(1197, 453);
             this.lblSaleRemainAmountText.Name = "lblSaleRemainAmountText";
             this.lblSaleRemainAmountText.Size = new System.Drawing.Size(65, 29);
             this.lblSaleRemainAmountText.TabIndex = 42;
@@ -245,41 +243,92 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(1279, 24);
+            this.label3.Location = new System.Drawing.Point(1064, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 29);
             this.label3.TabIndex = 47;
             this.label3.Text = "Tarih :";
             // 
-            // btnSaleDelete
+            // nudPochetteQuantity
             // 
-            this.btnSaleDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSaleDelete.Location = new System.Drawing.Point(583, 783);
-            this.btnSaleDelete.Name = "btnSaleDelete";
-            this.btnSaleDelete.Size = new System.Drawing.Size(128, 48);
-            this.btnSaleDelete.TabIndex = 48;
-            this.btnSaleDelete.Text = " Sil";
-            this.btnSaleDelete.UseVisualStyleBackColor = true;
-            this.btnSaleDelete.Click += new System.EventHandler(this.btnSaleDelete_Click);
+            this.nudPochetteQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.nudPochetteQuantity.Location = new System.Drawing.Point(1077, 211);
+            this.nudPochetteQuantity.Name = "nudPochetteQuantity";
+            this.nudPochetteQuantity.Size = new System.Drawing.Size(129, 26);
+            this.nudPochetteQuantity.TabIndex = 50;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTotal.ForeColor = System.Drawing.Color.Blue;
+            this.lblTotal.Location = new System.Drawing.Point(1086, 682);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(30, 31);
+            this.lblTotal.TabIndex = 51;
+            this.lblTotal.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(1064, 648);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(151, 25);
+            this.label4.TabIndex = 52;
+            this.label4.Text = "Toplam Tutar";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(1088, 188);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(107, 20);
+            this.label5.TabIndex = 53;
+            this.label5.Text = "Poşet Sayısı";
+            // 
+            // dtSale
+            // 
+            this.dtSale.Location = new System.Drawing.Point(1150, 15);
+            this.dtSale.Name = "dtSale";
+            this.dtSale.Size = new System.Drawing.Size(200, 20);
+            this.dtSale.TabIndex = 54;
             // 
             // btnSaleUpdate
             // 
             this.btnSaleUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSaleUpdate.Location = new System.Drawing.Point(749, 783);
+            this.btnSaleUpdate.Location = new System.Drawing.Point(727, 671);
             this.btnSaleUpdate.Name = "btnSaleUpdate";
-            this.btnSaleUpdate.Size = new System.Drawing.Size(122, 48);
-            this.btnSaleUpdate.TabIndex = 49;
+            this.btnSaleUpdate.Size = new System.Drawing.Size(96, 42);
+            this.btnSaleUpdate.TabIndex = 55;
             this.btnSaleUpdate.Text = "Güncelle";
             this.btnSaleUpdate.UseVisualStyleBackColor = true;
-            this.btnSaleUpdate.Click += new System.EventHandler(this.btnSaleUpdate_Click);
+            this.btnSaleUpdate.Click += new System.EventHandler(this.btnSaleUpdate_Click_1);
+            // 
+            // btnSaleDelete
+            // 
+            this.btnSaleDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSaleDelete.Location = new System.Drawing.Point(590, 671);
+            this.btnSaleDelete.Name = "btnSaleDelete";
+            this.btnSaleDelete.Size = new System.Drawing.Size(96, 42);
+            this.btnSaleDelete.TabIndex = 56;
+            this.btnSaleDelete.Text = "Sil";
+            this.btnSaleDelete.UseVisualStyleBackColor = true;
+            this.btnSaleDelete.Click += new System.EventHandler(this.btnSaleDelete_Click_1);
             // 
             // SaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 741);
-            this.Controls.Add(this.btnSaleUpdate);
             this.Controls.Add(this.btnSaleDelete);
+            this.Controls.Add(this.btnSaleUpdate);
+            this.Controls.Add(this.dtSale);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.nudPochetteQuantity);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nmQuantity);
@@ -296,13 +345,13 @@
             this.Controls.Add(this.lblTotalAmountText);
             this.Controls.Add(this.lblSaleTotalAmount);
             this.Controls.Add(this.lblOrderBarcode);
-            this.Controls.Add(this.dtSale);
             this.Controls.Add(this.lblSaleTitle);
             this.Name = "SaleForm";
             this.Text = "SaleForm";
             this.Load += new System.EventHandler(this.SaleForm_Load);
             this.gbPayingType.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nmQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPochetteQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,7 +360,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblSaleTitle;
-        private System.Windows.Forms.DateTimePicker dtSale;
+      
         private System.Windows.Forms.Label lblOrderBarcode;
         private System.Windows.Forms.Label lblTotalAmountText;
         private System.Windows.Forms.Label lblSaleTotalAmount;
@@ -329,8 +378,15 @@
         private System.Windows.Forms.NumericUpDown nmQuantity;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnSaleDelete;
-        private System.Windows.Forms.Button btnSaleUpdate;
+        
+       
         private System.Windows.Forms.RadioButton rbSaleCreditCard;
+        private System.Windows.Forms.NumericUpDown nudPochetteQuantity;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dtSale;
+        private System.Windows.Forms.Button btnSaleUpdate;
+        private System.Windows.Forms.Button btnSaleDelete;
     }
 }

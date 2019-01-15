@@ -157,9 +157,6 @@ namespace MarketOtomasyonu.WFA
                 foreach (var item in sepet)
                 {
                     item.PaymentType = i;
-                    
-                    
-               
                     double poset = Convert.ToDouble(nudPochetteQuantity.Value) * 0.25;
                     var tutar1 = Convert.ToString(Convert.ToDecimal(lblTotalAmountText.Text));
                     if (rbSaleCreditCard.Checked == true)
@@ -221,54 +218,9 @@ namespace MarketOtomasyonu.WFA
 
         
 
-        private void btnSaleDelete_Click(object sender, EventArgs e)
-        {
-            ProductRepo db = new ProductRepo();
-
-            if (lstProduct.SelectedItem == null) return;
-
-            var seciliSepet1 = lstProduct.SelectedItem as SepetViewModel;
-
-            
-            sepet.Remove(seciliSepet1);
-            lstProduct.Items.Clear();
-      
-       
-            lstProduct.Items.Clear();
-            foreach (var item in sepet)
-            {
-                lstProduct.Items.Add(item);
-            }
-           
-            
-            var tutar = sepet.Sum(x => x.ProductSellingPrice * x.Quantity * Convert.ToDecimal( 1-x.Discount));
-            lblTotalAmountText.Text = $" {tutar:c2}";
-        }
+     
         
         private SepetViewModel seciliSepet;
-        private void btnSaleUpdate_Click(object sender, EventArgs e)
-        {
-           
-            seciliSepet = lstProduct.SelectedItem as SepetViewModel;
-            foreach (var item in sepet)
-            {
-                if (seciliSepet.ProductId == item.ProductId)
-                {
-                    
-                    item.Quantity = Convert.ToInt32(nmQuantity.Value);
-                    break;
-                }
-            }
-            seciliSepet = null;
-            lstProduct.Items.Clear();
-            
-            foreach (var item in sepet)
-            {
-                lstProduct.Items.Add(item);
-            }
-            var tutar = sepet.Sum(x => x.ProductSellingPrice * x.Quantity * Convert.ToDecimal(1 - x.Discount));
-            lblTotalAmountText.Text = $" {tutar:c2}";
-        }
 
         private void lstProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -294,14 +246,61 @@ namespace MarketOtomasyonu.WFA
         {
             if (rbSaleCreditCard.Checked == true)
             {
-                //double poset = Convert.ToDouble(nudPochetteQuantity.Value) * 0.25;
-                //txtSaleReceivedAmount.Text = Convert.ToString(Convert.ToDecimal(lblTotalAmountText.Text) + Convert.ToDecimal(poset));
-                //lblSaleRemainAmountText.Text = "0";
+                double poset = Convert.ToDouble(nudPochetteQuantity.Value) * 0.25;
+                txtSaleReceivedAmount.Text = Convert.ToString(Convert.ToDecimal(lblTotalAmountText.Text) + Convert.ToDecimal(poset));
+                lblSaleRemainAmountText.Text = "0";
             }
             else
             {
                 // lblSaleRemainAmountText.Text = (Convert.ToDecimal(txtSaleReceivedAmount.Text) - Convert.ToDecimal(lblTotalAmountText.Text)).ToString();
             }
+        }
+
+        private void btnSaleUpdate_Click_1(object sender, EventArgs e)
+        {
+            seciliSepet = lstProduct.SelectedItem as SepetViewModel;
+            foreach (var item in sepet)
+            {
+                if (seciliSepet.ProductId == item.ProductId)
+                {
+
+                    item.Quantity = Convert.ToInt32(nmQuantity.Value);
+                    break;
+                }
+            }
+            seciliSepet = null;
+            lstProduct.Items.Clear();
+
+            foreach (var item in sepet)
+            {
+                lstProduct.Items.Add(item);
+            }
+            var tutar = sepet.Sum(x => x.ProductSellingPrice * x.Quantity * Convert.ToDecimal(1 - x.Discount));
+            lblTotalAmountText.Text = $" {tutar:c2}";
+        }
+
+        private void btnSaleDelete_Click_1(object sender, EventArgs e)
+        {
+            ProductRepo db = new ProductRepo();
+
+            if (lstProduct.SelectedItem == null) return;
+
+            var seciliSepet1 = lstProduct.SelectedItem as SepetViewModel;
+
+
+            sepet.Remove(seciliSepet1);
+            lstProduct.Items.Clear();
+
+
+            lstProduct.Items.Clear();
+            foreach (var item in sepet)
+            {
+                lstProduct.Items.Add(item);
+            }
+
+
+            var tutar = sepet.Sum(x => x.ProductSellingPrice * x.Quantity * Convert.ToDecimal(1 - x.Discount));
+            lblTotalAmountText.Text = $" {tutar:c2}";
         }
     }
 }
