@@ -40,12 +40,11 @@
             this.btnProductOrder.AutoEllipsis = true;
             this.btnProductOrder.BackColor = System.Drawing.Color.DarkOrchid;
             this.btnProductOrder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProductOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnProductOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnProductOrder.ForeColor = System.Drawing.Color.Yellow;
-            this.btnProductOrder.Location = new System.Drawing.Point(259, 62);
-            this.btnProductOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProductOrder.Location = new System.Drawing.Point(545, 61);
             this.btnProductOrder.Name = "btnProductOrder";
-            this.btnProductOrder.Size = new System.Drawing.Size(480, 95);
+            this.btnProductOrder.Size = new System.Drawing.Size(515, 171);
             this.btnProductOrder.TabIndex = 0;
             this.btnProductOrder.Text = "Sipariş Ver";
             this.btnProductOrder.UseVisualStyleBackColor = false;
@@ -56,12 +55,11 @@
             this.btnGoodsAcceptance.AutoEllipsis = true;
             this.btnGoodsAcceptance.BackColor = System.Drawing.Color.DarkOrchid;
             this.btnGoodsAcceptance.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGoodsAcceptance.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGoodsAcceptance.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGoodsAcceptance.ForeColor = System.Drawing.Color.Yellow;
-            this.btnGoodsAcceptance.Location = new System.Drawing.Point(259, 206);
-            this.btnGoodsAcceptance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGoodsAcceptance.Location = new System.Drawing.Point(545, 248);
             this.btnGoodsAcceptance.Name = "btnGoodsAcceptance";
-            this.btnGoodsAcceptance.Size = new System.Drawing.Size(480, 95);
+            this.btnGoodsAcceptance.Size = new System.Drawing.Size(515, 171);
             this.btnGoodsAcceptance.TabIndex = 1;
             this.btnGoodsAcceptance.Text = "Mal Kabul";
             this.btnGoodsAcceptance.UseVisualStyleBackColor = false;
@@ -72,12 +70,11 @@
             this.btnSelling.AutoEllipsis = true;
             this.btnSelling.BackColor = System.Drawing.Color.DarkOrchid;
             this.btnSelling.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSelling.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSelling.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSelling.ForeColor = System.Drawing.Color.Yellow;
-            this.btnSelling.Location = new System.Drawing.Point(259, 354);
-            this.btnSelling.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSelling.Location = new System.Drawing.Point(545, 441);
             this.btnSelling.Name = "btnSelling";
-            this.btnSelling.Size = new System.Drawing.Size(480, 95);
+            this.btnSelling.Size = new System.Drawing.Size(515, 171);
             this.btnSelling.TabIndex = 2;
             this.btnSelling.Text = "Satış Yap";
             this.btnSelling.UseVisualStyleBackColor = false;
@@ -88,12 +85,11 @@
             this.btnBills.AutoEllipsis = true;
             this.btnBills.BackColor = System.Drawing.Color.DarkOrchid;
             this.btnBills.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBills.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnBills.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnBills.ForeColor = System.Drawing.Color.Yellow;
-            this.btnBills.Location = new System.Drawing.Point(259, 500);
-            this.btnBills.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBills.Location = new System.Drawing.Point(545, 635);
             this.btnBills.Name = "btnBills";
-            this.btnBills.Size = new System.Drawing.Size(480, 95);
+            this.btnBills.Size = new System.Drawing.Size(515, 171);
             this.btnBills.TabIndex = 3;
             this.btnBills.Text = "Fişler";
             this.btnBills.UseVisualStyleBackColor = false;
@@ -101,16 +97,15 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1067, 654);
+            this.ClientSize = new System.Drawing.Size(1584, 861);
             this.Controls.Add(this.btnBills);
             this.Controls.Add(this.btnSelling);
             this.Controls.Add(this.btnGoodsAcceptance);
             this.Controls.Add(this.btnProductOrder);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.ResumeLayout(false);

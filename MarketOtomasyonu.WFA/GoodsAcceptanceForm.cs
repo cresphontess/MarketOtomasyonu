@@ -225,6 +225,9 @@ namespace MarketOtomasyonu.WFA
             cmbOrderProduct.Items.AddRange(orders.ToArray());
         }
 
-     
+        private void cmbOrderProduct_DropDown(object sender, EventArgs e)
+        {
+            PaketleriGetirMalKabul();
+        }
     }
 }
