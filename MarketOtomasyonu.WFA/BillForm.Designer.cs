@@ -66,7 +66,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(1163, 139);
+            this.label1.Location = new System.Drawing.Point(1030, 139);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 31);
             this.label1.TabIndex = 5;
@@ -76,7 +76,7 @@
             // 
             this.lblBillDate.AutoSize = true;
             this.lblBillDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblBillDate.Location = new System.Drawing.Point(1267, 139);
+            this.lblBillDate.Location = new System.Drawing.Point(1134, 139);
             this.lblBillDate.Name = "lblBillDate";
             this.lblBillDate.Size = new System.Drawing.Size(0, 31);
             this.lblBillDate.TabIndex = 6;
@@ -85,7 +85,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(1145, 170);
+            this.label3.Location = new System.Drawing.Point(1012, 170);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 31);
             this.label3.TabIndex = 7;
@@ -95,7 +95,7 @@
             // 
             this.lblBillNo.AutoSize = true;
             this.lblBillNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblBillNo.Location = new System.Drawing.Point(1267, 170);
+            this.lblBillNo.Location = new System.Drawing.Point(1134, 170);
             this.lblBillNo.Name = "lblBillNo";
             this.lblBillNo.Size = new System.Drawing.Size(0, 31);
             this.lblBillNo.TabIndex = 8;
@@ -105,16 +105,16 @@
             this.lstBillProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lstBillProducts.FormattingEnabled = true;
             this.lstBillProducts.ItemHeight = 29;
-            this.lstBillProducts.Location = new System.Drawing.Point(1050, 239);
+            this.lstBillProducts.Location = new System.Drawing.Point(947, 217);
             this.lstBillProducts.Name = "lstBillProducts";
-            this.lstBillProducts.Size = new System.Drawing.Size(449, 410);
+            this.lstBillProducts.Size = new System.Drawing.Size(375, 410);
             this.lstBillProducts.TabIndex = 9;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(1147, 677);
+            this.label7.Location = new System.Drawing.Point(1003, 655);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(158, 33);
             this.label7.TabIndex = 12;
@@ -124,7 +124,7 @@
             // 
             this.lblBillTotalAmount.AutoSize = true;
             this.lblBillTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblBillTotalAmount.Location = new System.Drawing.Point(1327, 677);
+            this.lblBillTotalAmount.Location = new System.Drawing.Point(1183, 655);
             this.lblBillTotalAmount.Name = "lblBillTotalAmount";
             this.lblBillTotalAmount.Size = new System.Drawing.Size(32, 33);
             this.lblBillTotalAmount.TabIndex = 13;
@@ -134,7 +134,7 @@
             // 
             this.lblBillTotalKDV.AutoSize = true;
             this.lblBillTotalKDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblBillTotalKDV.Location = new System.Drawing.Point(1327, 716);
+            this.lblBillTotalKDV.Location = new System.Drawing.Point(1183, 694);
             this.lblBillTotalKDV.Name = "lblBillTotalKDV";
             this.lblBillTotalKDV.Size = new System.Drawing.Size(32, 33);
             this.lblBillTotalKDV.TabIndex = 17;
@@ -144,7 +144,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(1210, 716);
+            this.label5.Location = new System.Drawing.Point(1066, 694);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 33);
             this.label5.TabIndex = 18;
@@ -154,7 +154,7 @@
             // 
             this.cmbBills.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbBills.FormattingEnabled = true;
-            this.cmbBills.Location = new System.Drawing.Point(741, 389);
+            this.cmbBills.Location = new System.Drawing.Point(638, 354);
             this.cmbBills.Name = "cmbBills";
             this.cmbBills.Size = new System.Drawing.Size(217, 28);
             this.cmbBills.TabIndex = 14;
@@ -163,7 +163,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(811, 349);
+            this.label2.Location = new System.Drawing.Point(708, 314);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 29);
             this.label2.TabIndex = 15;
@@ -172,7 +172,7 @@
             // btnGetBill
             // 
             this.btnGetBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGetBill.Location = new System.Drawing.Point(741, 457);
+            this.btnGetBill.Location = new System.Drawing.Point(638, 422);
             this.btnGetBill.Margin = new System.Windows.Forms.Padding(2);
             this.btnGetBill.Name = "btnGetBill";
             this.btnGetBill.Size = new System.Drawing.Size(230, 67);
@@ -184,7 +184,7 @@
             // btnGetProducts
             // 
             this.btnGetProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGetProducts.Location = new System.Drawing.Point(107, 139);
+            this.btnGetProducts.Location = new System.Drawing.Point(37, 121);
             this.btnGetProducts.Name = "btnGetProducts";
             this.btnGetProducts.Size = new System.Drawing.Size(230, 67);
             this.btnGetProducts.TabIndex = 19;
@@ -195,7 +195,7 @@
             // btnGetCategories
             // 
             this.btnGetCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGetCategories.Location = new System.Drawing.Point(377, 139);
+            this.btnGetCategories.Location = new System.Drawing.Point(307, 121);
             this.btnGetCategories.Name = "btnGetCategories";
             this.btnGetCategories.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.btnGetCategories.Size = new System.Drawing.Size(230, 67);
@@ -207,7 +207,7 @@
             // btnGetSaleCard
             // 
             this.btnGetSaleCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGetSaleCard.Location = new System.Drawing.Point(107, 234);
+            this.btnGetSaleCard.Location = new System.Drawing.Point(37, 216);
             this.btnGetSaleCard.Name = "btnGetSaleCard";
             this.btnGetSaleCard.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.btnGetSaleCard.Size = new System.Drawing.Size(230, 67);
@@ -219,7 +219,7 @@
             // btnGetCash
             // 
             this.btnGetCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGetCash.Location = new System.Drawing.Point(377, 234);
+            this.btnGetCash.Location = new System.Drawing.Point(307, 216);
             this.btnGetCash.Name = "btnGetCash";
             this.btnGetCash.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.btnGetCash.Size = new System.Drawing.Size(230, 67);
@@ -231,7 +231,7 @@
             // dtpDate
             // 
             this.dtpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dtpDate.Location = new System.Drawing.Point(714, 272);
+            this.dtpDate.Location = new System.Drawing.Point(612, 237);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(270, 29);
             this.dtpDate.TabIndex = 23;
@@ -239,7 +239,7 @@
             // btnGetDaySale
             // 
             this.btnGetDaySale.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGetDaySale.Location = new System.Drawing.Point(107, 330);
+            this.btnGetDaySale.Location = new System.Drawing.Point(37, 312);
             this.btnGetDaySale.Name = "btnGetDaySale";
             this.btnGetDaySale.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.btnGetDaySale.Size = new System.Drawing.Size(230, 67);
@@ -251,7 +251,7 @@
             // btnGetMonth
             // 
             this.btnGetMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGetMonth.Location = new System.Drawing.Point(377, 330);
+            this.btnGetMonth.Location = new System.Drawing.Point(307, 312);
             this.btnGetMonth.Name = "btnGetMonth";
             this.btnGetMonth.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.btnGetMonth.Size = new System.Drawing.Size(230, 67);
@@ -265,9 +265,9 @@
             this.lstReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lstReport.FormattingEnabled = true;
             this.lstReport.ItemHeight = 25;
-            this.lstReport.Location = new System.Drawing.Point(90, 447);
+            this.lstReport.Location = new System.Drawing.Point(39, 418);
             this.lstReport.Name = "lstReport";
-            this.lstReport.Size = new System.Drawing.Size(529, 304);
+            this.lstReport.Size = new System.Drawing.Size(498, 279);
             this.lstReport.TabIndex = 28;
             // 
             // lblSum
@@ -283,7 +283,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.lstReport);
             this.Controls.Add(this.lblSum);
             this.Controls.Add(this.btnGetMonth);
