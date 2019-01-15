@@ -50,8 +50,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnSaleDelete = new System.Windows.Forms.Button();
             this.btnSaleUpdate = new System.Windows.Forms.Button();
+            this.nudPochetteQuantity = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.gbPayingType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPochetteQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // lblSaleTitle
@@ -75,7 +80,7 @@
             // 
             this.lblOrderBarcode.AutoSize = true;
             this.lblOrderBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrderBarcode.Location = new System.Drawing.Point(96, 93);
+            this.lblOrderBarcode.Location = new System.Drawing.Point(82, 68);
             this.lblOrderBarcode.Name = "lblOrderBarcode";
             this.lblOrderBarcode.Size = new System.Drawing.Size(146, 20);
             this.lblOrderBarcode.TabIndex = 27;
@@ -85,7 +90,7 @@
             // 
             this.lblTotalAmountText.AutoSize = true;
             this.lblTotalAmountText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTotalAmountText.Location = new System.Drawing.Point(141, 188);
+            this.lblTotalAmountText.Location = new System.Drawing.Point(127, 163);
             this.lblTotalAmountText.Name = "lblTotalAmountText";
             this.lblTotalAmountText.Size = new System.Drawing.Size(48, 29);
             this.lblTotalAmountText.TabIndex = 29;
@@ -95,11 +100,11 @@
             // 
             this.lblSaleTotalAmount.AutoSize = true;
             this.lblSaleTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSaleTotalAmount.Location = new System.Drawing.Point(107, 158);
+            this.lblSaleTotalAmount.Location = new System.Drawing.Point(50, 319);
             this.lblSaleTotalAmount.Name = "lblSaleTotalAmount";
-            this.lblSaleTotalAmount.Size = new System.Drawing.Size(114, 20);
+            this.lblSaleTotalAmount.Size = new System.Drawing.Size(119, 20);
             this.lblSaleTotalAmount.TabIndex = 28;
-            this.lblSaleTotalAmount.Text = "Toplam Tutar";
+            this.lblSaleTotalAmount.Text = "Toplam Tutar:";
             // 
             // lstProduct
             // 
@@ -113,7 +118,7 @@
             // btnSaleProductPass
             // 
             this.btnSaleProductPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSaleProductPass.Location = new System.Drawing.Point(341, 233);
+            this.btnSaleProductPass.Location = new System.Drawing.Point(327, 208);
             this.btnSaleProductPass.Name = "btnSaleProductPass";
             this.btnSaleProductPass.Size = new System.Drawing.Size(147, 49);
             this.btnSaleProductPass.TabIndex = 31;
@@ -142,13 +147,14 @@
             this.rbSaleCreditCard.TabStop = true;
             this.rbSaleCreditCard.Text = "KrediKartı";
             this.rbSaleCreditCard.UseVisualStyleBackColor = true;
+            this.rbSaleCreditCard.CheckedChanged += new System.EventHandler(this.rbSaleCreditCard_CheckedChanged);
             // 
             // gbPayingType
             // 
             this.gbPayingType.Controls.Add(this.rbSaleCash);
             this.gbPayingType.Controls.Add(this.rbSaleCreditCard);
             this.gbPayingType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.gbPayingType.Location = new System.Drawing.Point(62, 242);
+            this.gbPayingType.Location = new System.Drawing.Point(48, 217);
             this.gbPayingType.Name = "gbPayingType";
             this.gbPayingType.Size = new System.Drawing.Size(218, 84);
             this.gbPayingType.TabIndex = 35;
@@ -216,14 +222,14 @@
             // cmbProductBarcode
             // 
             this.cmbProductBarcode.FormattingEnabled = true;
-            this.cmbProductBarcode.Location = new System.Drawing.Point(68, 126);
+            this.cmbProductBarcode.Location = new System.Drawing.Point(54, 101);
             this.cmbProductBarcode.Name = "cmbProductBarcode";
             this.cmbProductBarcode.Size = new System.Drawing.Size(202, 21);
             this.cmbProductBarcode.TabIndex = 43;
             // 
             // nmQuantity
             // 
-            this.nmQuantity.Location = new System.Drawing.Point(290, 127);
+            this.nmQuantity.Location = new System.Drawing.Point(276, 102);
             this.nmQuantity.Name = "nmQuantity";
             this.nmQuantity.Size = new System.Drawing.Size(120, 20);
             this.nmQuantity.TabIndex = 45;
@@ -232,7 +238,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(325, 104);
+            this.label2.Location = new System.Drawing.Point(311, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 20);
             this.label2.TabIndex = 46;
@@ -270,11 +276,53 @@
             this.btnSaleUpdate.UseVisualStyleBackColor = true;
             this.btnSaleUpdate.Click += new System.EventHandler(this.btnSaleUpdate_Click);
             // 
+            // nudPochetteQuantity
+            // 
+            this.nudPochetteQuantity.Location = new System.Drawing.Point(276, 163);
+            this.nudPochetteQuantity.Name = "nudPochetteQuantity";
+            this.nudPochetteQuantity.Size = new System.Drawing.Size(120, 20);
+            this.nudPochetteQuantity.TabIndex = 50;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(289, 140);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 20);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "Poşet Sayısı";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(129, 140);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 20);
+            this.label5.TabIndex = 52;
+            this.label5.Text = "Tutar";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTotal.ForeColor = System.Drawing.Color.Blue;
+            this.lblTotal.Location = new System.Drawing.Point(175, 319);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(19, 20);
+            this.lblTotal.TabIndex = 53;
+            this.lblTotal.Text = "0";
+            // 
             // SaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 455);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.nudPochetteQuantity);
             this.Controls.Add(this.btnSaleUpdate);
             this.Controls.Add(this.btnSaleDelete);
             this.Controls.Add(this.label3);
@@ -301,6 +349,7 @@
             this.gbPayingType.ResumeLayout(false);
             this.gbPayingType.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPochetteQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,5 +379,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSaleDelete;
         private System.Windows.Forms.Button btnSaleUpdate;
+        private System.Windows.Forms.NumericUpDown nudPochetteQuantity;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblTotal;
     }
 }

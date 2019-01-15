@@ -38,9 +38,9 @@ namespace MarketOtomasyonu.WFA
                         ProductBarcode = x.ProductBarcode,
                         ProductPurchasingUnitPrice = x.ProductPurchasingPrice,
                         ProductSellingPrice = x.ProductSellingPrice,
-                        ProductStock = x.ProductStock
-
-                    }));
+                        ProductStock = x.ProductStock,
+                       
+    }));
             }
             catch (Exception ex)
             {
@@ -66,6 +66,7 @@ namespace MarketOtomasyonu.WFA
                     {
                         ProductId = x.ProductId,
                         ProductName = x.ProductName,
+
                         Quantity = Convert.ToInt32(nmQuantity.Value),
                         ProductSellingPrice = nmQuantity.Value * x.ProductSellingPrice
 
@@ -152,17 +153,35 @@ namespace MarketOtomasyonu.WFA
                         break;
                     }
                 }
-
+               
                 foreach (var item in sepet)
                 {
                     item.PaymentType = i;
-                    item.GivenAmount = (Convert.ToDecimal(txtSaleReceivedAmount.Text) - Convert.ToDecimal(lblTotalAmountText.Text));
-                    item.ReceivedAmount = Convert.ToDecimal(txtSaleReceivedAmount.Text);
+                    
+                    
+               
+                    double poset = Convert.ToDouble(nudPochetteQuantity.Value) * 0.25;
+                    var tutar1 = Convert.ToString(Convert.ToDecimal(lblTotalAmountText.Text));
+                    if (rbSaleCreditCard.Checked == true)
+                {
+                    
+                    txtSaleReceivedAmount.Text = Convert.ToString(Convert.ToDecimal(lblTotalAmountText.Text) + Convert.ToDecimal(poset));  
+                    item.GivenAmount = (Convert.ToDecimal(lblTotalAmountText.Text)+ Convert.ToDecimal(poset));
+                    item.GivenAmount = 0;
+                    lblTotal.Text =  $"{tutar1:c2}+{poset:c2}";
+                    }
+                else
+                {
+                        item.GivenAmount = (Convert.ToDecimal(lblTotalAmountText.Text) + Convert.ToDecimal(poset));
+                        item.ReceivedAmount = Convert.ToDecimal(txtSaleReceivedAmount.Text);        
+                        lblSaleRemainAmountText.Text = (Convert.ToDecimal(txtSaleReceivedAmount.Text) - ((Convert.ToDecimal(lblTotalAmountText.Text) + Convert.ToDecimal(poset)))).ToString();
+                        lblTotal.Text = $"{tutar1:c2}+{poset:c2}";
+                    }
                     item.SaleId = sale.SaleId;
                     item.SaleDateTime = dtSale.Value;
                 }
 
-                lblSaleRemainAmountText.Text = (Convert.ToDecimal(txtSaleReceivedAmount.Text) - Convert.ToDecimal(lblTotalAmountText.Text)).ToString();
+
 
                 var orderBusiness = new SaleBusines();
                 var dbSale = new SaleDetailRepo();
@@ -210,15 +229,22 @@ namespace MarketOtomasyonu.WFA
 
             var seciliSepet1 = lstProduct.SelectedItem as SepetViewModel;
 
-            db.Update();
+            
             sepet.Remove(seciliSepet1);
+            lstProduct.Items.Clear();
+      
+       
             lstProduct.Items.Clear();
             foreach (var item in sepet)
             {
                 lstProduct.Items.Add(item);
             }
+           
+            
+            var tutar = sepet.Sum(x => x.ProductSellingPrice * x.Quantity * Convert.ToDecimal( 1-x.Discount));
+            lblTotalAmountText.Text = $" {tutar:c2}";
         }
-
+        
         private SepetViewModel seciliSepet;
         private void btnSaleUpdate_Click(object sender, EventArgs e)
         {
@@ -235,10 +261,13 @@ namespace MarketOtomasyonu.WFA
             }
             seciliSepet = null;
             lstProduct.Items.Clear();
+            
             foreach (var item in sepet)
             {
                 lstProduct.Items.Add(item);
             }
+            var tutar = sepet.Sum(x => x.ProductSellingPrice * x.Quantity * Convert.ToDecimal(1 - x.Discount));
+            lblTotalAmountText.Text = $" {tutar:c2}";
         }
 
         private void lstProduct_SelectedIndexChanged(object sender, EventArgs e)
@@ -246,8 +275,7 @@ namespace MarketOtomasyonu.WFA
             if (lstProduct.SelectedItem == null) return;
             seciliSepet = lstProduct.SelectedItem as SepetViewModel;
             nmQuantity.Value = seciliSepet.Quantity;
-
-
+            
             ProductRepo db = new ProductRepo();
 
             foreach (var item in db.GetAll())
@@ -258,6 +286,21 @@ namespace MarketOtomasyonu.WFA
                     cmbProductBarcode.Text = (item.ProductBarcode) + " - " + item.ProductName;
 
                 }
+
+            }
+        }
+
+        private void rbSaleCreditCard_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbSaleCreditCard.Checked == true)
+            {
+                //double poset = Convert.ToDouble(nudPochetteQuantity.Value) * 0.25;
+                //txtSaleReceivedAmount.Text = Convert.ToString(Convert.ToDecimal(lblTotalAmountText.Text) + Convert.ToDecimal(poset));
+                //lblSaleRemainAmountText.Text = "0";
+            }
+            else
+            {
+                // lblSaleRemainAmountText.Text = (Convert.ToDecimal(txtSaleReceivedAmount.Text) - Convert.ToDecimal(lblTotalAmountText.Text)).ToString();
             }
         }
     }

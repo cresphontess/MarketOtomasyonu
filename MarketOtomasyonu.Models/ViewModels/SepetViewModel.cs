@@ -27,6 +27,7 @@ namespace MarketOtomasyonu.Models.ViewModels
 
         public int Quantity { get; set; }
 
+        public decimal Discount { get; set; } = 0;
 
 
         public override string ToString() => $"{ProductName} - {Quantity} ";

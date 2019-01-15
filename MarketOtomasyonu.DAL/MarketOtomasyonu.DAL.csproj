@@ -47,13 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201901140543364_dfd.cs" />
-    <Compile Include="Migrations\201901140543364_dfd.Designer.cs">
-      <DependentUpon>201901140543364_dfd.cs</DependentUpon>
+    <Compile Include="Migrations\201901142039599_s77.cs" />
+    <Compile Include="Migrations\201901142039599_s77.Designer.cs">
+      <DependentUpon>201901142039599_s77.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201901141141223_ghg.cs" />
-    <Compile Include="Migrations\201901141141223_ghg.Designer.cs">
-      <DependentUpon>201901141141223_ghg.cs</DependentUpon>
+    <Compile Include="Migrations\201901150020020_x4.cs" />
+    <Compile Include="Migrations\201901150020020_x4.Designer.cs">
+      <DependentUpon>201901150020020_x4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyContext.cs" />
@@ -70,11 +70,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201901140543364_dfd.resx">
-      <DependentUpon>201901140543364_dfd.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201901142039599_s77.resx">
+      <DependentUpon>201901142039599_s77.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901141141223_ghg.resx">
-      <DependentUpon>201901141141223_ghg.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201901150020020_x4.resx">
+      <DependentUpon>201901150020020_x4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
