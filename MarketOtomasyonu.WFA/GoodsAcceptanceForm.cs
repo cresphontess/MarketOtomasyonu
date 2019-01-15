@@ -99,22 +99,23 @@ namespace MarketOtomasyonu.WFA
 
             foreach (var item in pr.GetAll())
             {
-
-                if (seciliPaket1.ProductId == item.Product.ProductId)
+                foreach (var item1 in prodb.GetAll())
                 {
-
-                    foreach (var item2 in prodb.GetAll())
+                    if (item.ProductId == item1.ProductId)
                     {
-                        if (item2.ProductId == seciliPaket1.ProductId)
+                        if (seciliPaket1.ProductId == item1.ProductId)
                         {
-                            item2.ProductStock += seciliPaket1.PackageProductQuantity;
-                            item2.ProductSellingPrice = (item2.ProductPurchasingPrice * (1 + 0.18m));
+
+                            item1.ProductStock += seciliPaket1.PackageProductQuantity;
+                            item1.ProductSellingPrice = (item1.ProductPurchasingPrice * (1 + 0.18m));
+
+
                         }
                     }
 
-                }
 
-                
+
+                }
             }
 
             pr.Update();

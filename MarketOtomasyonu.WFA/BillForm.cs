@@ -262,5 +262,10 @@ namespace MarketOtomasyonu.WFA
                             };
             lstReport.DataSource = satislar2.ToList();
         }
+
+        private void dtpDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

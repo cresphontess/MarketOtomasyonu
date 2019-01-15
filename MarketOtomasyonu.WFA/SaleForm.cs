@@ -158,7 +158,7 @@ namespace MarketOtomasyonu.WFA
                 {
                     item.PaymentType = i;
                     double poset = Convert.ToDouble(nudPochetteQuantity.Value) * 0.25;
-                    var tutar1 = Convert.ToString(Convert.ToDecimal(lblTotalAmountText.Text));
+                    var tutar1 = Convert.ToDecimal(lblTotalAmountText.Text);
                     if (rbSaleCreditCard.Checked == true)
                 {
                     

@@ -235,6 +235,7 @@
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(270, 29);
             this.dtpDate.TabIndex = 23;
+            this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
             // 
             // btnGetDaySale
             // 
